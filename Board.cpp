@@ -25,28 +25,42 @@ Board::Board() {
  * Print method which prints the board as requested.
  */
 void Board::Print() const {
-  cout << " ";
-  for (int i = 0; i < NUM_OF_COLS; i++) {
-    cout << "|" << i + 1;
-  }
-  cout << "|" << endl << "------------------" << endl;
-  for (int i = 0; i < NUM_OF_ROWS; i++) {
-    cout << i + 1 << "|";
-    for (int j = 0; j < NUM_OF_COLS; j++) {
-      //cout << j+1 << "|";
-      if (board_[i][j] == EnumDeclration::E) {
-        cout << " |";
-      }
-      if (board_[i][j] == EnumDeclration::O) {
-        cout << "O|";
+	cout << " |";
+			for (int i = 1; i <= NUM_OF_COLS; i++) {
+			cout << " " << i << " |";
+		}
+		cout << endl;
+		cout << "--";
+		for(int i = 0; i < NUM_OF_COLS; i++) {
+			cout << "----";
+		}
+		cout << endl;
+		for (int i = 0; i < NUM_OF_COLS; i++) {
+			cout << "" << i + 1 << "|";
+			for (int j = 0; j < NUM_OF_ROWS; j++) {
+				cout << " ";
+			switch(board_[i][j]) {
+			case EnumDeclration::E:
+				cout << " ";
+				break;
+			case EnumDeclration::O:
+				cout << "O";
+				break;
+			case EnumDeclration::X:
+				cout << "X";
+				break;
+			}
+			cout << " |";
+		}
+			cout << endl;
+			cout << "--";
+			for(int i = 0; i < NUM_OF_COLS; i++) {
+				cout << "----";
+			}
+			cout << endl;
 
-      }
-      if (board_[i][j] == EnumDeclration::X) {
-        cout << "X|";
-      }
-    }
-    cout << endl << "------------------" << endl;
-  }
+		}
+
 }
 
 /**

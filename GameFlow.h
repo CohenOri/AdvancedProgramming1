@@ -21,6 +21,8 @@ class GameFlow {
   PlayerInterface* player2_;
   EnumDeclration::CellStatus current_turn_;
   bool GameOver();
+  void endGame();
+
 };
 
 #endif //EX1_GAMEFLOW_H

@@ -17,17 +17,17 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
   this->player1_ = player1;
   this->player2_ = player2;
   this->current_turn_ = EnumDeclration::X;
+  // some initialization
+  board_->SetCellStatus(board_->NumOfRows()/2, board_->NumOfCols()/2, EnumDeclration::O);
+  board_->SetCellStatus(board_->NumOfRows()/2+1, board_->NumOfCols()/2+1, EnumDeclration::O);
+  board_->SetCellStatus(board_->NumOfRows()/2+1, board_->NumOfCols()/2, EnumDeclration::X);
+  board_->SetCellStatus(board_->NumOfRows()/2, board_->NumOfCols()/2+1, EnumDeclration::X);
 }
 /**
  * Run the game
  */
 void GameFlow::Run() {
   Board *b = this->board_;
-  // some initialization
-  b->SetCellStatus(b->NumOfRows()/2, b->NumOfCols()/2, EnumDeclration::O);
-  b->SetCellStatus(b->NumOfRows()/2+1, b->NumOfCols()/2+1, EnumDeclration::O);
-  b->SetCellStatus(b->NumOfRows()/2+1, b->NumOfCols()/2, EnumDeclration::X);
-  b->SetCellStatus(b->NumOfRows()/2, b->NumOfCols()/2+1, EnumDeclration::X);
   b->Print();
   // run the game while it is still not over
   while (!GameOver()) {
@@ -72,24 +72,8 @@ void GameFlow::Run() {
       }
     }
   }
-  if (GameOver()) {
-    // find the reason
-    int num_of_slots_in_board = b->NumOfRows() * b->NumOfCols();
-    int num_of_used_slots = b->GetXSlots().size() + b->GetOSlots().size();
-    if (num_of_used_slots >= num_of_slots_in_board) {
-      cout << "Game is over, board is completely full" << endl;
-    } else {
-      cout << "Game is over, both sides can't make any more moves" << endl;
-    }
-    // declare result
-    if (b->GetXSlots().size() > b->GetOSlots().size()) {
-      cout << "X is the WINNER!";
-    } else if (b->GetXSlots().size() < b->GetOSlots().size()) {
-      cout << "O is the WINNER!";
-    } else {
-      cout << "It's a tie";
-    }
-  }
+  //print end game screen.
+  endGame();
 }
 /**
  * @param tag to place
@@ -142,4 +126,28 @@ bool GameFlow::GameOver() {
     return false;
   }
   return true;
+}
+
+
+/**
+ * prints why the game end and who is the winner
+ */
+void GameFlow::endGame() {
+	  Board *b = this->board_;
+
+    int num_of_slots_in_board = b->NumOfRows() * b->NumOfCols();
+    int num_of_used_slots = b->GetXSlots().size() + b->GetOSlots().size();
+    if (num_of_used_slots >= num_of_slots_in_board) {
+      cout << "Game is over, board is completely full" << endl;
+    } else {
+      cout << "Game is over, both sides can't make any more moves" << endl;
+    }
+    // declare result
+    if (b->GetXSlots().size() > b->GetOSlots().size()) {
+      cout << "X is the WINNER!";
+    } else if (b->GetXSlots().size() < b->GetOSlots().size()) {
+      cout << "O is the WINNER!";
+    } else {
+      cout << "It's a tie";
+    }
 }
