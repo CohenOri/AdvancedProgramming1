@@ -1,13 +1,12 @@
 //
 // Created by Ori Cohen
 // ID: 207375783
-//changed
 //
 
 #include "Board.h"
 #include <iostream>
-#define NUM_OF_ROWS 8
-#define NUM_OF_COLS 8
+#define NUM_OF_ROWS 4
+#define NUM_OF_COLS 4
 
 /**
  * Constructor for board, which initialize the board to E (Empty)
@@ -144,3 +143,10 @@ void Board::SetXSlots(vector<Slot> x_slots) {
   this->x_slots_ = x_slots;
 }
 
+vector<Slot> Board::GetSlotsOfPlayer(EnumDeclration :: CellStatus player) const {
+	if(player == EnumDeclration::X) {
+  return this->x_slots_;
+} else {
+	return this->o_slots_;
+}
+}

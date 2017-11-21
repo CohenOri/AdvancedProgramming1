@@ -1,6 +1,6 @@
 //
 // Created by Ori Cohen on 12/11/2017.
-//changed
+//
 
 #ifndef EX1_GAMEFLOW_H
 #define EX1_GAMEFLOW_H
@@ -19,10 +19,10 @@ class GameFlow {
   Board* board_;
   PlayerInterface* player1_;
   PlayerInterface* player2_;
+  PlayerInterface* player[2];
   EnumDeclration::CellStatus current_turn_;
   bool GameOver();
   void endGame();
-
 };
 
 #endif //EX1_GAMEFLOW_H

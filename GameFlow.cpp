@@ -1,6 +1,5 @@
 //
 // Created by Ori Cohen on 12/11/2017.
-//changed
 //
 
 #include "GameFlow.h"
@@ -18,6 +17,8 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
   this->player1_ = player1;
   this->player2_ = player2;
   this->current_turn_ = EnumDeclration::X;
+  this->player[0] = player1;
+  this->player[1] = player2;
   // some initialization
   board_->SetCellStatus(board_->NumOfRows()/2, board_->NumOfCols()/2, EnumDeclration::O);
   board_->SetCellStatus(board_->NumOfRows()/2+1, board_->NumOfCols()/2+1, EnumDeclration::O);
@@ -29,53 +30,34 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
  */
 void GameFlow::Run() {
   Board *b = this->board_;
+  int tunrnConter = 0;
   b->Print();
   // run the game while it is still not over
   while (!GameOver()) {
-    if (this->current_turn_ == EnumDeclration::X) {
+	  if(tunrnConter%2 == 1) {
+		  this->current_turn_ = EnumDeclration::O;
+	  } else {
+		  this->current_turn_ = EnumDeclration::X;
+	  }
       // if it has possible slots to place tag at
-      if (this->logic_->SlotsToPlace(EnumDeclration::X).size() != 0) {
-        cout << "X I'ts your move.\n" << "Your possible moves: ";
+   if (this->logic_->SlotsToPlace(this->current_turn_).size() != 0) {
+        cout<< player[tunrnConter%2]->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
         // prints all the possible slots & play.
-        PlaceTag(EnumDeclration::X);
-        // move the turn back to O, and re-check if game isn't over
-        this->current_turn_ = EnumDeclration::O;
-        continue;
-      } else {
+        PlaceTag(this->current_turn_);
+   } else {
         // it doesn't have possible slots to place tag at
         // the turn passes over
-        cout << "X I'ts your move. but unfortunately you don't have anything to do," <<
+    	  cout<< player[tunrnConter%2] << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to O"
              << endl;
-        // moves the turn back to O, and re-check if game isn't over
-        this->current_turn_ = EnumDeclration::O;
-        continue;
       }
-    }
-    if (this->current_turn_ == EnumDeclration::O) {
-      // if it has possible slots to place tag at
-      if (this->logic_->SlotsToPlace(EnumDeclration::O).size() != 0) {
-        cout << "O I'ts your move.\n" << "Your possible moves: ";
-        // prints all the possible slots & play.
-        PlaceTag(EnumDeclration::O);
-        // move the turn back to X, and re-check if game isn't over
-        this->current_turn_ = EnumDeclration::X;
-        continue;
-      } else {
-        // it doesn't have possible slots to place tag at
-        // the turn passes over
-        cout << "O I'ts your move. but unfortunately you don't have anything to do," <<
-             "therefore it's only fair that the play passes back to X"
-             << endl;
-        // moves the turn back to X, and re-check if game isn't over
-        this->current_turn_ = EnumDeclration::X;
-        continue;
-      }
-    }
+   tunrnConter++;
+   this->board_->Print();
   }
   //print end game screen.
   endGame();
 }
+
 /**
  * @param tag to place
  * @param print_board by default prints the board each time
@@ -84,39 +66,18 @@ void GameFlow::Run() {
 void GameFlow::PlaceTag(EnumDeclration::CellStatus tag, bool print_board) {
   // prints all the possible slots for the given tag
   vector<Slot> v = this->logic_->SlotsToPlace(tag);
-  for (int i = 0; i < v.size(); i++) {
+  for (unsigned int i = 0; i < v.size(); i++) {
     v[i].Print();
   }
-  int row_to_place_tag_at;
-  int col_to_place_tag_at;
-  cout << "\n\n" << "Please enter your row,col: ";
-  if (tag == EnumDeclration::X) {
-    // get the chosen slot from the X player, confirm its legal slot and add it to the board_.
-    Slot chosen_slot = player1_->Play();
-    if (chosen_slot.ExistInVector(this->logic_->SlotsToPlace(EnumDeclration::X))) {
-      this->board_->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), EnumDeclration::X);
-      this->logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), EnumDeclration::X);
+    // get the chosen slot from the player, confirm its legal slot and add it to the board_.
+    Slot chosen_slot = player[tag - 1]->Play();
+    if (chosen_slot.ExistInVector(this->logic_->SlotsToPlace(tag))) {
+      this->board_->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), tag);
+      this->logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), tag);
     } else {
-      cout << "ILLEGAL PLACE FOR TAG X try again" << endl;
-      PlaceTag(tag, false);
+      cout << "ILLEGAL PLACE FOR TAG "<< player[tag - 1]->getSymbol() << "try again" << endl;
+      PlaceTag(tag);
     }
-  } else {
-    // get the chosen slot from the O player, confirm its legal slot and add it to the board_.
-    Slot chosen_slot = player2_->Play();
-    if (chosen_slot.ExistInVector(this->logic_->SlotsToPlace(EnumDeclration::O))) {
-      this->board_->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), EnumDeclration::O);
-      this->logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), EnumDeclration::O);
-    } else {
-      cout << "ILLEGAL PLACE FOR TAG O try again" << endl;
-      PlaceTag(tag, false);
-    }
-  }
-  /* print the current board if it's the method wasn't recursively called (print
-   * the board unless player did a bad move and we asked him to play again)
-   */
-  if (print_board) {
-    this->board_->Print();
-  }
 }
 /**
  * @return if Game is Over

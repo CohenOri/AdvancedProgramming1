@@ -22,8 +22,10 @@ class TerminalPlayer : public PlayerInterface {
  public:
   TerminalPlayer(EnumDeclration::CellStatus player);
   Slot Play();
+  char getSymbol();
  private:
   EnumDeclration::CellStatus player;
+  char symbol;
 };
 
 #endif //EX1_TERMINALPLAYER_H

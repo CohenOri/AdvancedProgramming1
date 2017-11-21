@@ -12,6 +12,7 @@ class PlayerInterface {
    * @return the Slot the player chose to place his tag at
    */
   virtual Slot Play() = 0;
+  virtual char getSymbol() = 0;
 };
 
 #endif //EX1_PLAYERINTERFACE_H

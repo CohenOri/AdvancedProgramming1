@@ -22,6 +22,7 @@ class Board {
   int NumOfCols() const;
   vector<Slot> GetOSlots() const;
   vector<Slot> GetXSlots() const;
+  vector<Slot> GetSlotsOfPlayer(EnumDeclration :: CellStatus player) const;
   void SetOSlots(vector<Slot> o_slots);
   void SetXSlots(vector<Slot> x_slots);
   bool LegalPlaceInBoard(int row, int col);

@@ -8,6 +8,11 @@
  */
 TerminalPlayer::TerminalPlayer(EnumDeclration::CellStatus player) {
   this->player = player;
+  if(player == EnumDeclration::X) {
+	  this->symbol = 'X';
+  } else {
+  this->symbol = 'O';
+  }
 }
 
 /**
@@ -20,6 +25,7 @@ Slot TerminalPlayer::Play() {
   int i;
   string str;
   vector<int> vect;
+  cout << "\n\n" << "Please enter your row,col: ";
   getline(cin, str);
   stringstream ss(str);
   while (ss >> i) {
@@ -36,3 +42,5 @@ Slot TerminalPlayer::Play() {
     return Play();
   }
 }
+
+char TerminalPlayer::getSymbol() { return this->symbol; }
