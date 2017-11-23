@@ -16,16 +16,15 @@ RegularLogic::RegularLogic(Board *b) {
 vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cell_status) {
   Board *b = this->b_;
   vector<Slot> overall_slots_to_place_list;
-  if (cell_status == EnumDeclration::X) {
     /*
      * iterate over every X in the board, find the PossibleSlots for him
      * add it to overall slots to place list only if it doesn't in it already
      * (overall_slots_to_place_list is free of duplicates)
      */
-    for (int i = 0; i < b->GetXSlots().size(); i++) {
-      Slot s = b->GetXSlots()[i];
+    for (unsigned int i = 0; i < b->GetSlotsOfPlayer(cell_status).size(); i++) {
+      Slot s = b->GetSlotsOfPlayer(cell_status)[i];
       vector<Slot> v = PossibleSlotsFor(s.GetCellStatus(), s.GetRow(), s.GetCol());
-      for (int i = 0; i < v.size(); i++) {
+      for (unsigned int i = 0; i < v.size(); i++) {
         Slot slot = v[i];
         // verify that each Slot inserted only once (prevent duplicates)
         if (!slot.ExistInVector(overall_slots_to_place_list)) {
@@ -33,21 +32,6 @@ vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cell_status) 
         }
       }
     }
-  }
-  // same as for X.
-  if (cell_status == EnumDeclration::O) {
-    for (int i = 0; i < b->GetOSlots().size(); i++) {
-      Slot s = b->GetOSlots()[i];
-      vector<Slot> v = PossibleSlotsFor(s.GetCellStatus(), s.GetRow(), s.GetCol());
-      for (int i = 0; i < v.size(); i++) {
-        Slot slot = v[i];
-        // verify that each Slot inserted only once (prevent duplicates)
-        if (!slot.ExistInVector(overall_slots_to_place_list)) {
-          overall_slots_to_place_list.push_back(slot);
-        }
-      }
-    }
-  }
   return overall_slots_to_place_list;
 }
 
@@ -192,7 +176,7 @@ void RegularLogic::RecursiveCheckNextCell(int row_to_check,
       }
       // if checks "cells to flip", add the temp_slots_to_flip to final_slots_to_flip
       if (end_tag != EnumDeclration::E) {
-        for (int k = 0; k < slots_vector.size(); k++) {
+        for (unsigned int k = 0; k < slots_vector.size(); k++) {
           this->final_slots_to_flip_.push_back(slots_vector[k]);
         }
       }
@@ -392,7 +376,7 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
     flip_from = EnumDeclration::X;
   }
   // for each slot in slot_to_flip vector
-  for (int i = 0; i < slots_to_flip.size(); i++) {
+  for (unsigned int i = 0; i < slots_to_flip.size(); i++) {
     // remove from old vector (also known as "flip_from" vector)
     if (flip_from == EnumDeclration::X) {
       // remove slots_to_flip[i] from b_->GetXSlots vector
@@ -402,7 +386,7 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
       // if location_to_omit exist
       if (location_to_omit != -1) {
         // copy every X slot to a new vector without slot at [location to omit]
-        for (int k = 0; k < b->GetXSlots().size(); k++) {
+        for (unsigned int k = 0; k < b->GetXSlots().size(); k++) {
           if (k != location_to_omit) {
             newXSlots.push_back(b->GetXSlots()[k]);
           }
@@ -416,7 +400,7 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
       vector<Slot> newOSlots;
       // if location_to_omit exist
       if (location_to_omit != -1) {
-        for (int k = 0; k < b->GetOSlots().size(); k++) {
+        for (unsigned int k = 0; k < b->GetOSlots().size(); k++) {
           if (k != location_to_omit) {
             newOSlots.push_back(b->GetOSlots()[k]);
           }

@@ -14,8 +14,6 @@
 GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1, PlayerInterface *player2) {
   this->logic_ = logic;
   this->board_ = board;
-  this->player1_ = player1;
-  this->player2_ = player2;
   this->current_turn_ = EnumDeclration::X;
   this->player[0] = player1;
   this->player[1] = player2;
@@ -34,16 +32,17 @@ void GameFlow::Run() {
   b->Print();
   // run the game while it is still not over
   while (!GameOver()) {
+	  //check who's turn it is.
 	  if(tunrnConter%2 == 1) {
 		  this->current_turn_ = EnumDeclration::O;
 	  } else {
 		  this->current_turn_ = EnumDeclration::X;
 	  }
-      // if it has possible slots to place tag at
+      // if player has possible slots to place.
    if (this->logic_->SlotsToPlace(this->current_turn_).size() != 0) {
-        cout<< player[tunrnConter%2]->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
-        // prints all the possible slots & play.
-        PlaceTag(this->current_turn_);
+        cout<< this->player[tunrnConter%2]->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
+       // player makes a move.
+        this->player[tunrnConter%2]->makeAMove(this->board_, this->logic_);
    } else {
         // it doesn't have possible slots to place tag at
         // the turn passes over
@@ -52,33 +51,12 @@ void GameFlow::Run() {
              << endl;
       }
    tunrnConter++;
-   this->board_->Print();
+   this->board_->Print();//print the board.
   }
   //print end game screen.
   endGame();
 }
 
-/**
- * @param tag to place
- * @param print_board by default prints the board each time
- * after tag placing, it is possible to not disable this by sending false
- */
-void GameFlow::PlaceTag(EnumDeclration::CellStatus tag, bool print_board) {
-  // prints all the possible slots for the given tag
-  vector<Slot> v = this->logic_->SlotsToPlace(tag);
-  for (unsigned int i = 0; i < v.size(); i++) {
-    v[i].Print();
-  }
-    // get the chosen slot from the player, confirm its legal slot and add it to the board_.
-    Slot chosen_slot = player[tag - 1]->Play();
-    if (chosen_slot.ExistInVector(this->logic_->SlotsToPlace(tag))) {
-      this->board_->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), tag);
-      this->logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), tag);
-    } else {
-      cout << "ILLEGAL PLACE FOR TAG "<< player[tag - 1]->getSymbol() << "try again" << endl;
-      PlaceTag(tag);
-    }
-}
 /**
  * @return if Game is Over
  */

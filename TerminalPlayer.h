@@ -6,6 +6,8 @@
 #define EX1_TERMINALPLAYER_H
 #include "PlayerInterface.h"
 #include "EnumDeclration.h"
+#include "LogicInterface.h"
+#include "Board.h"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -23,6 +25,8 @@ class TerminalPlayer : public PlayerInterface {
   TerminalPlayer(EnumDeclration::CellStatus player);
   Slot Play();
   char getSymbol();
+  void makeAMove(Board* b, LogicInterface* logic_);
+
  private:
   EnumDeclration::CellStatus player;
   char symbol;

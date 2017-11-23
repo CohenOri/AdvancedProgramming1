@@ -44,3 +44,19 @@ Slot TerminalPlayer::Play() {
 }
 
 char TerminalPlayer::getSymbol() { return this->symbol; }
+
+void TerminalPlayer::makeAMove(Board* b, LogicInterface* logic_) {
+	  vector<Slot> v = logic_->SlotsToPlace(this->player);
+	  for (unsigned int i = 0; i < v.size(); i++) {
+	    v[i].Print();
+	  }
+	    // get the chosen slot from the player, confirm its legal slot and add it to the board_.
+	    Slot chosen_slot = Play();
+	    if (chosen_slot.ExistInVector(logic_->SlotsToPlace(this->player))) {
+	      b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
+	      logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
+	    } else {
+	      cout << "ILLEGAL PLACE FOR TAG "<< getSymbol() << "try again" << endl;
+	      makeAMove(b, logic_);
+	    }
+}

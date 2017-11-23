@@ -2,7 +2,7 @@
 // Created by Ori Cohen
 // ID: 207375783
 //
-//changed
+
 #include <iostream>
 #include "Board.h"
 

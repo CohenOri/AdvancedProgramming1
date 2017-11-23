@@ -17,8 +17,6 @@ class GameFlow {
  private:
   LogicInterface* logic_;
   Board* board_;
-  PlayerInterface* player1_;
-  PlayerInterface* player2_;
   PlayerInterface* player[2];
   EnumDeclration::CellStatus current_turn_;
   bool GameOver();

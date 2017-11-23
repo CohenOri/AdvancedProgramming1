@@ -12,7 +12,6 @@ class EnumDeclration {
     O,
     X,
   };
-
 };
 
 #endif //EX1_ENUMDECLRATION_H
