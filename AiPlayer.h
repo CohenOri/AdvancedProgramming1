@@ -12,24 +12,28 @@
 #include "EnumDeclration.h"
 #include "LogicInterface.h"
 #include "Board.h"
+#include "SlotWithRank.h"
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <climits>
 
-class AiPlayer: public PlayerInterface {
-public:
-	AiPlayer(EnumDeclration::CellStatus player);
-	virtual ~AiPlayer();
-  virtual Slot Play();
-  virtual char getSymbol();
-	  /**
-	   * input: pointer to board and gameLogic.
-	   * output:non
-	   * the function make players move-depended what kind of player it is.
-	   */
-  virtual void makeAMove(Board* b, LogicInterface* logic_);
-private:
+class AiPlayer : public PlayerInterface {
+ public:
+  AiPlayer(EnumDeclration::CellStatus player);
+  ~AiPlayer();
+  Slot Play();
+  char getSymbol();
+  /**
+   * input: pointer to board and gameLogic.
+   * output:non
+   * the function make players move-depended what kind of player it is.
+   */
+  void makeAMove(Board *b, LogicInterface *logic_);
+ private:
   EnumDeclration::CellStatus player;
+  Board *board_;
+  LogicInterface* logic_;
   char symbol;
 };
 

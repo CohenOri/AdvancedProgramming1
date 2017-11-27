@@ -412,3 +412,18 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
     b->SetCellStatus(slots_to_flip[i].GetRow(), slots_to_flip[i].GetCol(), flip_to);
   }
 }
+
+/**
+ * @param b - pointer to board which the new copy of logic (deep copy) should run on.
+ * @return RegularLogic object running on the given board
+ */
+LogicInterface* RegularLogic::CopyLogic(Board *b) {
+  RegularLogic* copy_of_rl = new RegularLogic(b);
+  copy_of_rl->b_ = b->CopyBoard();
+  return copy_of_rl;
+}
+RegularLogic::~RegularLogic() {
+  delete this->b_;
+  //delete this->final_slots_to_flip_;
+}
+

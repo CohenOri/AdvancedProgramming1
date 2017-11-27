@@ -40,7 +40,6 @@ void GameFlow::Run() {
 	  }
       // if player has possible slots to place.
    if (this->logic_->SlotsToPlace(this->current_turn_).size() != 0) {
-        cout<< this->player[tunrnConter%2]->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
        // player makes a move.
         this->player[tunrnConter%2]->makeAMove(this->board_, this->logic_);
    } else {

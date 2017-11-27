@@ -10,6 +10,7 @@ using namespace std;
 
 class LogicInterface {
  public:
+  virtual ~LogicInterface() = 0;
   /**
    * @return pointer to an array including all the possible slots to place tag in.
    */
@@ -22,7 +23,9 @@ class LogicInterface {
    * @param flip_to
    */
   virtual void FlipSlots(int row, int col, EnumDeclration::CellStatus flip_to) = 0;
-  virtual ~LogicInterface() {}
+  virtual LogicInterface* CopyLogic(Board *b) = 0;
 };
+
+inline LogicInterface::~LogicInterface() { }
 
 #endif //EX1_LOGICINTERFACE_H

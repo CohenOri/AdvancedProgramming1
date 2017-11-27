@@ -3,8 +3,7 @@
 //
 
 #include "Slot.h"
-#include <string>
-#include <iostream>
+
 using namespace std;
 /**
  * Create a slot with E (Empty status)

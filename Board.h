@@ -15,6 +15,7 @@ using namespace std;
 class Board {
  public:
   Board();
+  ~Board();
   void Print() const;
   int GetCellStatus(int xLocation, int yLocation) const;
   void SetCellStatus(int xLocation, int yLocation, EnumDeclration::CellStatus status);
@@ -26,6 +27,7 @@ class Board {
   void SetOSlots(vector<Slot> o_slots);
   void SetXSlots(vector<Slot> x_slots);
   bool LegalPlaceInBoard(int row, int col);
+  Board* CopyBoard();
  private:
   vector<vector<int> > board_;
   vector<Slot> o_slots_;

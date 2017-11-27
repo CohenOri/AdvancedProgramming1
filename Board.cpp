@@ -4,7 +4,6 @@
 //
 
 #include "Board.h"
-#include <iostream>
 #define NUM_OF_ROWS 4
 #define NUM_OF_COLS 4
 
@@ -21,45 +20,50 @@ Board::Board() {
   }
 }
 
+Board::~Board() {
+  // if in future changing the members to dynimacly allocated memberes,
+  // I should run on each object in the vector, delete him, empty the vector and only then delete it.
+  //delete this->board_;
+  //delete this->x_slots_;
+  //delete this->o_slots_;
+}
+
 /**
  * Print method which prints the board as requested.
  */
 void Board::Print() const {
-	cout << " |";
-			for (int i = 1; i <= NUM_OF_COLS; i++) {
-			cout << " " << i << " |";
-		}
-		cout << endl;
-		cout << "--";
-		for(int i = 0; i < NUM_OF_COLS; i++) {
-			cout << "----";
-		}
-		cout << endl;
-		for (int i = 0; i < NUM_OF_COLS; i++) {
-			cout << "" << i + 1 << "|";
-			for (int j = 0; j < NUM_OF_ROWS; j++) {
-				cout << " ";
-			switch(board_[i][j]) {
-			case EnumDeclration::E:
-				cout << " ";
-				break;
-			case EnumDeclration::O:
-				cout << "O";
-				break;
-			case EnumDeclration::X:
-				cout << "X";
-				break;
-			}
-			cout << " |";
-		}
-			cout << endl;
-			cout << "--";
-			for(int i = 0; i < NUM_OF_COLS; i++) {
-				cout << "----";
-			}
-			cout << endl;
+  cout << " |";
+  for (int i = 1; i <= NUM_OF_COLS; i++) {
+    cout << " " << i << " |";
+  }
+  cout << endl;
+  cout << "--";
+  for (int i = 0; i < NUM_OF_COLS; i++) {
+    cout << "----";
+  }
+  cout << endl;
+  for (int i = 0; i < NUM_OF_COLS; i++) {
+    cout << "" << i + 1 << "|";
+    for (int j = 0; j < NUM_OF_ROWS; j++) {
+      cout << " ";
+      switch (board_[i][j]) {
+        case EnumDeclration::E: cout << " ";
+          break;
+        case EnumDeclration::O: cout << "O";
+          break;
+        case EnumDeclration::X: cout << "X";
+          break;
+      }
+      cout << " |";
+    }
+    cout << endl;
+    cout << "--";
+    for (int i = 0; i < NUM_OF_COLS; i++) {
+      cout << "----";
+    }
+    cout << endl;
 
-		}
+  }
 
 }
 
@@ -143,10 +147,21 @@ void Board::SetXSlots(vector<Slot> x_slots) {
   this->x_slots_ = x_slots;
 }
 
-vector<Slot> Board::GetSlotsOfPlayer(EnumDeclration :: CellStatus player) const {
-	if(player == EnumDeclration::X) {
-  return this->x_slots_;
-} else {
-	return this->o_slots_;
+vector<Slot> Board::GetSlotsOfPlayer(EnumDeclration::CellStatus player) const {
+  if (player == EnumDeclration::X) {
+    return this->x_slots_;
+  } else {
+    return this->o_slots_;
+  }
 }
+
+/**
+ * @return deep copy of the board.
+ */
+Board *Board::CopyBoard() {
+  Board *copy_of_board = new Board();
+  copy_of_board->board_ = std::vector<vector<int> >(this->board_);
+  copy_of_board->x_slots_ = std::vector<Slot>(this->x_slots_);
+  copy_of_board->o_slots_ = std::vector<Slot>(this->o_slots_);
+  return copy_of_board;
 }

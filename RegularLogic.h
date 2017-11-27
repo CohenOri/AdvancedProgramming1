@@ -16,6 +16,7 @@ using namespace std;
 class RegularLogic : public LogicInterface {
  public:
   RegularLogic(Board *b);
+  virtual ~RegularLogic();
   vector<Slot> SlotsToPlace(EnumDeclration::CellStatus cell_status);
   void FlipSlots(int row, int col, EnumDeclration::CellStatus flip_to);
  private:
@@ -53,6 +54,8 @@ class RegularLogic : public LogicInterface {
                               const EnumDeclration::CellStatus &current_tag,
                               Operation row_operation,
                               Operation col_operation, const EnumDeclration::CellStatus &end_tag = EnumDeclration::E);
+
+  LogicInterface* CopyLogic(Board *b);
 
 };
 
