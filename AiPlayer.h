@@ -22,6 +22,9 @@ class AiPlayer : public PlayerInterface {
  public:
   AiPlayer(EnumDeclration::CellStatus player);
   ~AiPlayer();
+  /**
+   * @return the Slot AI player chose to locate his tag at
+   */
   Slot Play();
   char getSymbol();
   /**
@@ -33,8 +36,28 @@ class AiPlayer : public PlayerInterface {
  private:
   EnumDeclration::CellStatus player;
   Board *board_;
-  LogicInterface* logic_;
+  LogicInterface *logic_;
   char symbol;
+/**
+ * calculates the max points difference in the given move
+ * if AI is X: calc m = oSlots - xSlots
+ * if AI is O: calc m = xSlots - oSlots
+ * calculates the other player points - AI points.
+ * @param aiSlot the current aiSlot (the slot we check now)
+ * @param bToCalculateWith board to findMaxM of
+ * @param m value
+ * @param maxM the current maxM
+ * @param maxMSlot the current maxMSlot
+ */
+  void FindMaxM(const Slot &aiSlot, const Board *bToCalculateWith, int m, int &maxM, Slot &maxMSlot) const;
+/**
+ * find the slot that AI should choose in order to make other player have the min "MaxM" value
+ * in shortly - find the min rank of slotsWithMaxM and return the slot
+ * @param min rank so far
+ * @param slotsWithMaxM pointer to array of vector of slots with Max m
+ * @return the slot which has the min rank
+ */
+  Slot FindMinSlotRank(int min, vector<SlotWithRank> &slotsWithMaxM);
 };
 
 #endif /* AIPLAYER_H_ */

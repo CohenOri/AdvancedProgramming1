@@ -14,6 +14,7 @@ using namespace std;
 
 class Board {
  public:
+  // default board size is set to 8
   Board(unsigned long numOfRows = 8, unsigned long numOfCols = 8);
   ~Board();
   void Print() const;

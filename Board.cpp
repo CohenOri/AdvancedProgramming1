@@ -33,18 +33,18 @@ Board::~Board() {
  */
 void Board::Print() const {
   cout << " |";
-  for (int i = 1; i <= NUM_OF_COLS; i++) {
+  for (int i = 1; i <= NumOfCols(); i++) {
     cout << " " << i << " |";
   }
   cout << endl;
   cout << "--";
-  for (int i = 0; i < NUM_OF_COLS; i++) {
+  for (int i = 0; i < NumOfCols(); i++) {
     cout << "----";
   }
   cout << endl;
-  for (int i = 0; i < NUM_OF_COLS; i++) {
+  for (int i = 0; i < NumOfCols(); i++) {
     cout << "" << i + 1 << "|";
-    for (int j = 0; j < NUM_OF_ROWS; j++) {
+    for (int j = 0; j < NumOfRows(); j++) {
       cout << " ";
       switch (board_[i][j]) {
         case EnumDeclration::E: cout << " ";
@@ -58,7 +58,7 @@ void Board::Print() const {
     }
     cout << endl;
     cout << "--";
-    for (int i = 0; i < NUM_OF_COLS; i++) {
+    for (int i = 0; i < NumOfCols(); i++) {
       cout << "----";
     }
     cout << endl;
