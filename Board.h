@@ -14,7 +14,7 @@ using namespace std;
 
 class Board {
  public:
-  Board();
+  Board(unsigned long numOfRows = 8, unsigned long numOfCols = 8);
   ~Board();
   void Print() const;
   int GetCellStatus(int xLocation, int yLocation) const;

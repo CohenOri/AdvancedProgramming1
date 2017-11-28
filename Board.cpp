@@ -4,19 +4,19 @@
 //
 
 #include "Board.h"
-#define NUM_OF_ROWS 8
-#define NUM_OF_COLS 8
+//#define NUM_OF_ROWS 8 NO NEED
+//#define NUM_OF_COLS 8 NO NEED
 
 /**
  * Constructor for board, which initialize the board to E (Empty)
  * cells.
  */
-Board::Board() {
+Board::Board(unsigned long numOfRows, unsigned long numOfCols) {
 // num of rows
-  this->board_.resize(NUM_OF_ROWS);
+  this->board_.resize(numOfRows);
   // num of cols
-  for (int i = 0; i < NUM_OF_ROWS; ++i) {
-    this->board_[i].resize(NUM_OF_COLS);
+  for (int i = 0; i < numOfRows; ++i) {
+    this->board_[i].resize(numOfCols);
   }
 }
 
