@@ -165,3 +165,15 @@ Board *Board::CopyBoard() {
   copy_of_board->o_slots_ = std::vector<Slot>(this->o_slots_);
   return copy_of_board;
 }
+
+bool Board::operator ==(const Board &b) const {
+	for(int i = 0; i < NUM_OF_ROWS;i++) {
+		for(int j = 0; j < NUM_OF_COLS;j++) {
+			if(!(this->board_[i][j] == b.board_[i][j])) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
