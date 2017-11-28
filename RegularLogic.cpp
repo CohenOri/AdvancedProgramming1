@@ -419,11 +419,12 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
  */
 LogicInterface* RegularLogic::CopyLogic(Board *b) {
   RegularLogic* copy_of_rl = new RegularLogic(b);
-  copy_of_rl->b_ = b->CopyBoard();
+  copy_of_rl->b_ = b;
+  //copy_of_rl->b_ = b->CopyBoard();
   return copy_of_rl;
 }
 RegularLogic::~RegularLogic() {
-  delete this->b_;
+  //delete this->b_;
   //delete this->final_slots_to_flip_;
 }
 

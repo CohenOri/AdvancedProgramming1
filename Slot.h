@@ -18,6 +18,7 @@ class Slot {
  public:
   Slot(int row, int col);
   Slot(int row, int col, EnumDeclration::CellStatus status);
+  ~Slot();
   void Print() const;
   int GetRow() const;
   void SetRow(int row_);
@@ -27,6 +28,7 @@ class Slot {
   EnumDeclration::CellStatus GetCellStatus() const;
   bool ExistInVector(vector<Slot> v);
   int LocationInVector(vector<Slot> v);
+  Slot* CopySlot();
  private:
   int row_;
   int col_;

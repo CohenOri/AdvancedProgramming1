@@ -20,7 +20,7 @@ AiPlayer::~AiPlayer() {}
 
 Slot AiPlayer::Play() {
   // the slot that if AI chooses him Other Player has minimum (lowest) "max rank to gain in turn" in his next play
-  Slot* min_slot;
+  Slot min_slot = Slot(-1,-1,EnumDeclration::E); // default value, soon it will be deleted
   int min = INT_MAX; // default val
   EnumDeclration::CellStatus other_player = EnumDeclration::OtherPlayer(this->player);
   vector<SlotWithRank> slots_with_max_m;
@@ -37,7 +37,7 @@ Slot AiPlayer::Play() {
     LogicInterface* l_to_play_AI_on = l_copy->CopyLogic(b_to_play_AI_on);
     // contain the max possible m given this slot
     int max_m = INT_MIN;
-    Slot* max_m_slot;
+    Slot max_m_slot = Slot(-2,-2,EnumDeclration::E);
     // play AI
     b_to_play_AI_on->SetCellStatus(AI_slot.GetRow(), AI_slot.GetCol(), this->player);
     l_to_play_AI_on->FlipSlots(AI_slot.GetRow(), AI_slot.GetCol(), this->player);
@@ -63,7 +63,7 @@ Slot AiPlayer::Play() {
       }
       if (m > max_m) {
         max_m = m;
-        max_m_slot = &AI_slot;
+        max_m_slot = AI_slot;
       }
       // !!!!!
       // dont forget to revert back to regular order (think before if it should or not - i believe it doenst mattewr)
@@ -71,8 +71,28 @@ Slot AiPlayer::Play() {
       delete l_to_play_other_on;
 
     }
+    // if there is no slots for other player, calculate m accordingly
+    if(possible_slots_for_other_player.size() == 0){
+      // calculate the max points difference in the given move
+      /* if AI is X: calc m = oSlots - xSlots
+       * if AI is O: calc m = xSlots - oSlots
+       * calculates the other player points - AI points.
+      */
+      int m;
+      if(this->player == EnumDeclration::X){
+        // since other player can't play its ok to calculate with b_to_play_AI_on and not b_to_play_other_on
+        // they are practicably the same (but I had to use b_to_play_AI_on because of scope reasons)
+        m = b_to_play_AI_on->GetOSlots().size() - b_to_play_AI_on->GetXSlots().size();
+      } else {
+        m = b_to_play_AI_on->GetXSlots().size() - b_to_play_AI_on->GetOSlots().size();
+      }
+      if (m > max_m) {
+        max_m = m;
+        max_m_slot = AI_slot;
+      }
+    }
     // saves the slot_with_max_m, to later choose the min of all this slots
-    slots_with_max_m.push_back(SlotWithRank(*max_m_slot, max_m));
+    slots_with_max_m.push_back(SlotWithRank(max_m_slot, max_m));
     delete b_to_play_AI_on;
     delete l_to_play_AI_on;
   }
@@ -81,12 +101,20 @@ Slot AiPlayer::Play() {
   for(int i=0; i<slots_with_max_m.size(); i++){
     if(slots_with_max_m[i].GetRank() < min){
       min = slots_with_max_m[i].GetRank();
+      // delete old min
+      //if(min_slot != nullptr){
+        //delete min_slot;
+      //}
+      //cout << "GELLLLLL" << endl;
       min_slot = slots_with_max_m[i].GetSlot();
     }
   }
+  slots_with_max_m.clear();
   delete b_copy;
   delete l_copy;
-  return *min_slot;
+  //Slot temp = *min_slot;
+  //delete min_slot;
+  return min_slot;
 }
 
 void AiPlayer::makeAMove(Board *b, LogicInterface *logic) {
@@ -106,7 +134,7 @@ void AiPlayer::makeAMove(Board *b, LogicInterface *logic) {
     cout << "ILLEGAL PLACE FOR TAG "<< getSymbol() << " try again" << endl;
     makeAMove(b, logic_);
   }
-  delete &chosen_slot;
+  //delete &chosen_slot;
 }
 
 char AiPlayer::getSymbol() {

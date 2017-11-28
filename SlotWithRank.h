@@ -9,7 +9,8 @@
 class SlotWithRank {
  public:
   SlotWithRank(Slot slot, int rank);
-  Slot* GetSlot();
+  ~SlotWithRank();
+  Slot GetSlot();
   int GetRank() const;
  private:
   Slot slot;

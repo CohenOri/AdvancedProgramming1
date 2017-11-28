@@ -26,6 +26,11 @@ Slot::Slot(int row, int col, EnumDeclration::CellStatus status) {
   this->col_ = col;
   this->status = status;
 }
+
+Slot::~Slot(){
+  //delete &this->status;
+}
+
 /**
  * @return row of slot
  */
@@ -97,4 +102,8 @@ int Slot::LocationInVector(vector<Slot> v) {
     }
   }
   return -1;
+}
+Slot* Slot::CopySlot() {
+  Slot* copy_of_slot = new Slot(this->GetRow(), this->GetCol(), this->GetCellStatus());
+  return copy_of_slot;
 }

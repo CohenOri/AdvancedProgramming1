@@ -45,7 +45,7 @@ void GameFlow::Run() {
    } else {
         // it doesn't have possible slots to place tag at
         // the turn passes over
-    	  cout<< player[tunrnConter%2] << " I'ts your move. but unfortunately you don't have anything to do," <<
+    	  cout<< player[tunrnConter%2]->getSymbol() << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to O"
              << endl;
       }
