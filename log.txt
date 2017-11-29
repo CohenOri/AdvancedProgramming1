@@ -1,0 +1,103 @@
+commit 70bcbebca72b3e649514074ea45c797f58b1ab87
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Wed Nov 29 12:24:57 2017 +0200
+
+    final version, fixed some more checkStyle issues. Tested to fully function  on remote server
+
+commit 95237fd627d920cb08526a3019c1847aaf55dfd5
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Wed Nov 29 02:19:13 2017 +0200
+
+    check style on files
+
+commit 07e63faf0846e40ed2172eb312622c5cd9267142
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Wed Nov 29 02:12:42 2017 +0200
+
+    Finished Project-Before checkStyle
+
+commit 0624bdc197f3fe226c1631ac991e8b1495a488b1
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 20:24:07 2017 +0200
+
+    split to functions and comments to AI play
+
+commit 8297da175c1325321c37387d35265276849b5639
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 14:09:29 2017 +0200
+
+    update board constrcutor
+
+commit de16d589f72ffb82ef3bfcc91422a904c59fe10c
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 13:33:51 2017 +0200
+
+    AI is fully functional, tested and passed memeory leaks successfully
+
+commit c472112da2b8679b58387d1f8f3f416e88714983
+Merge: dd0a366 6ec8b69
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 12:17:55 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit dd0a36688393c9680d96d528705b9b542949132e
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 12:16:29 2017 +0200
+
+    Fully functional AI player, free of memory leaks, with fixes zero slots for enemy bug, printing adress instead of player name is fixed. All left is to integrate tests, comments & NamingConvention, and creating main
+
+commit 4ea0eaf4d2f8e116fe0fdece93fa75294e96d5b1
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 28 11:51:00 2017 +0200
+
+    AI is fully functional, tested and passed memeory leaks successfully
+
+commit 6ec8b69a65cf91e2463644fe8bed66a45d7cb6b6
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Tue Nov 28 00:55:30 2017 +0200
+
+    Gtest first version.
+    first try to make folders
+
+commit 5ee746314964bddc522cc2a54c6d2592b6e6e669
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Mon Nov 27 18:26:36 2017 +0200
+
+    AI is almost fully functional, farther attempts to fix seg fault & memory leaks is needed
+
+commit 7ad352746aa8fb7030d901f90bd1c2edbd417afd
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Thu Nov 23 16:14:27 2017 +0200
+
+    lastChnges. Now each player type makes its own move+Created AI
+
+commit 0c49b9737985187c649aab75d67708d9b859b1d0
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Tue Nov 21 17:23:19 2017 +0200
+
+    new changes in gameflow and board.
+
+commit 645f73b0fd235a9f0bed6df41f66190cdedac295
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Tue Nov 21 01:12:00 2017 +0200
+
+    second try
+
+commit cc90c2ebbdaf8c08ba0aaecf8a536036f4e0df6f
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Tue Nov 21 01:09:36 2017 +0200
+
+    i changed print funtion of board to be dynamic and GameFlow.
+
+commit ef670161ecff2ba192335b584496fb89ece555e6
+Author: yanap <yanap@yanap-HP-Pavilion-15-Notebook-PC>
+Date:   Mon Nov 20 11:23:50 2017 +0200
+
+    try to find change
+
+commit 1282216ad72992c0b2a784f91a2d08e313a02b50
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Nov 14 22:48:06 2017 +0200
+
+    Initial commit, project up to ex2
