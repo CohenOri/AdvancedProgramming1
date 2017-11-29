@@ -1,11 +1,13 @@
 //
-// Created by Ori Cohen on 12/11/2017.
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 //
 
-#include "TerminalPlayer.h"
-/**
- * @param player the side/status of the player X or O
- */
+#include "../include/TerminalPlayer.h"
 TerminalPlayer::TerminalPlayer(EnumDeclration::CellStatus player) {
   this->player = player;
   if (player == EnumDeclration::X) {
@@ -15,10 +17,6 @@ TerminalPlayer::TerminalPlayer(EnumDeclration::CellStatus player) {
   }
 }
 
-/**
- * reads from terminal "row, col" & converts it to slot
- * @return the slot the player chose to locate his tag at
- */
 Slot TerminalPlayer::Play() {
   int row;
   int col;
@@ -45,19 +43,19 @@ Slot TerminalPlayer::Play() {
 
 char TerminalPlayer::getSymbol() { return this->symbol; }
 
-void TerminalPlayer::makeAMove(Board *b, LogicInterface *logic_) {
+void TerminalPlayer::makeAMove(Board *b, LogicInterface *logic) {
   cout << this->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
-  vector<Slot> v = logic_->SlotsToPlace(this->player);
+  vector<Slot> v = logic->SlotsToPlace(this->player);
   for (unsigned int i = 0; i < v.size(); i++) {
     v[i].Print();
   }
   // get the chosen slot from the player, confirm its legal slot and add it to the board_.
   Slot chosen_slot = Play();
-  if (chosen_slot.ExistInVector(logic_->SlotsToPlace(this->player))) {
+  if (chosen_slot.ExistInVector(logic->SlotsToPlace(this->player))) {
     b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
-    logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
+    logic->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
   } else {
     cout << "ILLEGAL PLACE FOR TAG " << getSymbol() << " try again" << endl;
-    makeAMove(b, logic_);
+    makeAMove(b, logic);
   }
 }

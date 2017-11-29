@@ -1,31 +1,50 @@
 /*
- * tt.cpp
- *
- *  Created on: 26 בנוב׳ 2017
- *      Author: yanap
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
 #include <iostream>
 #include "gtest/gtest.h"
-#include "test_player_Ai.h"
 #include "Slot.h"
-#include "test_classic_logic.h"
 #include "EnumDeclration.h"
+#include "AdvanceTestGame.h"
+#include "TestAiPlayer.h"
+#include "TestClassicLogic.h"
+TEST_F(AdvanceTestGame, testBoardCells) {
+	//play some moves of two computers and check the board.
+	MenualGameMoves();
+	//Board boundaries.
+	EXPECT_FALSE(b->LegalPlaceInBoard(-1,-1));
+	EXPECT_FALSE(b->LegalPlaceInBoard(b->NumOfRows()+1,b->NumOfCols()+1));
+	//check if slots are already on the board.
+	CheckSlotsPlace();
 
+}
 //check first time Ai choice
-TEST_F(test_player_Ai, firstAiInput) {
-	EXPECT_EQ(choosen, Slot(4,6));
-}
-//check AI choice after player 1 played.
-TEST_F(test_player_Ai, SecondAiInput) {
-	EXPECT_NE(choosen, Slot(2,3));
-	checkSlots();
-}
-//check of flipping cells works by compere boards.
-TEST_F(test_classic_logic, flippingTest) {
-	comperBord();
+TEST_F(TestAiPlayer, testCorrectChoice) {
+	//Get Slot if board is empty.
+	EXPECT_NE(choosenCell, Slot(0,0));
+	//Place starting slots and check again.
+  PlaceAnotherCells();
+	EXPECT_EQ(choosenCell, Slot(4,6));
+	//place more slots on board.
+	PlaceAnotherCells1();
+	EXPECT_EQ(choosenCell, Slot(3,3));
+	//place anoyher slots and check for difference.
+	PlaceAnotherCells2();
+	EXPECT_NE(choosenCell, Slot(2,3));
+	//if the boards is full
+	PlaceAnotherCells3();
+	EXPECT_NE(choosenCell, Slot(0,0));
 }
 
+//check of flipping cells works by compere boards.
+TEST_F(TestClassicLogic, flippingTest) {
+	ComperBord();
+}
+//Test for Enum Class
 TEST(EnumDeclration, checkWhoIsEnemy) {
 	EXPECT_EQ(EnumDeclration::OtherPlayer(EnumDeclration::O), EnumDeclration::X);
 	EXPECT_EQ(EnumDeclration::OtherPlayer(EnumDeclration::X), EnumDeclration::O);
@@ -35,3 +54,4 @@ TEST(EnumDeclration, checkWhoIsEnemy) {
 	EXPECT_NE(EnumDeclration::OtherPlayer(EnumDeclration::O), EnumDeclration::E);
 	EXPECT_EQ(EnumDeclration::OtherPlayer(EnumDeclration::E), EnumDeclration::E);
 }
+

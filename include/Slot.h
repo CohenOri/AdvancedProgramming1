@@ -1,7 +1,9 @@
-//
-// Created by Ori Cohen on 29/10/2017.
-//
-
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 #ifndef EX1_SLOT_H
 #define EX1_SLOT_H
 
@@ -16,22 +18,70 @@ using namespace std;
  */
 class Slot {
  public:
+	/**
+	 * Create a slot with E (Empty status)
+	 * @param row
+	 * @param col
+	 */
   Slot(int row, int col);
+  /**
+   * Create slot with given status
+   * @param row
+   * @param col
+   * @param status
+   */
   Slot(int row, int col, EnumDeclration::CellStatus status);
+  ~Slot();
+  /**
+   * Print in the (row,col) format
+   */
   void Print() const;
+  /**
+   * @return row of slot
+   */
   int GetRow() const;
-  void SetRow(int row_);
+  /**
+   * @param row_ to set
+   */
+  void SetRow(int row);
+  /**
+   * @return col of slot
+   */
   int GetCol() const;
-  void SetCol(int col_);
+  /**
+   * @param col_ to set
+   */
+  void SetCol(int col);
+  /**
+   * Prints the status of the slot (E, X, O)
+   */
   void PrintStatus() const;
+  /**
+   * @return status of the slot
+   */
   EnumDeclration::CellStatus GetCellStatus() const;
+  /**
+   * @param v vector
+   * @return if the slot exist in the vector
+   */
   bool ExistInVector(vector<Slot> v);
+  /**
+   * @param v vector
+   * @return the index (location) of the slot in the given vector
+   */
   int LocationInVector(vector<Slot> v);
+  /**
+   * @return deep copy for slot.
+   */
+  Slot* CopySlot();
+  /**
+   * new operators to compare.
+   */
   bool operator ==(const Slot &s) const;
   bool operator !=(const Slot &s) const;
  private:
-  int row_;
-  int col_;
+  int row;
+  int col;
   EnumDeclration::CellStatus status;
 
 };

@@ -1,6 +1,9 @@
-//
-// Created by Ori Cohen on 12/11/2017.
-//
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 
 #ifndef EX1_TERMINALPLAYER_H
 #define EX1_TERMINALPLAYER_H
@@ -22,7 +25,14 @@ using namespace std;
  */
 class TerminalPlayer : public PlayerInterface {
  public:
+	/**
+	 * @param player the side/status of the player X or O
+	 */
   TerminalPlayer(EnumDeclration::CellStatus player);
+  /**
+   * reads from terminal "row, col" & converts it to slot
+   * @return the slot the player chose to locate his tag at
+   */
   Slot Play();
   char getSymbol();
   void makeAMove(Board* b, LogicInterface* logic_);

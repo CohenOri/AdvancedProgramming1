@@ -1,7 +1,9 @@
-//
-// Created by Ori Cohen on 10/11/2017.
-//
-
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 #ifndef EX1_ENUMDECLRATION_H
 #define EX1_ENUMDECLRATION_H
 

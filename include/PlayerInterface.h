@@ -1,7 +1,9 @@
-//
-// Created by Ori Cohen on 12/11/2017.
-//
-
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 #ifndef EX1_PLAYERINTERFACE_H
 #define EX1_PLAYERINTERFACE_H
 #include "Slot.h"
@@ -14,6 +16,9 @@ class PlayerInterface {
    * @return the Slot the player chose to place his tag at
    */
   virtual Slot Play() = 0;
+  /**
+   * @return players symbol as char and not enum.
+   */
   virtual char getSymbol() = 0;
   /**
    * input: pointer to board and gameLogic.

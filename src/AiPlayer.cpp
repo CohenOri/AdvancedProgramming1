@@ -1,16 +1,14 @@
-/*
- * AiPlayer.cpp
- *
- *  Created on: 23 בנוב׳ 2017
- *      Author: yanap
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
-#include "AiPlayer.h"
-
+#include "../include/AiPlayer.h"
 AiPlayer::AiPlayer(EnumDeclration::CellStatus player) {
-	this->logic_ = NULL;
-	this->board_= NULL;
-
+	this->logic = NULL;
+	this->board= NULL;
   this->player = player;
   if (player == EnumDeclration::X) {
     this->symbol = 'X';
@@ -20,107 +18,123 @@ AiPlayer::AiPlayer(EnumDeclration::CellStatus player) {
 }
 
 AiPlayer::AiPlayer(EnumDeclration::CellStatus player, Board * b, LogicInterface* l) {
-	this->logic_ = l;
+	this->logic = l;
   this->player = player;
   if (player == EnumDeclration::X) {
     this->symbol = 'X';
   } else {
     this->symbol = 'O';
   }
-  this->board_= b;
+  this->board= b;
 }
 
 AiPlayer::~AiPlayer() {}
 
 Slot AiPlayer::Play() {
-  // the slot that if AI chooses him Other Player has minimum (lowest) "max rank to gain in turn" in his next play
-  Slot* min_slot;
+  /**
+   * Choose slot based on minMax algorithm,
+   * AI is looking for slot that if AI chooses him
+   * Other Player (enemy) has minimum (lowest) "max possible rank to gain in turn" in his next play
+   */
+  Slot minSlot = Slot(-1,-1,EnumDeclration::E); // default value, soon it will be deleted
   int min = INT_MAX; // default val
-  EnumDeclration::CellStatus other_player = EnumDeclration::OtherPlayer(this->player);
-  vector<SlotWithRank> slots_with_max_m;
-
-  // find the possible slots for AI
-  Board* b_copy = this->board_->CopyBoard();
-  LogicInterface* l_copy = this->logic_->CopyLogic(b_copy);
-  vector<Slot> possible_slots_for_AI = l_copy->SlotsToPlace(this->player);
-  // iterate on each of them, find the ma
-  // for each slot in possible_slots_for_AI
-  for(int i=0; i<possible_slots_for_AI.size(); i++){
-    Slot AI_slot = possible_slots_for_AI[i];
-    Board* b_to_play_AI_on = b_copy->CopyBoard();
-    LogicInterface* l_to_play_AI_on = l_copy->CopyLogic(b_to_play_AI_on);
+  EnumDeclration::CellStatus otherPlayer = EnumDeclration::OtherPlayer(this->player);
+  vector<SlotWithRank> slotsWithMaxM;
+  /**
+   * find the possible slots for AI, and check for each one: "what is the max possible rank to gain in turn"
+   * for Other Player (enemy) - also known as 'm'.
+   * create copies of logic & board to work at without hurting original board and logic
+   */
+  Board* bCopy = this->board->CopyBoard();
+  LogicInterface* lCopy = this->logic->CopyLogic(bCopy);
+  vector<Slot> possibleSlotsForAi = lCopy->SlotsToPlace(this->player);
+  for(unsigned int i=0; i<possibleSlotsForAi.size(); i++){
+    Slot aiSlot = possibleSlotsForAi[i];
+    Board* bToPlayAiOn = bCopy->CopyBoard();
+    LogicInterface* lToPlayAiOn = lCopy->CopyLogic(bToPlayAiOn);
     // contain the max possible m given this slot
-    int max_m = INT_MIN;
-    Slot* max_m_slot;
+    int maxM = INT_MIN; // default val
+    Slot maxMSlot = Slot(-2,-2,EnumDeclration::E);
     // play AI
-    b_to_play_AI_on->SetCellStatus(AI_slot.GetRow(), AI_slot.GetCol(), this->player);
-    l_to_play_AI_on->FlipSlots(AI_slot.GetRow(), AI_slot.GetCol(), this->player);
+    bToPlayAiOn->SetCellStatus(aiSlot.GetRow(), aiSlot.GetCol(), this->player);
+    lToPlayAiOn->FlipSlots(aiSlot.GetRow(), aiSlot.GetCol(), this->player);
     // return the slots other player has to choose now
-    vector<Slot> possible_slots_for_other_player = l_to_play_AI_on->SlotsToPlace(other_player);
-    for(int j=0; j<possible_slots_for_other_player.size(); j++){
-      Slot other_slot = possible_slots_for_other_player[j];
-      Board* b_to_play_other_on = b_to_play_AI_on->CopyBoard();
-      LogicInterface* l_to_play_other_on = l_to_play_AI_on->CopyLogic(b_to_play_other_on);
-      int m;
+    vector<Slot> possibleSlotsForOtherPlayer = lToPlayAiOn->SlotsToPlace(otherPlayer);
+    for(unsigned int j=0; j<possibleSlotsForOtherPlayer.size(); j++){
+      Slot otherSlot = possibleSlotsForOtherPlayer[j];
+      Board* bToPlayOtherOn = bToPlayAiOn->CopyBoard();
+      LogicInterface* lToPlayOtherOn = lToPlayAiOn->CopyLogic(bToPlayOtherOn);
+      int m  = 0;
       // play other player
-      b_to_play_other_on->SetCellStatus(other_slot.GetRow(), other_slot.GetCol(), other_player);
-      l_to_play_other_on->FlipSlots(other_slot.GetRow(), other_slot.GetCol(), other_player);
-      // calculate the max points difference in the given move
-      /* if AI is X: calc m = oSlots - xSlots
-       * if AI is O: calc m = xSlots - oSlots
-       * calculates the other player points - AI points.
-      */
-      if(this->player == EnumDeclration::X){
-        m = b_to_play_other_on->GetOSlots().size() - b_to_play_other_on->GetXSlots().size();
-      } else {
-        m = b_to_play_other_on->GetXSlots().size() - b_to_play_other_on->GetOSlots().size();
-      }
-      if (m > max_m) {
-        max_m = m;
-        max_m_slot = &AI_slot;
-      }
-      // !!!!!
-      // dont forget to revert back to regular order (think before if it should or not - i believe it doenst mattewr)
-      delete b_to_play_other_on;
-      delete l_to_play_other_on;
+      bToPlayOtherOn->SetCellStatus(otherSlot.GetRow(), otherSlot.GetCol(), otherPlayer);
+      lToPlayOtherOn->FlipSlots(otherSlot.GetRow(), otherSlot.GetCol(), otherPlayer);
+      // find max m
+      FindMaxM(aiSlot, bToPlayOtherOn, m, maxM, maxMSlot);
+      delete bToPlayOtherOn;
+      delete lToPlayOtherOn;
+    }
+    // if there is no slots for other player, calculate m accordingly
+    if(possibleSlotsForOtherPlayer.size() == 0){
+      int m = 0;
+      // find max m
+      FindMaxM(aiSlot, bToPlayAiOn, m, maxM, maxMSlot);
+    }
+    // saves the slotWithMaxM, to later choose the min of all this slots
+    slotsWithMaxM.push_back(SlotWithRank(maxMSlot, maxM));
+    delete bToPlayAiOn;
+    delete lToPlayAiOn;
+  }
+  /**
+   * find FindMinSlotRank from the array of max possible ranks for enemy player
+   * = find the min of the Max according to minMax algorithm
+   */
+  minSlot = FindMinSlotRank(min, slotsWithMaxM);
+  slotsWithMaxM.clear();
+  delete bCopy;
+  delete lCopy;
+  return minSlot;
+}
 
-    }
-    // saves the slot_with_max_m, to later choose the min of all this slots
-    slots_with_max_m.push_back(SlotWithRank(*max_m_slot, max_m));
-    delete b_to_play_AI_on;
-    delete l_to_play_AI_on;
-  }
-  // find the slot that AI should choose in order to make other player have the min "max_m" value
-  // in shortly - find the min rank of slots_with_max_m and return the slot
-  for(int i=0; i<slots_with_max_m.size(); i++){
-    if(slots_with_max_m[i].GetRank() < min){
-      min = slots_with_max_m[i].GetRank();
-      min_slot = slots_with_max_m[i].GetSlot();
+Slot AiPlayer::FindMinSlotRank(int min, vector<SlotWithRank> &slotsWithMaxM) {
+  Slot minSlot = Slot(-1,-1,EnumDeclration::E); // default value, soon it will be deleted
+  for(unsigned int i=0; i<slotsWithMaxM.size(); i++){
+    if(slotsWithMaxM[i].GetRank() < min){
+      min = slotsWithMaxM[i].GetRank();
+      minSlot = slotsWithMaxM[i].GetSlot();
     }
   }
-  delete b_copy;
-  delete l_copy;
-  return *min_slot;
+  return minSlot;
+}
+
+void AiPlayer::FindMaxM(const Slot &aiSlot, const Board *bToCalculateWith, int m, int &maxM, Slot &maxMSlot) const {
+  if(player == EnumDeclration::X){
+        m = bToCalculateWith->GetOSlots().size() - bToCalculateWith->GetXSlots().size();
+      } else {
+        m = bToCalculateWith->GetXSlots().size() - bToCalculateWith->GetOSlots().size();
+      }
+  if (m > maxM) {
+        maxM = m;
+        maxMSlot = aiSlot;
+      }
 }
 
 void AiPlayer::makeAMove(Board *b, LogicInterface *logic) {
-  this->board_ = b;
-  this->logic_ = logic;
-  // get the chosen slot from the player (AI), confirm its legal slot and add it to the board_.
-  // get the chosen slot from the player, confirm its legal slot and add it to the board_.
+  this->board = b;
+  this->logic = logic;
+  // get the chosen slot from the player (AI), confirm its legal slot and add it to the board.
+  // get the chosen slot from the player, confirm its legal slot and add it to the board.
   Slot chosen_slot = Play();
-  if (chosen_slot.ExistInVector(logic_->SlotsToPlace(this->player))) {
+  if (chosen_slot.ExistInVector(logic->SlotsToPlace(this->player))) {
     b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
-    logic_->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
+    logic->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
     // print the slot AI chose
     cout << getSymbol() << " played: ";
     chosen_slot.Print();
     cout << endl;
   } else {
     cout << "ILLEGAL PLACE FOR TAG "<< getSymbol() << " try again" << endl;
-    makeAMove(b, logic_);
+    makeAMove(b, logic);
   }
-  //delete &chosen_slot;
 }
 
 char AiPlayer::getSymbol() {

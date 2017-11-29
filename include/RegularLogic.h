@@ -1,6 +1,9 @@
-//
-// Created by Ori Cohen on 29/10/2017.
-//
+/**
+ * # Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 
 #ifndef EX1_REGULARLOGIC_H
 #define EX1_REGULARLOGIC_H
@@ -15,10 +18,24 @@ using namespace std;
 
 class RegularLogic : public LogicInterface {
  public:
+	/**
+	 * @param b create logic using a pointer to board
+	 */
   RegularLogic(Board *b);
   virtual ~RegularLogic();
-  vector<Slot> SlotsToPlace(EnumDeclration::CellStatus cell_status);
-  void FlipSlots(int row, int col, EnumDeclration::CellStatus flip_to);
+  /**
+   * @param cell_status tag
+   * @return vector with all the slots available to place the given tag
+   */
+  vector<Slot> SlotsToPlace(EnumDeclration::CellStatus cellStatus);
+  /**
+   * Flips the slots which should be flipped due to the recent placement
+   * of the given tag
+   * @param row of the recently placed tag
+   * @param col of the recently placed tag
+   * @param flip_to the status of the recently placed tag
+   */
+  void FlipSlots(int row, int col, EnumDeclration::CellStatus flipTo);
  private:
   /**
   * when checking another cell we get the result, bad place (can't place there tag)
@@ -38,23 +55,79 @@ class RegularLogic : public LogicInterface {
     MINUS,
   };
 
-  Board *b_;
-  vector<Slot> final_slots_to_flip_;
-  vector<Slot> PossibleSlotsFor(EnumDeclration::CellStatus current_tag, int row, int col);
-  vector<Slot> SlotsToFlip(EnumDeclration::CellStatus current_tag, int row, int col);
-  ExtraCellValidateResult FlagCheckNextCell(int row, int col, EnumDeclration::CellStatus current_tag,
-                                            EnumDeclration::CellStatus tags_looking_for);
+  Board *board;
+  vector<Slot> finalSlotsToFlip;
 
-  ExtraCellValidateResult FlagCheckToFlipNextCell(int row, int col, EnumDeclration::CellStatus current_tag,
-                                                  EnumDeclration::CellStatus tags_looking_for);
+  /**
+   * @param currentTag
+   * @param row
+   * @param col
+   * @return vector with all the possible slots to another tag (same status) unlocked because of
+   * the given tag
+   */
+  vector<Slot> PossibleSlotsFor(EnumDeclration::CellStatus c, int row, int col);
+  /**
+   * @param currentTag
+   * @param row
+   * @param col
+   * @return vector with slots we have to flip because of the placement
+   * of the given tag
+   */
+
+  vector<Slot> SlotsToFlip(EnumDeclration::CellStatus currentTag, int row, int col);
+  /**
+   * Return if given cell is good, bad or we have to check the also the next cell (again)
+   * to place certain tag - returns a flag.
+   * if the next cell filled with the tag we look for, we should check another cell (AGAIN)
+   * if the next cell filled with the same tag as given tag (XOX) - nothing to do (BAD place)
+   * if the next cell is empty, it is a GOOD place
+   * @param row
+   * @param col
+   * @param currentTag
+   * @param tagsLookingFor
+   * @return flag, cell is GOOD, BAD, or we have to check AGAIN
+   */
+  ExtraCellValidateResult FlagCheckNextCell(int row, int col, EnumDeclration::CellStatus currentTag,
+                                            EnumDeclration::CellStatus tagsLookingFor);
+
+
+  /**
+   * Return if given cell is good, bad or we have to check the also the next cell (again)
+   * so we have to flip all the slots between the start to end slots - returns a flag
+   * "end slot is: GOOD, BAD, AGAIN" if it is indeed GOOD we have to flip slots...
+   * if the next cell filled with the tag we look for, we should check another cell (AGAIN)
+   * if the next cell filled with the same tag as given tag (XOX) - GOOD place
+   * if the next cell is empty, it is a BAD place
+   * @param row
+   * @param col
+   * @param currentTag
+   * @param tagsLookingFor
+   * @return flag, cell is GOOD, BAD, or we have to check AGAIN
+   */
+  ExtraCellValidateResult FlagCheckToFlipNextCell(int row, int col, EnumDeclration::CellStatus currentTag,
+                                                  EnumDeclration::CellStatus tagsLookingFor);
+  /**
+   * Checks if a given cell is good to place tag and add it to the possible slot vector
+   * @param row_to_check
+   * @param col_to_check
+   * @param slots_vector
+   * @param tagsLookingFor
+   * @param currentTag
+   * @param rowOperation
+   * @param colOperation
+   */
+
   void RecursiveCheckNextCell(int row_to_check,
                               int col_to_check,
                               vector<Slot> &slots_vector,
-                              const EnumDeclration::CellStatus &tags_looking_for,
-                              const EnumDeclration::CellStatus &current_tag,
-                              Operation row_operation,
-                              Operation col_operation, const EnumDeclration::CellStatus &end_tag = EnumDeclration::E);
-
+                              const EnumDeclration::CellStatus &tagsLookingFor,
+                              const EnumDeclration::CellStatus &currentTag,
+                              Operation rowOperation,
+                              Operation colOperation, const EnumDeclration::CellStatus &endTag = EnumDeclration::E);
+  /**
+   * @param b - pointer to board which the new copy of logic (deep copy) should run on.
+   * @return RegularLogic object running on the given board
+   */
   LogicInterface* CopyLogic(Board *b);
 
 };

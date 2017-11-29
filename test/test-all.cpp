@@ -1,8 +1,8 @@
 /*
- * main.cpp
- *
- *  Created on: 25 בנוב׳ 2017
- *      Author: yanap
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
 #include "gtest/gtest.h"
