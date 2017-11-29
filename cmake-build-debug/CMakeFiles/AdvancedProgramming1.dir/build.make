@@ -57,223 +57,301 @@ include CMakeFiles/AdvancedProgramming1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AdvancedProgramming1.dir/flags.make
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o: ../AiPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.cpp
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o: ../gtest_src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest-all.cc
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.cpp > CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.i
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest-all.cc > CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.i
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.cpp -o CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.s
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest-all.cc -o CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.s
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.requires:
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.requires:
 
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.requires
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.requires
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.provides
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.provides: CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.provides
 
-CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o
-
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o: ../Board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/Board.cpp
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/Board.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/Board.cpp > CMakeFiles/AdvancedProgramming1.dir/Board.cpp.i
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/Board.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/Board.cpp -o CMakeFiles/AdvancedProgramming1.dir/Board.cpp.s
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.requires:
-
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.requires
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.provides
-
-CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o
+CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o
 
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o: ../GameFlow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.cpp
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o: ../src/AiPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/AiPlayer.cpp
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.cpp > CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.i
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/AiPlayer.cpp > CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.i
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.cpp -o CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.s
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/AiPlayer.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.s
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.requires:
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.requires
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.requires
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.provides
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.provides
 
-CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o
-
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/main.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/main.cpp
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/main.cpp > CMakeFiles/AdvancedProgramming1.dir/main.cpp.i
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/main.cpp -o CMakeFiles/AdvancedProgramming1.dir/main.cpp.s
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.requires
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.provides
-
-CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/main.cpp.o
+CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o
 
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o: ../RegularLogic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.cpp
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o: ../src/Board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Board.cpp
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.cpp > CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.i
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Board.cpp > CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.i
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.cpp -o CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.s
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Board.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.s
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.requires:
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.requires
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.requires
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.provides
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.provides
 
-CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o
-
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o: ../Slot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.cpp
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.cpp > CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.i
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.cpp -o CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.s
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.requires:
-
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.requires
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.provides
-
-CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o
+CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o
 
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o: ../TerminalPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.cpp
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o: ../src/GameFlow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/GameFlow.cpp
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.cpp > CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.i
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/GameFlow.cpp > CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.i
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.cpp -o CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.s
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/GameFlow.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.s
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.requires:
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.requires
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.requires
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.provides
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.provides
 
-CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o
+CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o
 
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o: ../SlotWithRank.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.cpp
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/main.cpp
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.cpp > CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.i
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/main.cpp > CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.i
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.cpp -o CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.s
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/main.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.s
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.requires:
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.requires
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.requires
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.provides.build
-.PHONY : CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.provides
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.provides
 
-CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o
+CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o: ../src/RegularLogic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/RegularLogic.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/RegularLogic.cpp > CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/RegularLogic.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o: ../src/Slot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Slot.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Slot.cpp > CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/Slot.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o: ../src/SlotWithRank.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/SlotWithRank.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/SlotWithRank.cpp > CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/SlotWithRank.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o: ../src/TerminalPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/src/TerminalPlayer.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/src/TerminalPlayer.cpp > CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/src/TerminalPlayer.cpp -o CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o: ../test/test-all.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/test/test-all.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/test/test-all.cpp > CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/test/test-all.cpp -o CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o: ../test/TestManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o -c /Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestManager.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestManager.cpp > CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestManager.cpp -o CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o
 
 
 # Object files for target AdvancedProgramming1
 AdvancedProgramming1_OBJECTS = \
-"CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/main.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o"
+"CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o"
 
 # External object files for target AdvancedProgramming1
 AdvancedProgramming1_EXTERNAL_OBJECTS =
 
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/main.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o
-AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/build.make
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable AdvancedProgramming1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable AdvancedProgramming1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AdvancedProgramming1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -281,14 +359,17 @@ CMakeFiles/AdvancedProgramming1.dir/build: AdvancedProgramming1
 
 .PHONY : CMakeFiles/AdvancedProgramming1.dir/build
 
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/main.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o.requires
-CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o.requires
 
 .PHONY : CMakeFiles/AdvancedProgramming1.dir/requires
 

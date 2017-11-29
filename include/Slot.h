@@ -41,7 +41,7 @@ class Slot {
    */
   int GetRow() const;
   /**
-   * @param row_ to set
+   * @param row to set
    */
   void SetRow(int row);
   /**
@@ -49,7 +49,7 @@ class Slot {
    */
   int GetCol() const;
   /**
-   * @param col_ to set
+   * @param col to set
    */
   void SetCol(int col);
   /**

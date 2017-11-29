@@ -65,7 +65,7 @@ class RegularLogic : public LogicInterface {
    * @return vector with all the possible slots to another tag (same status) unlocked because of
    * the given tag
    */
-  vector<Slot> PossibleSlotsFor(EnumDeclration::CellStatus c, int row, int col);
+  vector<Slot> PossibleSlotsFor(EnumDeclration::CellStatus currentTag, int row, int col);
   /**
    * @param currentTag
    * @param row
@@ -73,7 +73,6 @@ class RegularLogic : public LogicInterface {
    * @return vector with slots we have to flip because of the placement
    * of the given tag
    */
-
   vector<Slot> SlotsToFlip(EnumDeclration::CellStatus currentTag, int row, int col);
   /**
    * Return if given cell is good, bad or we have to check the also the next cell (again)
@@ -108,18 +107,18 @@ class RegularLogic : public LogicInterface {
                                                   EnumDeclration::CellStatus tagsLookingFor);
   /**
    * Checks if a given cell is good to place tag and add it to the possible slot vector
-   * @param row_to_check
-   * @param col_to_check
-   * @param slots_vector
+   * @param rowToCheck
+   * @param colToCheck
+   * @param slotsVector
    * @param tagsLookingFor
    * @param currentTag
    * @param rowOperation
    * @param colOperation
    */
 
-  void RecursiveCheckNextCell(int row_to_check,
-                              int col_to_check,
-                              vector<Slot> &slots_vector,
+  void RecursiveCheckNextCell(int rowToCheck,
+                              int colToCheck,
+                              vector<Slot> &slotsVector,
                               const EnumDeclration::CellStatus &tagsLookingFor,
                               const EnumDeclration::CellStatus &currentTag,
                               Operation rowOperation,

@@ -19,13 +19,13 @@ class PlayerInterface {
   /**
    * @return players symbol as char and not enum.
    */
-  virtual char getSymbol() = 0;
+  virtual char GetSymbol() = 0;
   /**
    * input: pointer to board and gameLogic.
    * output:non
    * the function make players move-depended what kind of player it is.
    */
-  virtual void makeAMove(Board* b, LogicInterface* logic_) = 0;
+  virtual void MakeAMove(Board *b, LogicInterface *logic) = 0;
   virtual ~PlayerInterface() {}
 };
 

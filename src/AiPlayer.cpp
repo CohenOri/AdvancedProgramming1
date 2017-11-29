@@ -118,7 +118,7 @@ void AiPlayer::FindMaxM(const Slot &aiSlot, const Board *bToCalculateWith, int m
       }
 }
 
-void AiPlayer::makeAMove(Board *b, LogicInterface *logic) {
+void AiPlayer::MakeAMove(Board *b, LogicInterface *logic) {
   this->board = b;
   this->logic = logic;
   // get the chosen slot from the player (AI), confirm its legal slot and add it to the board.
@@ -128,15 +128,15 @@ void AiPlayer::makeAMove(Board *b, LogicInterface *logic) {
     b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
     logic->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
     // print the slot AI chose
-    cout << getSymbol() << " played: ";
+    cout << GetSymbol() << " played: ";
     chosen_slot.Print();
     cout << endl;
   } else {
-    cout << "ILLEGAL PLACE FOR TAG "<< getSymbol() << " try again" << endl;
-    makeAMove(b, logic);
+    cout << "ILLEGAL PLACE FOR TAG "<< GetSymbol() << " try again" << endl;
+    MakeAMove(b, logic);
   }
 }
 
-char AiPlayer::getSymbol() {
+char AiPlayer::GetSymbol() {
   return this->symbol;
 }

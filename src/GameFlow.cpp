@@ -34,11 +34,12 @@ void GameFlow::Run() {
       // if player has possible slots to place.
    if (this->logic->SlotsToPlace(this->currentTurn).size() != 0) {
        // player makes a move.
-        this->player[tunrnConter%2]->makeAMove(this->board, this->logic);
+     this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
    } else {
         // it doesn't have possible slots to place tag at
         // the turn passes over
-    	  cout<< player[tunrnConter%2]->getSymbol() << " I'ts your move. but unfortunately you don't have anything to do," <<
+    	  cout<< player[tunrnConter % 2]->GetSymbol()
+              << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to O"
              << endl;
       }
@@ -46,7 +47,7 @@ void GameFlow::Run() {
    this->board->Print();//print the board.
   }
   //print end game screen.
-  endGame();
+  EndGame();
 }
 
 bool GameFlow::GameOver() {
@@ -57,7 +58,7 @@ bool GameFlow::GameOver() {
   return true;
 }
 
-void GameFlow::endGame() {
+void GameFlow::EndGame() {
 	  Board *b = this->board;
 
     int num_of_slots_in_board = b->NumOfRows() * b->NumOfCols();

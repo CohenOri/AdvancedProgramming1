@@ -82,58 +82,79 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest-all.cc">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/Board.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/AiPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/Board.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/Board.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/EnumDeclration.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/EnumDeclration.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/GameFlow.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/LogicInterface.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/LogicInterface.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/PlayerInterface.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/PlayerInterface.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/RegularLogic.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/Slot.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/SlotWithRank.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/include/TerminalPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/AiPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/Board.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/GameFlow.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/RegularLogic.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.h">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/Slot.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/main.cpp">
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/SlotWithRank.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/TerminalPlayer.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/src/main.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/test/AdvanceTestGame.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestAiPlayer.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestClassicLogic.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestManager.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/test/test-all.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/Users/oricohen/CLionProjects/AdvancedProgramming1/CMakeLists.txt">

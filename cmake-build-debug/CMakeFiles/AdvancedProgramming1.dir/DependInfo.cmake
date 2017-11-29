@@ -4,14 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/AiPlayer.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/Board.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/GameFlow.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/RegularLogic.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/Slot.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/SlotWithRank.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/TerminalPlayer.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o"
-  "/Users/oricohen/CLionProjects/AdvancedProgramming1/main.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/main.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/gtest_src/gtest-all.cc" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/AiPlayer.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/Board.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/GameFlow.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/RegularLogic.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/Slot.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/SlotWithRank.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/TerminalPlayer.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/src/main.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/test/TestManager.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o"
+  "/Users/oricohen/CLionProjects/AdvancedProgramming1/test/test-all.cpp" "/Users/oricohen/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

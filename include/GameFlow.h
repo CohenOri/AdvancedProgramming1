@@ -37,7 +37,7 @@ class GameFlow {
   /**
    * prints why the game end and who is the winner
    */
-  void endGame();
+  void EndGame();
 };
 
 #endif //EX1_GAMEFLOW_H

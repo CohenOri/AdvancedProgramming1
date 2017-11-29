@@ -17,15 +17,15 @@ class LogicInterface {
   /**
    * @return pointer to an array including all the possible slots to place tag in.
    */
-  virtual vector<Slot> SlotsToPlace(EnumDeclration::CellStatus cell_status) = 0;
+  virtual vector<Slot> SlotsToPlace(EnumDeclration::CellStatus cellStatus) = 0;
   /**
    * receives the row & col of the now placed tag, and the status we
    * are going to flip (if we placed X then we want to flip O)
    * @param row
    * @param col
-   * @param flip_to
+   * @param flipTo
    */
-  virtual void FlipSlots(int row, int col, EnumDeclration::CellStatus flip_to) = 0;
+  virtual void FlipSlots(int row, int col, EnumDeclration::CellStatus flipTo) = 0;
   /**
    * deep copy for logic.
    * @param b for copy.

@@ -34,8 +34,8 @@ class TerminalPlayer : public PlayerInterface {
    * @return the slot the player chose to locate his tag at
    */
   Slot Play();
-  char getSymbol();
-  void makeAMove(Board* b, LogicInterface* logic_);
+  char GetSymbol();
+  void MakeAMove(Board *b, LogicInterface *logic);
 
  private:
   EnumDeclration::CellStatus player;

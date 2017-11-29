@@ -123,221 +123,302 @@ AdvancedProgramming1/fast:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/build
 .PHONY : AdvancedProgramming1/fast
 
-AiPlayer.o: AiPlayer.cpp.o
+gtest_src/gtest-all.o: gtest_src/gtest-all.cc.o
 
-.PHONY : AiPlayer.o
-
-# target to build an object file
-AiPlayer.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.o
-.PHONY : AiPlayer.cpp.o
-
-AiPlayer.i: AiPlayer.cpp.i
-
-.PHONY : AiPlayer.i
-
-# target to preprocess a source file
-AiPlayer.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.i
-.PHONY : AiPlayer.cpp.i
-
-AiPlayer.s: AiPlayer.cpp.s
-
-.PHONY : AiPlayer.s
-
-# target to generate assembly for a file
-AiPlayer.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/AiPlayer.cpp.s
-.PHONY : AiPlayer.cpp.s
-
-Board.o: Board.cpp.o
-
-.PHONY : Board.o
+.PHONY : gtest_src/gtest-all.o
 
 # target to build an object file
-Board.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Board.cpp.o
-.PHONY : Board.cpp.o
+gtest_src/gtest-all.cc.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.o
+.PHONY : gtest_src/gtest-all.cc.o
 
-Board.i: Board.cpp.i
+gtest_src/gtest-all.i: gtest_src/gtest-all.cc.i
 
-.PHONY : Board.i
+.PHONY : gtest_src/gtest-all.i
 
 # target to preprocess a source file
-Board.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Board.cpp.i
-.PHONY : Board.cpp.i
+gtest_src/gtest-all.cc.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.i
+.PHONY : gtest_src/gtest-all.cc.i
 
-Board.s: Board.cpp.s
+gtest_src/gtest-all.s: gtest_src/gtest-all.cc.s
 
-.PHONY : Board.s
+.PHONY : gtest_src/gtest-all.s
 
 # target to generate assembly for a file
-Board.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Board.cpp.s
-.PHONY : Board.cpp.s
+gtest_src/gtest-all.cc.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/gtest_src/gtest-all.cc.s
+.PHONY : gtest_src/gtest-all.cc.s
 
-GameFlow.o: GameFlow.cpp.o
+src/AiPlayer.o: src/AiPlayer.cpp.o
 
-.PHONY : GameFlow.o
+.PHONY : src/AiPlayer.o
 
 # target to build an object file
-GameFlow.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.o
-.PHONY : GameFlow.cpp.o
+src/AiPlayer.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.o
+.PHONY : src/AiPlayer.cpp.o
 
-GameFlow.i: GameFlow.cpp.i
+src/AiPlayer.i: src/AiPlayer.cpp.i
 
-.PHONY : GameFlow.i
+.PHONY : src/AiPlayer.i
 
 # target to preprocess a source file
-GameFlow.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.i
-.PHONY : GameFlow.cpp.i
+src/AiPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.i
+.PHONY : src/AiPlayer.cpp.i
 
-GameFlow.s: GameFlow.cpp.s
+src/AiPlayer.s: src/AiPlayer.cpp.s
 
-.PHONY : GameFlow.s
+.PHONY : src/AiPlayer.s
 
 # target to generate assembly for a file
-GameFlow.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/GameFlow.cpp.s
-.PHONY : GameFlow.cpp.s
+src/AiPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/AiPlayer.cpp.s
+.PHONY : src/AiPlayer.cpp.s
 
-RegularLogic.o: RegularLogic.cpp.o
+src/Board.o: src/Board.cpp.o
 
-.PHONY : RegularLogic.o
+.PHONY : src/Board.o
 
 # target to build an object file
-RegularLogic.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.o
-.PHONY : RegularLogic.cpp.o
+src/Board.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.o
+.PHONY : src/Board.cpp.o
 
-RegularLogic.i: RegularLogic.cpp.i
+src/Board.i: src/Board.cpp.i
 
-.PHONY : RegularLogic.i
+.PHONY : src/Board.i
 
 # target to preprocess a source file
-RegularLogic.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.i
-.PHONY : RegularLogic.cpp.i
+src/Board.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.i
+.PHONY : src/Board.cpp.i
 
-RegularLogic.s: RegularLogic.cpp.s
+src/Board.s: src/Board.cpp.s
 
-.PHONY : RegularLogic.s
+.PHONY : src/Board.s
 
 # target to generate assembly for a file
-RegularLogic.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/RegularLogic.cpp.s
-.PHONY : RegularLogic.cpp.s
+src/Board.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Board.cpp.s
+.PHONY : src/Board.cpp.s
 
-Slot.o: Slot.cpp.o
+src/GameFlow.o: src/GameFlow.cpp.o
 
-.PHONY : Slot.o
+.PHONY : src/GameFlow.o
 
 # target to build an object file
-Slot.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.o
-.PHONY : Slot.cpp.o
+src/GameFlow.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.o
+.PHONY : src/GameFlow.cpp.o
 
-Slot.i: Slot.cpp.i
+src/GameFlow.i: src/GameFlow.cpp.i
 
-.PHONY : Slot.i
+.PHONY : src/GameFlow.i
 
 # target to preprocess a source file
-Slot.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.i
-.PHONY : Slot.cpp.i
+src/GameFlow.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.i
+.PHONY : src/GameFlow.cpp.i
 
-Slot.s: Slot.cpp.s
+src/GameFlow.s: src/GameFlow.cpp.s
 
-.PHONY : Slot.s
+.PHONY : src/GameFlow.s
 
 # target to generate assembly for a file
-Slot.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/Slot.cpp.s
-.PHONY : Slot.cpp.s
+src/GameFlow.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/GameFlow.cpp.s
+.PHONY : src/GameFlow.cpp.s
 
-SlotWithRank.o: SlotWithRank.cpp.o
+src/RegularLogic.o: src/RegularLogic.cpp.o
 
-.PHONY : SlotWithRank.o
+.PHONY : src/RegularLogic.o
 
 # target to build an object file
-SlotWithRank.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.o
-.PHONY : SlotWithRank.cpp.o
+src/RegularLogic.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.o
+.PHONY : src/RegularLogic.cpp.o
 
-SlotWithRank.i: SlotWithRank.cpp.i
+src/RegularLogic.i: src/RegularLogic.cpp.i
 
-.PHONY : SlotWithRank.i
+.PHONY : src/RegularLogic.i
 
 # target to preprocess a source file
-SlotWithRank.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.i
-.PHONY : SlotWithRank.cpp.i
+src/RegularLogic.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.i
+.PHONY : src/RegularLogic.cpp.i
 
-SlotWithRank.s: SlotWithRank.cpp.s
+src/RegularLogic.s: src/RegularLogic.cpp.s
 
-.PHONY : SlotWithRank.s
+.PHONY : src/RegularLogic.s
 
 # target to generate assembly for a file
-SlotWithRank.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/SlotWithRank.cpp.s
-.PHONY : SlotWithRank.cpp.s
+src/RegularLogic.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/RegularLogic.cpp.s
+.PHONY : src/RegularLogic.cpp.s
 
-TerminalPlayer.o: TerminalPlayer.cpp.o
+src/Slot.o: src/Slot.cpp.o
 
-.PHONY : TerminalPlayer.o
+.PHONY : src/Slot.o
 
 # target to build an object file
-TerminalPlayer.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.o
-.PHONY : TerminalPlayer.cpp.o
+src/Slot.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.o
+.PHONY : src/Slot.cpp.o
 
-TerminalPlayer.i: TerminalPlayer.cpp.i
+src/Slot.i: src/Slot.cpp.i
 
-.PHONY : TerminalPlayer.i
+.PHONY : src/Slot.i
 
 # target to preprocess a source file
-TerminalPlayer.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.i
-.PHONY : TerminalPlayer.cpp.i
+src/Slot.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.i
+.PHONY : src/Slot.cpp.i
 
-TerminalPlayer.s: TerminalPlayer.cpp.s
+src/Slot.s: src/Slot.cpp.s
 
-.PHONY : TerminalPlayer.s
+.PHONY : src/Slot.s
 
 # target to generate assembly for a file
-TerminalPlayer.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/TerminalPlayer.cpp.s
-.PHONY : TerminalPlayer.cpp.s
+src/Slot.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/Slot.cpp.s
+.PHONY : src/Slot.cpp.s
 
-main.o: main.cpp.o
+src/SlotWithRank.o: src/SlotWithRank.cpp.o
 
-.PHONY : main.o
+.PHONY : src/SlotWithRank.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/SlotWithRank.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.o
+.PHONY : src/SlotWithRank.cpp.o
 
-main.i: main.cpp.i
+src/SlotWithRank.i: src/SlotWithRank.cpp.i
 
-.PHONY : main.i
+.PHONY : src/SlotWithRank.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/SlotWithRank.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.i
+.PHONY : src/SlotWithRank.cpp.i
 
-main.s: main.cpp.s
+src/SlotWithRank.s: src/SlotWithRank.cpp.s
 
-.PHONY : main.s
+.PHONY : src/SlotWithRank.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/SlotWithRank.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/SlotWithRank.cpp.s
+.PHONY : src/SlotWithRank.cpp.s
+
+src/TerminalPlayer.o: src/TerminalPlayer.cpp.o
+
+.PHONY : src/TerminalPlayer.o
+
+# target to build an object file
+src/TerminalPlayer.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.o
+.PHONY : src/TerminalPlayer.cpp.o
+
+src/TerminalPlayer.i: src/TerminalPlayer.cpp.i
+
+.PHONY : src/TerminalPlayer.i
+
+# target to preprocess a source file
+src/TerminalPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.i
+.PHONY : src/TerminalPlayer.cpp.i
+
+src/TerminalPlayer.s: src/TerminalPlayer.cpp.s
+
+.PHONY : src/TerminalPlayer.s
+
+# target to generate assembly for a file
+src/TerminalPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/TerminalPlayer.cpp.s
+.PHONY : src/TerminalPlayer.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+test/TestManager.o: test/TestManager.cpp.o
+
+.PHONY : test/TestManager.o
+
+# target to build an object file
+test/TestManager.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.o
+.PHONY : test/TestManager.cpp.o
+
+test/TestManager.i: test/TestManager.cpp.i
+
+.PHONY : test/TestManager.i
+
+# target to preprocess a source file
+test/TestManager.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.i
+.PHONY : test/TestManager.cpp.i
+
+test/TestManager.s: test/TestManager.cpp.s
+
+.PHONY : test/TestManager.s
+
+# target to generate assembly for a file
+test/TestManager.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/TestManager.cpp.s
+.PHONY : test/TestManager.cpp.s
+
+test/test-all.o: test/test-all.cpp.o
+
+.PHONY : test/test-all.o
+
+# target to build an object file
+test/test-all.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.o
+.PHONY : test/test-all.cpp.o
+
+test/test-all.i: test/test-all.cpp.i
+
+.PHONY : test/test-all.i
+
+# target to preprocess a source file
+test/test-all.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.i
+.PHONY : test/test-all.cpp.i
+
+test/test-all.s: test/test-all.cpp.s
+
+.PHONY : test/test-all.s
+
+# target to generate assembly for a file
+test/test-all.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/test/test-all.cpp.s
+.PHONY : test/test-all.cpp.s
 
 # Help Target
 help:
@@ -348,30 +429,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdvancedProgramming1"
-	@echo "... AiPlayer.o"
-	@echo "... AiPlayer.i"
-	@echo "... AiPlayer.s"
-	@echo "... Board.o"
-	@echo "... Board.i"
-	@echo "... Board.s"
-	@echo "... GameFlow.o"
-	@echo "... GameFlow.i"
-	@echo "... GameFlow.s"
-	@echo "... RegularLogic.o"
-	@echo "... RegularLogic.i"
-	@echo "... RegularLogic.s"
-	@echo "... Slot.o"
-	@echo "... Slot.i"
-	@echo "... Slot.s"
-	@echo "... SlotWithRank.o"
-	@echo "... SlotWithRank.i"
-	@echo "... SlotWithRank.s"
-	@echo "... TerminalPlayer.o"
-	@echo "... TerminalPlayer.i"
-	@echo "... TerminalPlayer.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... gtest_src/gtest-all.o"
+	@echo "... gtest_src/gtest-all.i"
+	@echo "... gtest_src/gtest-all.s"
+	@echo "... src/AiPlayer.o"
+	@echo "... src/AiPlayer.i"
+	@echo "... src/AiPlayer.s"
+	@echo "... src/Board.o"
+	@echo "... src/Board.i"
+	@echo "... src/Board.s"
+	@echo "... src/GameFlow.o"
+	@echo "... src/GameFlow.i"
+	@echo "... src/GameFlow.s"
+	@echo "... src/RegularLogic.o"
+	@echo "... src/RegularLogic.i"
+	@echo "... src/RegularLogic.s"
+	@echo "... src/Slot.o"
+	@echo "... src/Slot.i"
+	@echo "... src/Slot.s"
+	@echo "... src/SlotWithRank.o"
+	@echo "... src/SlotWithRank.i"
+	@echo "... src/SlotWithRank.s"
+	@echo "... src/TerminalPlayer.o"
+	@echo "... src/TerminalPlayer.i"
+	@echo "... src/TerminalPlayer.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... test/TestManager.o"
+	@echo "... test/TestManager.i"
+	@echo "... test/TestManager.s"
+	@echo "... test/test-all.o"
+	@echo "... test/test-all.i"
+	@echo "... test/test-all.s"
 .PHONY : help
 
 

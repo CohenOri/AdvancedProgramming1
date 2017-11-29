@@ -104,8 +104,8 @@ bool Board::LegalPlaceInBoard(int row, int col) {
       && col <= NumOfCols() && col > 0);
 }
 
-void Board::SetOSlots(vector<Slot> o_slots) {
-  this->oSlots = o_slots;
+void Board::SetOSlots(vector<Slot> oSlots) {
+  this->oSlots = oSlots;
 }
 
 void Board::SetXSlots(vector<Slot> xSlots) {
@@ -122,11 +122,11 @@ vector<Slot> Board::GetSlotsOfPlayer(EnumDeclration::CellStatus player) const {
 
 
 Board *Board::CopyBoard() {
-  Board *copy_of_board = new Board();
-  copy_of_board->board = std::vector<vector<int> >(this->board);
-  copy_of_board->xSlots = std::vector<Slot>(this->xSlots);
-  copy_of_board->oSlots = std::vector<Slot>(this->oSlots);
-  return copy_of_board;
+  Board *copyOfBoard = new Board();
+  copyOfBoard->board = std::vector<vector<int> >(this->board);
+  copyOfBoard->xSlots = std::vector<Slot>(this->xSlots);
+  copyOfBoard->oSlots = std::vector<Slot>(this->oSlots);
+  return copyOfBoard;
 }
 
 bool Board::operator ==(const Board &b) const {

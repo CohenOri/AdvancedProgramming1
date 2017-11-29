@@ -10,7 +10,7 @@
 RegularLogic::RegularLogic(Board *b) {
   this->board = b;
 }
-vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cell_status) {
+vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cellStatus) {
   Board *b = this->board;
   vector<Slot> overallSlotsToPlaceList;
     /*
@@ -18,8 +18,8 @@ vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cell_status) 
      * add it to overall slots to place list only if it doesn't in it already
      * (overallSlotsToPlaceList is free of duplicates)
      */
-    for (unsigned int i = 0; i < b->GetSlotsOfPlayer(cell_status).size(); i++) {
-      Slot s = b->GetSlotsOfPlayer(cell_status)[i];
+    for (unsigned int i = 0; i < b->GetSlotsOfPlayer(cellStatus).size(); i++) {
+      Slot s = b->GetSlotsOfPlayer(cellStatus)[i];
       vector<Slot> v = PossibleSlotsFor(s.GetCellStatus(), s.GetRow(), s.GetCol());
       for (unsigned int i = 0; i < v.size(); i++) {
         Slot slot = v[i];
@@ -34,7 +34,7 @@ vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cell_status) 
 
 vector<Slot> RegularLogic::PossibleSlotsFor(EnumDeclration::CellStatus currentTag, int row, int col) {
   EnumDeclration::CellStatus tagsLookingFor;
-  vector<Slot> possible_slots;
+  vector<Slot> possibleSlots;
   if (currentTag == EnumDeclration::X) {
     tagsLookingFor = EnumDeclration::O;
   } else {
@@ -44,63 +44,68 @@ vector<Slot> RegularLogic::PossibleSlotsFor(EnumDeclration::CellStatus currentTa
    * Checks if it available to place tag in each direction (there's an 8 of them)
    */
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row - 1, col - 1) && this->board->GetCellStatus(row - 1, col - 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row - 1, col - 1) &&
+      this->board->GetCellStatus(row - 1, col - 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row - 2;
     int colToCheck = col - 2;
     // check the next cell in the same direction
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, MINUS, MINUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, MINUS, MINUS);
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row - 1, col) && this->board->GetCellStatus(row - 1, col) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row - 1, col) &&
+      this->board->GetCellStatus(row - 1, col) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row - 2;
     int colToCheck = col;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, MINUS, NOTHING);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, MINUS, NOTHING);
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row - 1, col + 1) && this->board->GetCellStatus(row - 1, col + 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row - 1, col + 1) &&
+      this->board->GetCellStatus(row - 1, col + 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row - 2;
     int colToCheck = col + 2;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, MINUS, PLUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, MINUS, PLUS);
   }
   // if we find the other tag we need to check the slot next to it
   if (this->board->LegalPlaceInBoard(row, col - 1) && this->board->GetCellStatus(row, col - 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row;
     int colToCheck = col - 2;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, NOTHING, MINUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, NOTHING, MINUS);
   }
   // if we find the other tag we need to check the slot next to it
   if (this->board->LegalPlaceInBoard(row, col + 1) && this->board->GetCellStatus(row, col + 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row;
     int colToCheck = col + 2;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, NOTHING, PLUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, NOTHING, PLUS);
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row + 1, col - 1) && this->board->GetCellStatus(row + 1, col - 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row + 1, col - 1) &&
+      this->board->GetCellStatus(row + 1, col - 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row + 2;
     int colToCheck = col - 2;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, PLUS, MINUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, PLUS, MINUS);
   }
   // if we find the other tag we need to check the slot next to it
   if (this->board->LegalPlaceInBoard(row + 1, col) && this->board->GetCellStatus(row + 1, col) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row + 2;
     int colToCheck = col;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, PLUS, NOTHING);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, PLUS, NOTHING);
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row + 1, col + 1) && this->board->GetCellStatus(row + 1, col + 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row + 1, col + 1) &&
+      this->board->GetCellStatus(row + 1, col + 1) == tagsLookingFor) {
     // checking the slot next to it
     int rowToCheck = row + 2;
     int colToCheck = col + 2;
-    RecursiveCheckNextCell(rowToCheck, colToCheck, possible_slots, tagsLookingFor, currentTag, PLUS, PLUS);
+    RecursiveCheckNextCell(rowToCheck, colToCheck, possibleSlots, tagsLookingFor, currentTag, PLUS, PLUS);
   }
-  return possible_slots;
+  return possibleSlots;
 }
 
 
@@ -188,7 +193,8 @@ vector<Slot> RegularLogic::SlotsToFlip(EnumDeclration::CellStatus currentTag, in
     tagsLookingFor = EnumDeclration::X;
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row - 1, col - 1) && this->board->GetCellStatus(row - 1, col - 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row - 1, col - 1) &&
+      this->board->GetCellStatus(row - 1, col - 1) == tagsLookingFor) {
     // save each slot we go trough in order to flip it later if needed
     tempSlotsToFlip.push_back(Slot(row - 1, col - 1, tagsLookingFor));
     // checking the slot next to it
@@ -218,7 +224,8 @@ vector<Slot> RegularLogic::SlotsToFlip(EnumDeclration::CellStatus currentTag, in
     tempSlotsToFlip.clear();
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row - 1, col + 1) && this->board->GetCellStatus(row - 1, col + 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row - 1, col + 1) &&
+      this->board->GetCellStatus(row - 1, col + 1) == tagsLookingFor) {
     tempSlotsToFlip.push_back(Slot(row - 1, col + 1, tagsLookingFor));
     // checking the slot next to it
     int rowToCheck = row - 2;
@@ -254,7 +261,8 @@ vector<Slot> RegularLogic::SlotsToFlip(EnumDeclration::CellStatus currentTag, in
     tempSlotsToFlip.clear();
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row + 1, col - 1) && this->board->GetCellStatus(row + 1, col - 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row + 1, col - 1) &&
+      this->board->GetCellStatus(row + 1, col - 1) == tagsLookingFor) {
     tempSlotsToFlip.push_back(Slot(row + 1, col - 1, tagsLookingFor));
     // checking the slot next to it
     int rowToCheck = row + 2;
@@ -274,7 +282,8 @@ vector<Slot> RegularLogic::SlotsToFlip(EnumDeclration::CellStatus currentTag, in
     tempSlotsToFlip.clear();
   }
   // if we find the other tag we need to check the slot next to it
-  if (this->board->LegalPlaceInBoard(row + 1, col + 1) && this->board->GetCellStatus(row + 1, col + 1) == tagsLookingFor) {
+  if (this->board->LegalPlaceInBoard(row + 1, col + 1) &&
+      this->board->GetCellStatus(row + 1, col + 1) == tagsLookingFor) {
     tempSlotsToFlip.push_back(Slot(row + 1, col + 1, tagsLookingFor));
     // checking the slot next to it
     int rowToCheck = row + 2;
@@ -307,22 +316,22 @@ RegularLogic::ExtraCellValidateResult RegularLogic::FlagCheckToFlipNextCell(int 
   return BAD;
 }
 
-void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_to) {
+void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flipTo) {
   Board *b = this->board;
   // clear the slots to flip vector, in order to not flip an old slot unintentionally
   this->finalSlotsToFlip.clear();
   // receives all the slots we have to flip due to recent placement of the tag
-  vector<Slot> slotsToFlip = SlotsToFlip(flip_to, row, col);
-  EnumDeclration::CellStatus flip_from;
-  if (flip_to == EnumDeclration::X) {
-    flip_from = EnumDeclration::O;
+  vector<Slot> slotsToFlip = SlotsToFlip(flipTo, row, col);
+  EnumDeclration::CellStatus flipFrom;
+  if (flipTo == EnumDeclration::X) {
+    flipFrom = EnumDeclration::O;
   } else {
-    flip_from = EnumDeclration::X;
+    flipFrom = EnumDeclration::X;
   }
   // for each slot in slot_to_flip vector
   for (unsigned int i = 0; i < slotsToFlip.size(); i++) {
-    // remove from old vector (also known as "flip_from" vector)
-    if (flip_from == EnumDeclration::X) {
+    // remove from old vector (also known as "flipFrom" vector)
+    if (flipFrom == EnumDeclration::X) {
       // remove slotsToFlip[i] from board->GetXSlots vector
       // if it is indeed in the vector, erase it
       int locationToOmit = slotsToFlip[i].LocationInVector(b->GetXSlots());
@@ -353,7 +362,7 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
       b->SetOSlots(newOSlots);
     }
     // flip it
-    b->SetCellStatus(slotsToFlip[i].GetRow(), slotsToFlip[i].GetCol(), flip_to);
+    b->SetCellStatus(slotsToFlip[i].GetRow(), slotsToFlip[i].GetCol(), flipTo);
   }
 }
 
@@ -361,11 +370,8 @@ void RegularLogic::FlipSlots(int row, int col, EnumDeclration::CellStatus flip_t
 LogicInterface* RegularLogic::CopyLogic(Board *b) {
   RegularLogic* copyOfRl = new RegularLogic(b);
   copyOfRl->board = b;
-  //copy_of_rl->board = b->CopyBoard();
   return copyOfRl;
 }
 RegularLogic::~RegularLogic() {
-  //delete this->board;
-  //delete this->finalSlotsToFlip;
 }
 

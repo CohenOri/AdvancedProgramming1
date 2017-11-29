@@ -33,13 +33,13 @@ class AiPlayer : public PlayerInterface {
    * @return the Slot AI player chose to locate his tag at
    */
   Slot Play();
-  char getSymbol();
+  char GetSymbol();
   /**
    * input: pointer to board and gameLogic.
    * output:non
    * the function make players move-depended what kind of player it is.
    */
-  void makeAMove(Board *b, LogicInterface *logic);
+  void MakeAMove(Board *b, LogicInterface *logic);
  private:
   EnumDeclration::CellStatus player;
   Board *board;

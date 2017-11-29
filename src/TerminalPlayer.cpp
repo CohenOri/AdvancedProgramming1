@@ -1,6 +1,6 @@
 //
 /**
- * # Ori Cohen
+# Ori Cohen
 # ID: 207375783
 # Yana Patyuk
 # ID:317106755
@@ -41,10 +41,10 @@ Slot TerminalPlayer::Play() {
   }
 }
 
-char TerminalPlayer::getSymbol() { return this->symbol; }
+char TerminalPlayer::GetSymbol() { return this->symbol; }
 
-void TerminalPlayer::makeAMove(Board *b, LogicInterface *logic) {
-  cout << this->getSymbol() << " I'ts your move.\n" << "Your possible moves: ";
+void TerminalPlayer::MakeAMove(Board *b, LogicInterface *logic) {
+  cout << this->GetSymbol() << " I'ts your move.\n" << "Your possible moves: ";
   vector<Slot> v = logic->SlotsToPlace(this->player);
   for (unsigned int i = 0; i < v.size(); i++) {
     v[i].Print();
@@ -55,7 +55,7 @@ void TerminalPlayer::makeAMove(Board *b, LogicInterface *logic) {
     b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
     logic->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
   } else {
-    cout << "ILLEGAL PLACE FOR TAG " << getSymbol() << " try again" << endl;
-    makeAMove(b, logic);
+    cout << "ILLEGAL PLACE FOR TAG " << GetSymbol() << " try again" << endl;
+    MakeAMove(b, logic);
   }
 }
