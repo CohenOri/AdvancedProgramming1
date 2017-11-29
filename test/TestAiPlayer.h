@@ -52,17 +52,17 @@ public:
 	}
 	//place more cells and get computers choice.
 	void PlaceAnotherCells2() {
-		rl->FlipSlots(3, 3,EnumDeclration::O );
-		b->SetCellStatus(3,3,EnumDeclration::O);
+		rl->FlipSlots(3, 3, EnumDeclration::O );
+		b->SetCellStatus(3, 3, EnumDeclration::O);
 		choosenCell = p1->Play();
 	}
 	//place all cell on board get computers choice.
 	void PlaceAnotherCells3() {
 		for(int i = 1; i <= b->NumOfRows(); i++) {
 			for(int j = 1; j <= b->NumOfCols(); j++) {
-				if((b->GetCellStatus(i,j) != EnumDeclration::X) &&
-						(b->GetCellStatus(i,j) != EnumDeclration::O))
-				b->SetCellStatus(i,j,EnumDeclration::X);
+				if((b->GetCellStatus(i, j) != EnumDeclration::X) &&
+						(b->GetCellStatus(i, j) != EnumDeclration::O))
+				b->SetCellStatus(i, j, EnumDeclration::X);
 			}
 		}
 		choosenCell = p1->Play();
@@ -75,10 +75,10 @@ protected:
 	RegularLogic *rl;
 private:
 	void PlaceFirstCells(){
-		b->SetCellStatus(4,4,EnumDeclration::O);
-		b->SetCellStatus(5,5,EnumDeclration::O);
-		b->SetCellStatus(4,5,EnumDeclration::X);
-		b->SetCellStatus(5,4,EnumDeclration::X);
+		b->SetCellStatus(4, 4, EnumDeclration::O);
+		b->SetCellStatus(5, 5, EnumDeclration::O);
+		b->SetCellStatus(4, 5, EnumDeclration::X);
+		b->SetCellStatus(5, 4, EnumDeclration::X);
 	}
 
 };

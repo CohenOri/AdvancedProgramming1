@@ -30,10 +30,10 @@ public:
 		b = new Board();
 		rl = new RegularLogic(b);
 		//place first slots on Board.
-		b->SetCellStatus(4,4,EnumDeclration::O);
-		b->SetCellStatus(5,5,EnumDeclration::O);
-		b->SetCellStatus(4,5,EnumDeclration::X);
-		b->SetCellStatus(5,4,EnumDeclration::X);
+		b->SetCellStatus(4, 4, EnumDeclration::O);
+		b->SetCellStatus(5, 5, EnumDeclration::O);
+		b->SetCellStatus(4, 5, EnumDeclration::X);
+		b->SetCellStatus(5, 4, EnumDeclration::X);
 	}
 	/**
 	 * free memory.
@@ -51,12 +51,12 @@ public:
 	void ComperBord() {
 		Board compered =  Board();
 		rl->FlipSlots(3, 4,EnumDeclration::X);
-		b->SetCellStatus(3,4,EnumDeclration::X);
-		compered.SetCellStatus(4,4,EnumDeclration::X);
-		compered.SetCellStatus(5,5,EnumDeclration::O);
-		compered.SetCellStatus(4,5,EnumDeclration::X);
-		compered.SetCellStatus(5,4,EnumDeclration::X);
-		compered.SetCellStatus(3,4,EnumDeclration::X);
+		b->SetCellStatus(3, 4, EnumDeclration::X);
+		compered.SetCellStatus(4, 4, EnumDeclration::X);
+		compered.SetCellStatus(5, 5, EnumDeclration::O);
+		compered.SetCellStatus(4, 5, EnumDeclration::X);
+		compered.SetCellStatus(5, 4, EnumDeclration::X);
+		compered.SetCellStatus(3, 4, EnumDeclration::X);
 		EXPECT_EQ(*b, compered);
 	}
 
