@@ -62,6 +62,8 @@ class Board {
    * @reutrn vector slots for x
    */
   vector<Slot> GetSlotsOfPlayer(EnumDeclration :: CellStatus player) const;
+  void SetSlotsOfPlayer(EnumDeclration :: CellStatus player, vector<Slot> slots);
+
   void SetOSlots(vector<Slot> oSlots);
   void SetXSlots(vector<Slot> xSlots);
   /**

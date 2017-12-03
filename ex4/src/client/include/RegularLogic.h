@@ -66,6 +66,24 @@ class RegularLogic : public LogicInterface {
    * the given tag
    */
   vector<Slot> PossibleSlotsFor(EnumDeclration::CellStatus currentTag, int row, int col);
+
+/**
+ * this function calls recirsuve function to check one direction if slots can flipped.
+ * it also can detemine if slots should be flipped in process or not.
+ * @param row place of slot to check if enemy or empty.
+ * @param col place of slot to check if enemy or empty.
+ * @param nextRow place of slot near the row val
+ * @param nextCol place of slot near the col val
+ * @param slotsVector will contain list of slots.
+ * @param player enum symbol
+ * @param enemy enum symbol
+ * @param rowOperation minus plus or nothing
+ * @param colOperation minus plus or nothing
+ * @param check bool if we just serach for liggal slots but not flipping-true.
+ *
+ */
+  void OneDierectionSlots(int row, int col, int nextRow, int nextCol, vector<Slot> &slotsVector,
+		  	  	  EnumDeclration::CellStatus player, EnumDeclration::CellStatus enemy, Operation rowOperation, Operation colOperation, bool check);
   /**
    * @param currentTag
    * @param row
