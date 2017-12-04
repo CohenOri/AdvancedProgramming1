@@ -30,6 +30,7 @@ class GameFlow {
   Board* board;
   PlayerInterface* player[2];
   EnumDeclration::CellStatus currentTurn;
+  bool clentServer;
   /**
    * @return if Game is Over
    */

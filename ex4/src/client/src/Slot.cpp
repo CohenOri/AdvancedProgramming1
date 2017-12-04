@@ -81,6 +81,19 @@ Slot* Slot::CopySlot() {
   return copyOfSlot;
 }
 
+string Slot::getString() {
+	string slotStr;
+	stringstream row;
+	stringstream col;
+	row << this->row;
+	slotStr += row.str();
+	slotStr += ", ";
+	col << this->col;
+	slotStr += col.str();
+	return slotStr;
+}
+
+
 bool Slot::operator ==(const Slot &s) const {
  return  ((this->row == s.row )&& (this->col == s.col));
 }

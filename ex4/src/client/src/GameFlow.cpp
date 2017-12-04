@@ -13,6 +13,10 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
   this->currentTurn = EnumDeclration::X;
   this->player[0] = player1;
   this->player[1] = player2;
+  this->clentServer = false;
+  if(player1 == NULL || player2 == NULL) {
+	  this->clentServer = true;
+  }
   // some initialization
   board->SetCellStatus(board->NumOfRows() / 2, board->NumOfCols()/2, EnumDeclration::O);
   board->SetCellStatus(board->NumOfRows() / 2 + 1, board->NumOfCols() / 2 + 1, EnumDeclration::O);
@@ -34,6 +38,7 @@ void GameFlow::Run() {
       // if player has possible slots to place.
    if (this->logic->SlotsToPlace(this->currentTurn).size() != 0) {
        // player makes a move.
+	   if(clentServer && this->player[tunrnConter % 2] == NULL) continue;
      this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
    } else {
         // it doesn't have possible slots to place tag at
@@ -42,6 +47,7 @@ void GameFlow::Run() {
               << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to" <<
 			 	 	 	 player[(tunrnConter + 1) % 2]->GetSymbol() << endl;
+    	  if(clentServer) this->player[tunrnConter % 2]->MakeAMove(NULL, NULL);
       }
    tunrnConter++;
    this->board->Print();//print the board.

@@ -7,6 +7,7 @@
 
 #ifndef SRC_CLIENT_INCLUDE_HOSTPLAYER_H_
 #define SRC_CLIENT_INCLUDE_HOSTPLAYER_H_
+#include "PlayerInterface.h"
 #include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -15,15 +16,25 @@
 #include <string.h>
 #include <unistd.h>
 using namespace std;
-class HostPlayer {
+class HostPlayer: public PlayerInterface {
 public:
 	HostPlayer(const char *serverIP, int serverPort);
  void connectToServer();
- int sendExercise(int arg1, char op, int arg2);
+ void getSymbolFromServer();
+ virtual Slot Play();
+ virtual char GetSymbol();
+ virtual void MakeAMove(Board *b, LogicInterface *logic);
+ //virtual ~HostPlayer();
 private:
+ EnumDeclration::CellStatus player;
+ char symbol;
  const char *serverIP;
  int serverPort;
  int clientSocket;
+ void reciveMove(Board *b, LogicInterface *logic,  string move);
+ void sendMove(string move);
+ bool placeSlotOfPlayer(Board *b,LogicInterface * logic);
+
 };
 
 #endif /* SRC_CLIENT_INCLUDE_HOSTPLAYER_H_ */

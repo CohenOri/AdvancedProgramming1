@@ -3,12 +3,14 @@
 #include <iostream>
 #include <limits>
 #include "../include/Board.h"
+#include <sstream>
 
 #include "../include/RegularLogic.h"
 #include "../include/GameFlow.h"
 #include "../include/TerminalPlayer.h"
 #include "../include/AiPlayer.h"
 #include "../include/PlayerInterface.h"
+#include "../include/HostPlayer.h"
 
 using namespace std;
 
@@ -41,10 +43,15 @@ int main() {
 			p1 = new TerminalPlayer(EnumDeclration::X);
 			p2 =new  AiPlayer(EnumDeclration::O);
 		} else if (userChoice == 3) {
-			//play against server
-			/*
-			 *
-			 */
+			HostPlayer p3("127.0.0.1", 8000);
+			try {
+				p3.connectToServer();
+				p3.getSymbolFromServer();
+			} catch (const char *msg) {
+				 cout << "Failed to connect to server. Reason:" << msg << endl;
+			}
+			*p1 = p3;
+			correct = true;
 		} else {//if input is taken or against the
 			cout << "no such option. choose again" << endl;
 		}

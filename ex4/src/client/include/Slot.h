@@ -8,6 +8,8 @@
 #define EX1_SLOT_H
 
 #include <string>
+#include <sstream>
+
 #include <iostream>
 #include "EnumDeclration.h"
 #include <vector>
@@ -74,6 +76,10 @@ class Slot {
    * @return deep copy for slot.
    */
   Slot* CopySlot();
+  /**
+   * @return slot values by string.
+   */
+  string getString();
   /**
    * new operators to compare.
    */
