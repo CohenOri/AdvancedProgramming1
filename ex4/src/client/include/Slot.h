@@ -21,6 +21,10 @@ using namespace std;
 class Slot {
  public:
 	/**
+	 * create slot from string.
+	 */
+	Slot(string values,  EnumDeclration::CellStatus status);
+	/**
 	 * Create a slot with E (Empty status)
 	 * @param row
 	 * @param col
@@ -89,6 +93,7 @@ class Slot {
   int row;
   int col;
   EnumDeclration::CellStatus status;
+  string s;
 
 };
 

@@ -26,6 +26,8 @@ class PlayerInterface {
    * the function make players move-depended what kind of player it is.
    */
   virtual void MakeAMove(Board *b, LogicInterface *logic) = 0;
+  virtual EnumDeclration::CellStatus getEnumSymbol() = 0;
+
   virtual ~PlayerInterface() {}
 };
 

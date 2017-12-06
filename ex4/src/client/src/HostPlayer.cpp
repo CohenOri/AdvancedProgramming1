@@ -44,38 +44,34 @@ void HostPlayer::connectToServer() {
 }
 
 void HostPlayer::getSymbolFromServer() {
-	 int player;
-		int n = read(clientSocket, &player, sizeof(player));
-		if (n == -1) {
-			throw "Error reading result from socket";
-		}
+	int player;
+	int start;
+	//read which player are you
+	int n = read(clientSocket, &player, sizeof(player));
+	if (n == -1) {
+		throw "Error reading result from socket";
+	}
 		if (player == 1) {
 			this->player = EnumDeclration::X;
 			this->symbol = 'X';
+			cout << "waiting for other player to conect.." << endl;
+			int n = read(clientSocket, &start, sizeof(start));
+			if (n == -1) {
+					throw "Error reading result from socket";
+			}
 		} else {
 			this->player = EnumDeclration::O;
 			this->symbol = 'O';
 		}
-		cout << "you are: " << player << endl;
+		cout << "you are: " << this->symbol << endl;
 }
 
 Slot HostPlayer::Play() {
-	  int row;
-	  int col;
-	  int i;
 	  string str;
-	  vector<int> vect;
 	  cout << "\n\n" << "Please enter your row,col: ";
 	  getline(cin, str);
-	  stringstream ss(str);
-	  while (ss >> i) {
-	    vect.push_back(i);
-
-	    if (ss.peek() == ',')
-	      ss.ignore();
-	  }
 	  try {
-	    return Slot(vect.at(0), vect.at(1));
+	    return Slot(str, this->player);
 	  }
 	  catch (exception exception) {
 	    cout << "Are you serious? enter something in the row, col format!";
@@ -86,73 +82,85 @@ Slot HostPlayer::Play() {
 char HostPlayer::GetSymbol() { return this->symbol; }
 
 void HostPlayer::MakeAMove(Board* b, LogicInterface* logic) {
-	 bool stop = false;
-	 bool firstMove = false;
-	 if(this->GetSymbol() == 'X') { firstMove = true; }
+	bool stop = false;//refrence if we need to stop the connection.
+	bool firstMove = false;
+	if(this->GetSymbol() == 'X') {firstMove = true; }//player x always starts.
+	//print begginig board.
+	b->Print();
+
 	while (!stop) {
-		b->Print();
+		//if its the first move-just get move from player and send.
 		if(firstMove) {
 			firstMove = false;
 			try {
-			placeSlotOfPlayer(b, logic);
+				placeSlotOfPlayer(b, logic);
+				b->Print();
 			} catch (const char *msg) {
 				cout << msg << endl;
 				return;
 			}
-		} else {
-			string result;
-			int n = read(clientSocket, &result, sizeof(result));
+		} else {//if its not the first move.
+			char buf[10];
+			char* s = buf;
+			//get other player move.
+			int n = read(clientSocket, s, sizeof(s));
 			if (n == -1) {
 				throw "Error reading result from socket";
 			}
-			if (result == "End") {
+			string result(s);
+			cout << "this is what received: " << result << endl;
+			//if we received end-means end of game-return back to gameFlow.
+			if (result.compare("End") == 0) {
 				stop = true;
-			} else if (result == "“NoMove”") {
+				return;
+			//if NoMove means other player have no moves
+			} else if (result.compare("NoMove") == 0) {
 				try {
 					stop = placeSlotOfPlayer(b, logic);
+					b->Print();
 				} catch (const char *msg) {
 					cout << msg << endl;
 					return;
 				}
+			//players move is correct.
 			} else {
 				try {
-					reciveMove(b, logic, result);
-					stop = placeSlotOfPlayer(b, logic);
+					//place enemys slot on the board.
+					reciveMove(b, logic, Slot(result, EnumDeclration::OtherPlayer((this->player))));
+					//make a turn.
+				stop =	placeSlotOfPlayer(b, logic);
+					b->Print();
 				} catch (const char *msg) {
 					cout << msg << endl;
 					return;
 				}
 			}
-
 
 	 }
 	}
 }
 
-void HostPlayer::reciveMove(Board* b, LogicInterface* logic, string move) {
-	  vector<int> vect;
-	  int i;
-	  stringstream ss(move);
-	  while (ss >> i) {
-	    vect.push_back(i);
-	    if (ss.peek() == ',')
-	      ss.ignore();
-	  }
-	  Slot enemy = Slot(vect.at(0), vect.at(1), EnumDeclration::OtherPlayer((this->player)));
-	  b->SetCellStatus(enemy.GetRow(), enemy.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
-	  logic->FlipSlots(enemy.GetRow(), enemy.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
+void HostPlayer::reciveMove(Board* b, LogicInterface* logic, Slot move) {
+	//place other player move on board and print new board.
+	  b->SetCellStatus(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
+	  logic->FlipSlots(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
+		b->Print();
 }
 
 void HostPlayer::sendMove(string move) {
-	int n = write(clientSocket, &move, sizeof(move));
+	cout << "start send move:" << endl;
+	cout << move << endl;
+	int n = write(clientSocket, move.c_str(), sizeof(move.c_str()));
 	if (n == -1) {
-		throw "Error writing op to socket";
+		throw "Error reading result from socket";
 	}
+	cout << "end of send/" << endl;
 }
 
 bool HostPlayer::placeSlotOfPlayer(Board* b, LogicInterface* logic) {
     if (logic->SlotsToPlace(this->player).size() == 0) {
     		if (logic->SlotsToPlace( EnumDeclration::OtherPlayer((this->player))).size() == 0) {
+        		sendMove("End");
     			return true;
     		}
     		cout << "no moves for you" << endl;
@@ -166,14 +174,20 @@ bool HostPlayer::placeSlotOfPlayer(Board* b, LogicInterface* logic) {
 	  }
 	  // get the chosen slot from the player, confirm its legal slot and add it to the board_.
 	  Slot chosenSlot = Play();
+	  cout << "this is your choice: ";
+	  chosenSlot.Print();
+	  cout << chosenSlot.GetCellStatus();
+	  cout << endl;
+
+	  //check if choice is correct-if not ask again.
 	  if (chosenSlot.ExistInVector(logic->SlotsToPlace(this->player))) {
 	    b->SetCellStatus(chosenSlot.GetRow(), chosenSlot.GetCol(), this->player);
 	    logic->FlipSlots(chosenSlot.GetRow(), chosenSlot.GetCol(), this->player);
 	    sendMove(chosenSlot.getString());
 	    if ((logic->SlotsToPlace(this->player).size() == 0) &&
 	    		(logic->SlotsToPlace( EnumDeclration::OtherPlayer((this->player))).size() == 0)) {
-		    sendMove("End");
-		    return true;
+		    //sendMove("End");
+		    //return true;
 	    }
 	    return false;
 	  } else {
@@ -181,3 +195,6 @@ bool HostPlayer::placeSlotOfPlayer(Board* b, LogicInterface* logic) {
 	    return placeSlotOfPlayer(b, logic);
 	  }
 }
+
+EnumDeclration::CellStatus HostPlayer::getEnumSymbol() { return this->player; }
+

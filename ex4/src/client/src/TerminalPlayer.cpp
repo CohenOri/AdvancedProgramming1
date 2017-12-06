@@ -42,6 +42,8 @@ Slot TerminalPlayer::Play() {
 }
 
 char TerminalPlayer::GetSymbol() { return this->symbol; }
+EnumDeclration::CellStatus TerminalPlayer::getEnumSymbol() { return this->player; }
+
 
 void TerminalPlayer::MakeAMove(Board *b, LogicInterface *logic) {
   cout << this->GetSymbol() << " I'ts your move.\n" << "Your possible moves: ";

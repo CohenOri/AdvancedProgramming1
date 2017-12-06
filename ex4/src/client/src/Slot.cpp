@@ -8,6 +8,21 @@
 #include "../include/Slot.h"
 
 using namespace std;
+Slot::Slot(string values,  EnumDeclration::CellStatus status) {
+	  vector<int> vect;
+	  int i;
+	  stringstream ss(values);
+	  while (ss >> i) {
+	    vect.push_back(i);
+	   if (ss.peek() == ',')
+	      ss.ignore();
+	  }
+	  this->row = vect.at(0);
+	  this->col = vect.at(1);
+	  //his->status = status;
+	  this->status = EnumDeclration::E;
+	  this->s = values;
+}
 
 Slot::Slot(int row, int col) {
   this->row = row;
@@ -82,15 +97,16 @@ Slot* Slot::CopySlot() {
 }
 
 string Slot::getString() {
-	string slotStr;
+/*	string slotStr;
 	stringstream row;
 	stringstream col;
 	row << this->row;
 	slotStr += row.str();
-	slotStr += ", ";
+	slotStr += ",";
 	col << this->col;
 	slotStr += col.str();
-	return slotStr;
+	return slotStr;*/
+	return this->s;
 }
 
 

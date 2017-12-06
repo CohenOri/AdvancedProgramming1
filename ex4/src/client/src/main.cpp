@@ -43,20 +43,22 @@ int main() {
 			p1 = new TerminalPlayer(EnumDeclration::X);
 			p2 =new  AiPlayer(EnumDeclration::O);
 		} else if (userChoice == 3) {
-			HostPlayer p3("127.0.0.1", 8000);
+			//HostPlayer p3("127.0.0.1", 8000);
+			HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
 			try {
-				p3.connectToServer();
-				p3.getSymbolFromServer();
+				p3->connectToServer();
+				p3->getSymbolFromServer();
 			} catch (const char *msg) {
 				 cout << "Failed to connect to server. Reason:" << msg << endl;
 			}
-			*p1 = p3;
+			p1 = p3;
 			correct = true;
 		} else {//if input is taken or against the
 			cout << "no such option. choose again" << endl;
 		}
 	} while(!correct);
   cin.ignore();
+	cout << "you are: 233" << p1->getEnumSymbol() << endl;
   GameFlow gameFlow(&rl, b, p1, p2);
   gameFlow.Run();
 

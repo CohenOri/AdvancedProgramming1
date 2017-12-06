@@ -24,6 +24,8 @@ public:
  virtual Slot Play();
  virtual char GetSymbol();
  virtual void MakeAMove(Board *b, LogicInterface *logic);
+ EnumDeclration::CellStatus getEnumSymbol();
+
  //virtual ~HostPlayer();
 private:
  EnumDeclration::CellStatus player;
@@ -31,7 +33,7 @@ private:
  const char *serverIP;
  int serverPort;
  int clientSocket;
- void reciveMove(Board *b, LogicInterface *logic,  string move);
+ void reciveMove(Board *b, LogicInterface *logic,  Slot move);
  void sendMove(string move);
  bool placeSlotOfPlayer(Board *b,LogicInterface * logic);
 

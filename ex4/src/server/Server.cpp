@@ -56,6 +56,11 @@ void Server::start() {
 		   		    	cout << "Error writing to socket" << endl;
 		   		    	return;
 		   		    	}
+		  int m = write(playerOne, &second, sizeof(second));
+		   if (m == -1) {
+		 		   	cout << "Error writing to socket" << endl;
+			    	return;
+		 		  }
 		   handleClient(playerOne, playerTwo);
 		   // Close communication with the client
 		   close(playerOne);
@@ -74,27 +79,35 @@ Server::~Server() {
 void Server::handleClient(int playerX, int playerO) {
 	int player[] =  { playerX, playerO };
 	int turnCounter = 0;
-	 string massage;
+	 char ma[10];
+	 char* massage = ma;
 	 while (true) {
+		  memset(ma,'\0',10);
 	 // Read new point from player.
-		 int n = read(player[turnCounter%2], &massage, sizeof(massage));
+		 int n = read(player[turnCounter%2], massage, sizeof(massage));
+			cout << player[0] << " and " << player[1] << endl;
 		 if (n == -1) {
 			 cout << "Error reading point" << endl;
 			 return;
 		 }
+		cout << "massage recived: " << endl;
+		//string a(massage);
+		cout << massage<< endl;
+		//cout << "massage: " << a<< endl;
+
 		 if (n == 0) {
 			 cout << "Client disconnected" << endl;
 			 return;
 		 }
 		 // Write the point back to the other player
-		 n = write(player[(turnCounter + 1) % 2], &massage, sizeof(massage));
+		 n = write(player[(turnCounter + 1) % 2], massage, sizeof(massage));
 		 if (n == -1) {
 			 cout << "Error writing to socket" << endl;
 			 return;
 		 }
 		 turnCounter++;
 		 //if the message is end-return to close connections with players.
-		 if (massage == "End") {
+		if (strcmp(massage,"End") == 0) {
 			 return;
 		 }
 	 }

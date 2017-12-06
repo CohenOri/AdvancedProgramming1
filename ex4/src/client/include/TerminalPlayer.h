@@ -36,6 +36,7 @@ class TerminalPlayer : public PlayerInterface {
   Slot Play();
   char GetSymbol();
   void MakeAMove(Board *b, LogicInterface *logic);
+  EnumDeclration::CellStatus getEnumSymbol();
 
  private:
   EnumDeclration::CellStatus player;

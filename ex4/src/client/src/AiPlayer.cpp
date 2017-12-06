@@ -136,6 +136,7 @@ void AiPlayer::MakeAMove(Board *b, LogicInterface *logic) {
     MakeAMove(b, logic);
   }
 }
+EnumDeclration::CellStatus AiPlayer::getEnumSymbol() { return this->player; }
 
 char AiPlayer::GetSymbol() {
   return this->symbol;

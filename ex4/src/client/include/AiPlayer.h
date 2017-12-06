@@ -34,6 +34,8 @@ class AiPlayer : public PlayerInterface {
    */
   Slot Play();
   char GetSymbol();
+  EnumDeclration::CellStatus getEnumSymbol();
+
   /**
    * input: pointer to board and gameLogic.
    * output:non

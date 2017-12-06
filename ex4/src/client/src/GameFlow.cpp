@@ -26,17 +26,17 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
 void GameFlow::Run() {
   Board *b = this->board;
   int tunrnConter = 0;
-  b->Print();
+ // b->Print();
   // run the game while it is still not over
   while (!GameOver()) {
 	  //check who's turn it is.
-	  if(tunrnConter%2 == 1) {
+	/*  if(tunrnConter%2 == 1) {
 		  this->currentTurn = EnumDeclration::O;
 	  } else {
 		  this->currentTurn = EnumDeclration::X;
-	  }
+	  }*/
       // if player has possible slots to place.
-   if (this->logic->SlotsToPlace(this->currentTurn).size() != 0) {
+   if (this->logic->SlotsToPlace(this->player[tunrnConter % 2]->getEnumSymbol()).size() != 0) {
        // player makes a move.
 	   if(clentServer && this->player[tunrnConter % 2] == NULL) continue;
      this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
@@ -50,7 +50,7 @@ void GameFlow::Run() {
     	  if(clentServer) this->player[tunrnConter % 2]->MakeAMove(NULL, NULL);
       }
    tunrnConter++;
-   this->board->Print();//print the board.
+   //this->board->Print();//print the board.
   }
   //print end game screen.
   EndGame();
