@@ -23,7 +23,7 @@ class Slot {
 	/**
 	 * create slot from string.
 	 */
-	Slot(string values,  EnumDeclration::CellStatus status);
+	Slot(string values, EnumDeclration::CellStatus status);
 	/**
 	 * Create a slot with E (Empty status)
 	 * @param row
@@ -83,7 +83,7 @@ class Slot {
   /**
    * @return slot values by string.
    */
-  string getString();
+  string GetString();
   /**
    * new operators to compare.
    */

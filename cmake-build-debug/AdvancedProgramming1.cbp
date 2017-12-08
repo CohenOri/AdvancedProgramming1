@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="AdvancedProgramming1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AdvancedProgramming1">
+				<Option output="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/AdvancedProgramming1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AdvancedProgramming1"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AdvancedProgramming1/fast">
+				<Option output="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/AdvancedProgramming1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AdvancedProgramming1/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/AiPlayer.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/Board.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/EnumDeclration.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/GameFlow.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/HostPlayer.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/LogicInterface.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/PlayerInterface.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/RegularLogic.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/Slot.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/SlotWithRank.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/TerminalPlayer.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/AiPlayer.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/Board.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/GameFlow.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/HostPlayer.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/RegularLogic.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/Slot.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/SlotWithRank.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/TerminalPlayer.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/main.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

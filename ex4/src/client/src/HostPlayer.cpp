@@ -183,7 +183,7 @@ bool HostPlayer::placeSlotOfPlayer(Board* b, LogicInterface* logic) {
 	  if (chosenSlot.ExistInVector(logic->SlotsToPlace(this->player))) {
 	    b->SetCellStatus(chosenSlot.GetRow(), chosenSlot.GetCol(), this->player);
 	    logic->FlipSlots(chosenSlot.GetRow(), chosenSlot.GetCol(), this->player);
-	    sendMove(chosenSlot.getString());
+	    sendMove(chosenSlot.GetString());
 	    if ((logic->SlotsToPlace(this->player).size() == 0) &&
 	    		(logic->SlotsToPlace( EnumDeclration::OtherPlayer((this->player))).size() == 0)) {
 		    //sendMove("End");
