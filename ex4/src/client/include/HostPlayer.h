@@ -33,6 +33,7 @@ private:
  const char *serverIP;
  int serverPort;
  int clientSocket;
+ bool firstMove;
  void reciveMove(Board *b, LogicInterface *logic,  Slot move);
  void sendMove(string move);
  bool placeSlotOfPlayer(Board *b,LogicInterface * logic);

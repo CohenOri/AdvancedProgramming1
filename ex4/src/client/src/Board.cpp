@@ -84,8 +84,6 @@ void Board::SetCellStatus(int xLocation, int yLocation, EnumDeclration::CellStat
     }
     // -1 because array starting from 0
     this->board[xLocation - 1][yLocation - 1] = status;
-    // update the lastMove happened in the board
-    SetLastMove(Slot(xLocation, yLocation, status).GetString());
 }
 
 int Board::NumOfRows() const {

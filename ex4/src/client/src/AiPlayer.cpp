@@ -127,6 +127,7 @@ void AiPlayer::MakeAMove(Board *b, LogicInterface *logic) {
   if (chosen_slot.ExistInVector(logic->SlotsToPlace(this->player))) {
     b->SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
     logic->FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this->player);
+    b->SetLastMove(chosen_slot.GetString());
     // print the slot AI chose
     cout << GetSymbol() << " played: ";
     chosen_slot.Print();

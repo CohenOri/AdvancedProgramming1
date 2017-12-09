@@ -20,7 +20,7 @@ class GameFlow {
 	 * @param player1
 	 * @param player2
 	 */
-  GameFlow(LogicInterface* logic, Board* board, PlayerInterface* player1, PlayerInterface* player2);
+  GameFlow(LogicInterface* logic, Board* board, PlayerInterface* player1, PlayerInterface* player2, bool server);
   /**
    * Run the game
    */
