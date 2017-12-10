@@ -26,18 +26,16 @@ void GameFlow::Run() {
   // run the game while it is still not over
 	b->Print();
   while (!GameOver()) {
-	  //check who's turn it is.
-	/*  if(tunrnConter%2 == 1) {
-		  this->currentTurn = EnumDeclration::O;
-	  } else {
-		  this->currentTurn = EnumDeclration::X;
-	  }*/
       // if player has possible slots to place.
    if (this->logic->SlotsToPlace(this->player[tunrnConter % 2]->getEnumSymbol()).size() != 0) {
        // player makes a move.
 	   if(clentServer && this->player[tunrnConter % 2] == NULL) continue;
      this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
-		if(!(clentServer && tunrnConter % 2 == 0)) b->Print();
+		if(!(clentServer && tunrnConter % 2 == 0)) {
+			cout << endl;
+			cout << "current board:" << endl;
+			b->Print();
+		}
    } else {
 	   //in server-client mode: we have to send lastmove and recive nomove ene if
 	   //we know other player cant move.
@@ -92,4 +90,5 @@ void GameFlow::EndGame() {
     } else {
       cout << "It's a tie";
     }
+    cout << endl;
 }

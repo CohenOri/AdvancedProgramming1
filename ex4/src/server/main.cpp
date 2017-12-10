@@ -1,16 +1,41 @@
 /*
  * main.cpp
- *
- *  Created on: 4 בדצמ׳ 2017
- *      Author: yanap
  */
 
 #include "Server.h"
 #include <iostream>
 #include <stdlib.h>
+#include <sstream>
+#include <fstream>
+#include <limits>
+
+
 using namespace std;
 int main() {
- Server server(8000);
+
+    // Read IP and port of remote Host from file
+       string ip, line;
+       int port;
+       ifstream hostInfo("hostInfo.txt");
+       if (hostInfo.is_open()) {
+           // break the first line into IP
+           // break the second line to Port No.
+           string delimiter = ":";
+           getline(hostInfo, line);
+           string token = line.substr(line.find(delimiter)+1, line.length());
+           /* remove spaces from the ip/port
+           std::remove(token.begin(), token.end()+1, ' '); */
+           std::stringstream stream(token);
+           stream >> token;
+           ip = token;
+           getline(hostInfo, line);
+           token = line.substr(line.find(delimiter)+1, line.length());
+           std::istringstream(token) >> port; //convert to int
+           hostInfo.close();
+       } else {
+           cout << "Unable to open file" << endl;
+       }
+ Server server(port);
  try {
 	 server.start();
  } catch (const char *msg) {

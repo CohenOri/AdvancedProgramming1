@@ -17,13 +17,28 @@ using namespace std;
 #define MAX_CONNECTED_CLIENTS 10
 class Server {
 public:
+	/**
+	 * Constructor.
+	 * @param port to connect to.
+	 */
 	 Server(int port);
+	 /**
+	  * start the connection.
+	  */
 	 void start();
+	 /**
+	  * stop the connection.
+	  */
 	 void stop();
 	virtual ~Server();
 private:
  int port;
  int serverSocket;
+ /**
+  * start a game between players.
+  * @param palyerX number given from server.
+  * @playerY number given from server.
+  */
  void handleClient(int playerX, int playerO);
 };
 

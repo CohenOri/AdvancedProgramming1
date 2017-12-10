@@ -28,11 +28,11 @@ void Server::start() {
 		 throw "Error on binding";
 	 }
 	 // Start listening to incoming connections
-	  listen(serverSocket, MAX_CONNECTED_CLIENTS);
-	  // Define the client socket's structures
-	   struct sockaddr_in clientAddress;
-	   socklen_t clientAddressLen;
-	   while (true) {
+	 listen(serverSocket, MAX_CONNECTED_CLIENTS);
+	 // Define the client socket's structures
+	  struct sockaddr_in clientAddress;
+	  socklen_t clientAddressLen;
+	  while (true) {
 		   cout << "Waiting for client connections..." << endl;
 		   // Accept a new client connection
 		   int playerOne = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
@@ -45,28 +45,41 @@ void Server::start() {
 		    if (n == -1) {
 		    		cout << "Error writing to socket" << endl;
 		    		return;
-		    	}
+		    	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		    //connect another client
 		   int playerTwo = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
 		   cout << "Client 2 connected" << endl;
 		   if (playerTwo == -1)
 			   throw "Error on accept";
 		   int second = 2;
+		   //send him he is the second.
 		   n = write(playerTwo, &second, sizeof(second));
-		   		    if (n == -1) {
-		   		    	cout << "Error writing to socket" << endl;
-		   		    	return;
-		   		    	}
+		   if (n == -1) {
+		   	cout << "Error writing to socket" << endl;
+		   	return;
+		   	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		   //send to the first player that he can sarts the game.
 		  int m = write(playerOne, &second, sizeof(second));
 		   if (m == -1) {
 		 		   	cout << "Error writing to socket" << endl;
 			    	return;
-		 		  }
+		 	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		   //start the game.
 		   handleClient(playerOne, playerTwo);
 		   // Close communication with the client
 		   close(playerOne);
 		   close(playerTwo);
 
-	   }
+	  }
 }
 
 void Server::stop() {
@@ -82,34 +95,25 @@ void Server::handleClient(int playerX, int playerO) {
 	 char ma[10];
 	 char* massage = ma;
 	 while (true) {
-		  memset(ma,'\0',10);
-	 // Read new point from player.
+		 memset(ma,0,10);//empty the values.
+	 // Read massage from player.
 		 int n = read(player[turnCounter%2], massage, sizeof(massage));
-			cout << player[0] << " and " << player[1] << endl;
 		 if (n == -1) {
 			 cout << "Error reading point" << endl;
 			 return;
-		 }
-		cout << "massage recived: " << endl;
-		//string a(massage);
-		cout << massage<< endl;
-		//cout << "massage: " << a<< endl;
-
-		 if (n == 0) {
+		 } else if (n == 0) {
 			 cout << "Client disconnected" << endl;
 			 return;
 		 }
-		 // Write the point back to the other player
+		 // Write the massage back to the other player
 		 n = write(player[(turnCounter + 1) % 2], massage, sizeof(massage));
 		 if (n == -1) {
 			 cout << "Error writing to socket" << endl;
 			 return;
-		 }
-		 if (n == 0) {
+		 } else if (n == 0) {
 					 cout << "Client disconnected" << endl;
 					 return;
-				 }
-
+		}
 		 turnCounter++;
 		 //if the message is end-return to close connections with players.
 		if (strcmp(massage,"End") == 0) {

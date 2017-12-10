@@ -1,5 +1,8 @@
 /*
  * HostPlayer.cpp
+ *
+ *  Created on: 2 בדצמ׳ 2017
+ *      Author: yanap
  */
 
 #include "../include/HostPlayer.h"
@@ -90,6 +93,7 @@ void HostPlayer::MakeAMove(Board* b, LogicInterface* logic) {
 	this->firstMove = false;
 	//instalize buffer. read from server array.
 	char buffer[10]= {0};
+	cout << "Waiting for other player's move..." << endl;
 	int n = read(clientSocket, buffer, sizeof(buffer));
 	if (n == -1) {
 		throw "Error reading result from socket";
@@ -103,7 +107,7 @@ void HostPlayer::MakeAMove(Board* b, LogicInterface* logic) {
 		//if NoMove means other player have no moves
 	} else if (answer.compare("NoMove") == 0) {
 		b->SetLastMove("NoMove");
-		cout << "Enemy have no moves-turn goes back to you." << endl;
+		cout << "Enemy has no moves-turn goes back to you." << endl;
 		return;//to get new moves
 
 		//we assume that any other move is int, int
@@ -118,6 +122,9 @@ void HostPlayer::ReciveMove(Board* b, LogicInterface* logic, Slot move) {
 	  b->SetCellStatus(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
 	  logic->FlipSlots(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
 	  //print updated board for player.
+	  cout <<  this->symbol <<" played: ";
+	  move.Print();
+	  cout << endl;
 		b->Print();
 }
 
