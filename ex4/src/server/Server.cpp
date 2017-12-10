@@ -105,6 +105,11 @@ void Server::handleClient(int playerX, int playerO) {
 			 cout << "Error writing to socket" << endl;
 			 return;
 		 }
+		 if (n == 0) {
+					 cout << "Client disconnected" << endl;
+					 return;
+				 }
+
 		 turnCounter++;
 		 //if the message is end-return to close connections with players.
 		if (strcmp(massage,"End") == 0) {

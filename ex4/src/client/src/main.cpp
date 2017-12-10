@@ -28,6 +28,7 @@ int main() {
     PlayerInterface *p2 = NULL;
     short userChoice;
     bool correct = false;
+    bool server = false;
     cout << "Let The Game Begin!" << endl;
     cout << "May the odds be ever in your favor\n" << endl;
     do {//ask user against who he wants to play.
@@ -78,18 +79,20 @@ int main() {
             try {
                 p3->connectToServer();
                 p3->getSymbolFromServer();
+                p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
+               // p2 = new TerminalPlayer(p3->getEnumSymbol());
             } catch (const char *msg) {
                 cout << "Failed to connect to server. Reason:" << msg << endl;
             }
             p1 = p3;
             correct = true;
+            server = true;
         } else {//if input is taken or against the
             cout << "no such option. choose again" << endl;
         }
     } while (!correct);
     cin.ignore();
-    cout << "you are: 233" << p1->getEnumSymbol() << endl;
-    GameFlow gameFlow(&rl, b, p1, p2, false);
+    GameFlow gameFlow(&rl, b, p1, p2, server);
     gameFlow.Run();
 
     //delete members-free memory.

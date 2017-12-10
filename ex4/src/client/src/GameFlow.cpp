@@ -50,7 +50,7 @@ void GameFlow::Run() {
         // the turn passes over
     	  cout<< player[tunrnConter % 2]->GetSymbol()
               << " I'ts your move. but unfortunately you don't have anything to do," <<
-             "therefore it's only fair that the play passes back to " <<
+             "therefore it's only fair that the play passes back to other player " <<
 			 	 	 	 player[(tunrnConter + 1) % 2]->GetSymbol() << endl;
     	  this->board->SetLastMove("NoMove");
     	  //if(clentServer) this->player[tunrnConter % 2]->MakeAMove(NULL, NULL);
