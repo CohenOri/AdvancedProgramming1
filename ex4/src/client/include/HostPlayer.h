@@ -1,8 +1,5 @@
 /*
  * HostPlayer.h
- *
- *  Created on: 2 בדצמ׳ 2017
- *      Author: yanap
  */
 
 #ifndef SRC_CLIENT_INCLUDE_HOSTPLAYER_H_

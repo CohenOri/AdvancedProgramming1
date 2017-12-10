@@ -1,8 +1,5 @@
 /*
  * HostPlayer.cpp
- *
- *  Created on: 2 בדצמ׳ 2017
- *      Author: yanap
  */
 
 #include "../include/HostPlayer.h"

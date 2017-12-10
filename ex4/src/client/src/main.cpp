@@ -5,6 +5,7 @@
 #include <iostream>
 #include <limits>
 #include <fstream>
+#include <algorithm>
 #include <string>
 #include "../include/Board.h"
 #include <sstream>
@@ -48,42 +49,33 @@ int main() {
             p1 = new TerminalPlayer(EnumDeclration::X);
             p2 = new AiPlayer(EnumDeclration::O);
         } else if (userChoice == 3) {//play against remote player.
-            /**
-             * Read IP and port of remote Host from file
-             */
-
-            /**FILE *hostInfo = fopen("hostInfo.txt", "rb");
-            char buffer[BUFFSIZE];
-            size_t bytes;
-            if (hostInfo == NULL) {
-                // Failed opening file...
-                return 0;
-            }
-            // as long as there bytes to copy copy them
-            while ((bytes = fread(buffer, 1, BUFFSIZE, hostInfo)) != 0) {
-            }
-            fclose(hostInfo);
-string ipNumber;
-            str
-            string line;
+            // Read IP and port of remote Host from file
+            string ip, line;
+            int port;
             ifstream hostInfo("hostInfo.txt");
-            if (hostInfo.is_open())
-            {
-                while ( getline (hostInfo,line) )
-                {
-                    //REMOVE THIS LINE cout << line << '\n';
-                    // break the first line into IP
-                    // break the second line to Port No.
-                    string delimiter = ": ";
-                    string token = line.substr(1, line.find(delimiter));
-                }
+            if (hostInfo.is_open()) {
+                // break the first line into IP
+                // break the second line to Port No.
+                string delimiter = ":";
+                getline(hostInfo, line);
+                string token = line.substr(line.find(delimiter)+1, line.length());
+                /* remove spaces from the ip/port
+                std::remove(token.begin(), token.end()+1, ' '); */
+                std::stringstream stream(token);
+                stream >> token;
+                ip = token;
+                getline(hostInfo, line);
+                token = line.substr(line.find(delimiter)+1, line.length());
+                std::istringstream(token) >> port; //convert to int
                 hostInfo.close();
+            } else {
+                cout << "Unable to open file" << endl;
             }
-            else cout << "Unable to open file";
-
-*/
-            //HostPlayer p3("127.0.0.1", 8000);
-            HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
+            //HostPlayer p3("127.0.0.1", 8000); DEFAULT
+            //cout << "ip read from file: " << ip << endl;
+            //cout << "port read from file: " << port << endl;
+            HostPlayer *p3 = new HostPlayer(ip.c_str(), port);
+            //HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
             try {
                 p3->connectToServer();
                 p3->getSymbolFromServer();
@@ -105,7 +97,9 @@ string ipNumber;
 
     //delete members-free memory.
     delete b;
-    delete p2;
+    if (userChoice == 2 || userChoice == 1) {
+        delete p2;
+    }
     delete p1;
     return 0;
 }
