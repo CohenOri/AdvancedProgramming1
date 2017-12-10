@@ -52,11 +52,10 @@ void GameFlow::Run() {
               << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to " <<
 			 	 	 	 player[(tunrnConter + 1) % 2]->GetSymbol() << endl;
+    	  //update board to noMove
     	  this->board->SetLastMove("NoMove");
-    	  //if(clentServer) this->player[tunrnConter % 2]->MakeAMove(NULL, NULL);
       }
    tunrnConter++;
-   //this->board->Print();//print the board.
   }
   //print end game screen.
   EndGame();
