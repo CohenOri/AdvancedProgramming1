@@ -58,8 +58,10 @@ int main() {
                 string delimiter = ":";
                 getline(hostInfo, line);
                 string token = line.substr(line.find(delimiter)+1, line.length());
-                // remove spaces from the ip/port
-                std::remove(token.begin(), token.end(), ' ');
+                /* remove spaces from the ip/port
+                std::remove(token.begin(), token.end()+1, ' '); */
+                std::stringstream stream(token);
+                stream >> token;
                 ip = token;
                 getline(hostInfo, line);
                 token = line.substr(line.find(delimiter)+1, line.length());
@@ -69,9 +71,10 @@ int main() {
                 cout << "Unable to open file" << endl;
             }
             //HostPlayer p3("127.0.0.1", 8000); DEFAULT
-            cout << "ip read from file: " << ip << endl;
-            cout << "port read from file: " << port << endl;
+            //cout << "ip read from file: " << ip << endl;
+            //cout << "port read from file: " << port << endl;
             HostPlayer *p3 = new HostPlayer(ip.c_str(), port);
+            //HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
             try {
                 p3->connectToServer();
                 p3->getSymbolFromServer();
