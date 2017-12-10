@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o"
-  "CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o"
   "AdvancedProgramming1.pdb"
   "AdvancedProgramming1"
 )

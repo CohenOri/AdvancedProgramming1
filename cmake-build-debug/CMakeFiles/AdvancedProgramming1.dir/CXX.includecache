@@ -161,6 +161,12 @@ iostream
 -
 limits
 -
+fstream
+-
+algorithm
+-
+string
+-
 ../include/Board.h
 /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/Board.h
 sstream
@@ -177,22 +183,4 @@ sstream
 /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/PlayerInterface.h
 ../include/HostPlayer.h
 /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/HostPlayer.h
-
-/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp
-Server.h
-/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.h
-
-/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.h
-sys/socket.h
--
-netinet/in.h
--
-unistd.h
--
-string.h
--
-iostream
--
-stdio.h
--
 

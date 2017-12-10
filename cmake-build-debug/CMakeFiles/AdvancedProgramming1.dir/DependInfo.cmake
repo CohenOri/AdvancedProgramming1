@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/SlotWithRank.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/TerminalPlayer.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/main.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o"
-  "/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

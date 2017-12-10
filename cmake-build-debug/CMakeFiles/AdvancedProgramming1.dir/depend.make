@@ -68,6 +68,3 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o: ../ex4/src/cl
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o: ../ex4/src/client/include/TerminalPlayer.h
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o: ../ex4/src/client/src/main.cpp
 
-CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o: ../ex4/src/server/Server.cpp
-CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o: ../ex4/src/server/Server.h
-

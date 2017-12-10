@@ -366,33 +366,6 @@ ex4/src/client/src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.s
 .PHONY : ex4/src/client/src/main.cpp.s
 
-ex4/src/server/Server.o: ex4/src/server/Server.cpp.o
-
-.PHONY : ex4/src/server/Server.o
-
-# target to build an object file
-ex4/src/server/Server.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o
-.PHONY : ex4/src/server/Server.cpp.o
-
-ex4/src/server/Server.i: ex4/src/server/Server.cpp.i
-
-.PHONY : ex4/src/server/Server.i
-
-# target to preprocess a source file
-ex4/src/server/Server.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.i
-.PHONY : ex4/src/server/Server.cpp.i
-
-ex4/src/server/Server.s: ex4/src/server/Server.cpp.s
-
-.PHONY : ex4/src/server/Server.s
-
-# target to generate assembly for a file
-ex4/src/server/Server.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.s
-.PHONY : ex4/src/server/Server.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -429,9 +402,6 @@ help:
 	@echo "... ex4/src/client/src/main.o"
 	@echo "... ex4/src/client/src/main.i"
 	@echo "... ex4/src/client/src/main.s"
-	@echo "... ex4/src/server/Server.o"
-	@echo "... ex4/src/server/Server.i"
-	@echo "... ex4/src/server/Server.s"
 .PHONY : help
 
 
