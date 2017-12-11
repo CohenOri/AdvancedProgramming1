@@ -1,5 +1,8 @@
-/*
- * main.cpp
+/**
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
 #include "Server.h"
@@ -8,7 +11,6 @@
 #include <sstream>
 #include <fstream>
 #include <limits>
-
 
 using namespace std;
 int main() {
@@ -23,8 +25,6 @@ int main() {
            string delimiter = ":";
            getline(hostInfo, line);
            string token = line.substr(line.find(delimiter)+1, line.length());
-           /* remove spaces from the ip/port
-           std::remove(token.begin(), token.end()+1, ' '); */
            std::stringstream stream(token);
            stream >> token;
            ip = token;

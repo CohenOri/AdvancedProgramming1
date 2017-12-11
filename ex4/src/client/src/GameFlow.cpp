@@ -1,5 +1,5 @@
 /**
- * # Ori Cohen
+# Ori Cohen
 # ID: 207375783
 # Yana Patyuk
 # ID:317106755
@@ -22,16 +22,16 @@ GameFlow::GameFlow(LogicInterface *logic, Board *board, PlayerInterface *player1
 }
 void GameFlow::Run() {
   Board *b = this->board;
-  int tunrnConter = 0;
+  int turnCounter = 0;
   // run the game while it is still not over
 	b->Print();
   while (!GameOver()) {
       // if player has possible slots to place.
-   if (this->logic->SlotsToPlace(this->player[tunrnConter % 2]->getEnumSymbol()).size() != 0) {
+   if (this->logic->SlotsToPlace(this->player[turnCounter % 2]->getEnumSymbol()).size() != 0) {
        // player makes a move.
-	   if(clentServer && this->player[tunrnConter % 2] == NULL) continue;
-     this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
-		if(!(clentServer && tunrnConter % 2 == 0)) {
+	   if(clentServer && this->player[turnCounter % 2] == NULL) continue;
+     this->player[turnCounter % 2]->MakeAMove(this->board, this->logic);
+		if(!(clentServer && turnCounter % 2 == 0)) {
 			cout << endl;
 			cout << "current board:" << endl;
 			b->Print();
@@ -39,21 +39,21 @@ void GameFlow::Run() {
    } else {
 	   //in server-client mode: we have to send lastmove and recive nomove ene if
 	   //we know other player cant move.
-	   if(clentServer && (tunrnConter % 2 == 0)) {
-		   this->player[tunrnConter % 2]->MakeAMove(this->board, this->logic);
-		   tunrnConter++;
+	   if(clentServer && (turnCounter % 2 == 0)) {
+		   this->player[turnCounter % 2]->MakeAMove(this->board, this->logic);
+		   turnCounter++;
 		   continue;
 	   }
         // it doesn't have possible slots to place tag at
         // the turn passes over
-    	  cout<< player[tunrnConter % 2]->GetSymbol()
+    	  cout<< player[turnCounter % 2]->GetSymbol()
               << " I'ts your move. but unfortunately you don't have anything to do," <<
              "therefore it's only fair that the play passes back to other player " <<
-			 	 	 	 player[(tunrnConter + 1) % 2]->GetSymbol() << endl;
+			 	 	 	 player[(turnCounter + 1) % 2]->GetSymbol() << endl;
     	  //update board to noMove
     	  this->board->SetLastMove("NoMove");
       }
-   tunrnConter++;
+   turnCounter++;
   }
   //print end game screen.
   EndGame();
@@ -75,9 +75,9 @@ bool GameFlow::GameOver() {
 void GameFlow::EndGame() {
 	  Board *b = this->board;
 
-    int num_of_slots_in_board = b->NumOfRows() * b->NumOfCols();
-    int num_of_used_slots = b->GetXSlots().size() + b->GetOSlots().size();
-    if (num_of_used_slots >= num_of_slots_in_board) {
+    int numOfSlotsInBoard = b->NumOfRows() * b->NumOfCols();
+    int numOfUsedSlots = b->GetXSlots().size() + b->GetOSlots().size();
+    if (numOfUsedSlots >= numOfSlotsInBoard) {
       cout << "Game is over, board is completely full" << endl;
     } else {
       cout << "Game is over, both sides can't make any more moves" << endl;

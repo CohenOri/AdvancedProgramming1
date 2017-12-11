@@ -1,3 +1,9 @@
+/**
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
+ */
 
 #define BOARD_ROWS 4
 #define BOARD_COLS 4
@@ -58,29 +64,22 @@ int main() {
                 // break the second line to Port No.
                 string delimiter = ":";
                 getline(hostInfo, line);
-                string token = line.substr(line.find(delimiter)+1, line.length());
-                /* remove spaces from the ip/port
-                std::remove(token.begin(), token.end()+1, ' '); */
+                string token = line.substr(line.find(delimiter) + 1, line.length());
                 std::stringstream stream(token);
                 stream >> token;
                 ip = token;
                 getline(hostInfo, line);
-                token = line.substr(line.find(delimiter)+1, line.length());
+                token = line.substr(line.find(delimiter) + 1, line.length());
                 std::istringstream(token) >> port; //convert to int
                 hostInfo.close();
             } else {
                 cout << "Unable to open file" << endl;
             }
-            //HostPlayer p3("127.0.0.1", 8000); DEFAULT
-            //cout << "ip read from file: " << ip << endl;
-            //cout << "port read from file: " << port << endl;
             HostPlayer *p3 = new HostPlayer(ip.c_str(), port);
-            //HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
             try {
                 p3->connectToServer();
                 p3->getSymbolFromServer();
                 p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
-               // p2 = new TerminalPlayer(p3->getEnumSymbol());
             } catch (const char *msg) {
                 cout << "Failed to connect to server. Reason:" << msg << endl;
             }

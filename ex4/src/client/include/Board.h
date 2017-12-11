@@ -17,10 +17,10 @@ using namespace std;
 
 class Board {
 public:
-    // default board size is set to 8
     /**
      * Constructor for board, which initialize the board to E (Empty)
      * cells.
+     * Note that default board size is set to 8
      */
     Board(unsigned long numOfRows = 8, unsigned long numOfCols = 8);
 
@@ -73,6 +73,11 @@ public:
      */
     vector<Slot> GetSlotsOfPlayer(EnumDeclration::CellStatus player) const;
 
+    /**
+     * Update the slots of X/O (given player) vector to new one
+     * @param player X/O
+     * @param slots the new vector to set
+     */
     void SetSlotsOfPlayer(EnumDeclration::CellStatus player, vector<Slot> slots);
 
     void SetOSlots(vector<Slot> oSlots);
@@ -91,7 +96,7 @@ public:
      */
     Board *CopyBoard();
     /**
-     * @param lastMove as String (you may convert Slot to string using GetString method
+     * @param lastMove as String (you may convert Slot to string using GetString method)
      */
     void SetLastMove(string lastMove);
     /**
@@ -105,7 +110,7 @@ public:
     bool LegalSlotInBoard(Slot slot);
 
     /**
-     * operator compere between boards.
+     * operator compare between boards.
      */
     bool operator==(const Board &b) const;
 

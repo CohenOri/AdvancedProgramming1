@@ -39,7 +39,6 @@ Slot::Slot(int row, int col, EnumDeclration::CellStatus status) {
 Slot::~Slot(){
 }
 
-
 int Slot::GetRow() const {
   return row;
 }
@@ -97,18 +96,8 @@ Slot* Slot::CopySlot() {
 }
 
 string Slot::GetString() {
-/*	string slotStr;
-	stringstream row;
-	stringstream col;
-	row << this->row;
-	slotStr += row.str();
-	slotStr += ",";
-	col << this->col;
-	slotStr += col.str();
-	return slotStr;*/
 	return this->s;
 }
-
 
 bool Slot::operator ==(const Slot &s) const {
  return  ((this->row == s.row )&& (this->col == s.col));

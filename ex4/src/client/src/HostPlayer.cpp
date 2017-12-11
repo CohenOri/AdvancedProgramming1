@@ -1,8 +1,8 @@
-/*
- * HostPlayer.cpp
- *
- *  Created on: 2 בדצמ׳ 2017
- *      Author: yanap
+/**
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
 #include "../include/HostPlayer.h"
@@ -112,12 +112,12 @@ void HostPlayer::MakeAMove(Board* b, LogicInterface* logic) {
 
 		//we assume that any other move is int, int
 	} else {
-		ReciveMove(b, logic,Slot(answer, this->player));
+		ReceiveMove(b, logic, Slot(answer, this->player));
 
 	}
 }
 
-void HostPlayer::ReciveMove(Board* b, LogicInterface* logic, Slot move) {
+void HostPlayer::ReceiveMove(Board *b, LogicInterface *logic, Slot move) {
 	//place other player move on board and print new board.
 	  b->SetCellStatus(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
 	  logic->FlipSlots(move.GetRow(), move.GetCol(),  EnumDeclration::OtherPlayer((this->player)));
@@ -129,7 +129,7 @@ void HostPlayer::ReciveMove(Board* b, LogicInterface* logic, Slot move) {
 }
 
 void HostPlayer::SendMove(string move) {
-	//instelize the buffer array and copy the string.
+	//initialize the buffer array and copy the string.
 	char buf[10] = {0};
 	size_t length = move.copy(buf,move.size(),0);
 	buf[length]='\0';

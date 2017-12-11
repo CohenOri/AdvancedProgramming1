@@ -4,6 +4,8 @@ project(AdvancedProgramming1)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
+        ex4/src/client/gtest_src/gtest-all.cc
+        ex4/src/client/gtest_src/gtest.h
         ex4/src/client/include/AiPlayer.h
         ex4/src/client/include/Board.h
         ex4/src/client/include/EnumDeclration.h
@@ -24,7 +26,14 @@ set(SOURCE_FILES
         ex4/src/client/src/Slot.cpp
         ex4/src/client/src/SlotWithRank.cpp
         ex4/src/client/src/TerminalPlayer.cpp
+        ex4/src/client/test/AdvanceTestGame.h
+        ex4/src/client/test/test-all.cpp
+        ex4/src/client/test/TestAiPlayer.h
+        ex4/src/client/test/TestClassicLogic.h
+        ex4/src/client/test/TestManager.cpp
         ex4/src/client/hostInfo.txt
-        ex4/src/client/makefile)
+        ex4/src/lib/googletest-master.zip
+        ex4/src/server/Server.cpp
+        ex4/src/server/Server.h)
 
 add_executable(AdvancedProgramming1 ${SOURCE_FILES})

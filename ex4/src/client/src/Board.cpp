@@ -18,7 +18,7 @@ Board::Board(unsigned long numOfRows, unsigned long numOfCols) {
 }
 
 Board::~Board() {
-    // if in future changing the members to dynimacly allocated memberes,
+    // if in future changing the members to dynamically allocated members,
     // I should run on each object in the vector, delete him, empty the vector and only then delete it.
     //delete this->board;
     //delete this->xSlots;
@@ -59,9 +59,7 @@ void Board::Print() const {
             cout << "----";
         }
         cout << endl;
-
     }
-
 }
 
 

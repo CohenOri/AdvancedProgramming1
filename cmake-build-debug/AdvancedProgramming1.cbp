@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/gtest_src/gtest-all.cc">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/gtest_src/gtest.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/hostInfo.txt">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -120,9 +126,6 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/include/TerminalPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/makefile">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/AiPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -148,6 +151,30 @@
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/main.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/AdvanceTestGame.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestAiPlayer.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestClassicLogic.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestManager.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/test-all.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/lib/googletest-master.zip">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/CMakeLists.txt">

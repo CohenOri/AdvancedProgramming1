@@ -57,9 +57,33 @@ include CMakeFiles/AdvancedProgramming1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AdvancedProgramming1.dir/flags.make
 
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o: ../ex4/src/client/gtest_src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/gtest_src/gtest-all.cc
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/gtest_src/gtest-all.cc > CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.i
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/gtest_src/gtest-all.cc -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.s
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.provides: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o
+
+
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o: ../ex4/src/client/src/AiPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/AiPlayer.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o.provides.b
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o: ../ex4/src/client/src/Board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/Board.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o.provides.buil
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o: ../ex4/src/client/src/GameFlow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/GameFlow.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o.provides.b
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o: ../ex4/src/client/src/HostPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/HostPlayer.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/HostPlayer.cpp.o.provides
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o: ../ex4/src/client/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/main.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.o.provides.build
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o: ../ex4/src/client/src/RegularLogic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/RegularLogic.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o.provid
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o: ../ex4/src/client/src/Slot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/Slot.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o.provides.build
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o: ../ex4/src/client/src/SlotWithRank.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/SlotWithRank.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o.provid
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o: ../ex4/src/client/src/TerminalPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/src/TerminalPlayer.cpp
 
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.i: cmake_force
@@ -273,8 +297,81 @@ CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o.prov
 CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o
 
 
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o: ../ex4/src/client/test/test-all.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/test-all.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/test-all.cpp > CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/test-all.cpp -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o: ../ex4/src/client/test/TestManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestManager.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestManager.cpp > CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/client/test/TestManager.cpp -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o
+
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o: CMakeFiles/AdvancedProgramming1.dir/flags.make
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o: ../ex4/src/server/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o -c /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp > CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.i
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori/CLionProjects/AdvancedProgramming1/ex4/src/server/Server.cpp -o CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.s
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.requires
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.provides: CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.provides.build
+.PHONY : CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.provides
+
+CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.provides.build: CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o
+
+
 # Object files for target AdvancedProgramming1
 AdvancedProgramming1_OBJECTS = \
+"CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o" \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o" \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o" \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o" \
@@ -283,11 +380,15 @@ AdvancedProgramming1_OBJECTS = \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/RegularLogic.cpp.o" \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o" \
 "CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o" \
-"CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o"
+"CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o" \
+"CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o"
 
 # External object files for target AdvancedProgramming1
 AdvancedProgramming1_EXTERNAL_OBJECTS =
 
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o
@@ -297,9 +398,12 @@ AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Reg
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o
+AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/build.make
 AdvancedProgramming1: CMakeFiles/AdvancedProgramming1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable AdvancedProgramming1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable AdvancedProgramming1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AdvancedProgramming1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -307,6 +411,7 @@ CMakeFiles/AdvancedProgramming1.dir/build: AdvancedProgramming1
 
 .PHONY : CMakeFiles/AdvancedProgramming1.dir/build
 
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o.requires
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/AiPlayer.cpp.o.requires
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Board.cpp.o.requires
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/GameFlow.cpp.o.requires
@@ -316,6 +421,9 @@ CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.di
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/Slot.cpp.o.requires
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/SlotWithRank.cpp.o.requires
 CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/TerminalPlayer.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o.requires
+CMakeFiles/AdvancedProgramming1.dir/requires: CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o.requires
 
 .PHONY : CMakeFiles/AdvancedProgramming1.dir/requires
 

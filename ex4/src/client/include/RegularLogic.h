@@ -47,7 +47,7 @@ class RegularLogic : public LogicInterface {
     AGAIN,
   };
   /**
-   * recevies an operation to do to a row/col
+   * receives an operation to do to a row/col
    */
   enum Operation {
     NOTHING,

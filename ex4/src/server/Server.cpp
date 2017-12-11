@@ -1,12 +1,11 @@
-/*
- * Server.cpp
- *
- *  Created on: 2 בדצמ׳ 2017
- *      Author: yanap
+/**
+# Ori Cohen
+# ID: 207375783
+# Yana Patyuk
+# ID:317106755
  */
 
 #include "Server.h"
-
 
 Server::Server(int port): port(port), serverSocket(0) {
 	cout << "Server" << endl;
@@ -78,7 +77,6 @@ void Server::start() {
 		   // Close communication with the client
 		   close(playerOne);
 		   close(playerTwo);
-
 	  }
 }
 

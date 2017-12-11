@@ -123,6 +123,33 @@ AdvancedProgramming1/fast:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/build
 .PHONY : AdvancedProgramming1/fast
 
+ex4/src/client/gtest_src/gtest-all.o: ex4/src/client/gtest_src/gtest-all.cc.o
+
+.PHONY : ex4/src/client/gtest_src/gtest-all.o
+
+# target to build an object file
+ex4/src/client/gtest_src/gtest-all.cc.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.o
+.PHONY : ex4/src/client/gtest_src/gtest-all.cc.o
+
+ex4/src/client/gtest_src/gtest-all.i: ex4/src/client/gtest_src/gtest-all.cc.i
+
+.PHONY : ex4/src/client/gtest_src/gtest-all.i
+
+# target to preprocess a source file
+ex4/src/client/gtest_src/gtest-all.cc.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.i
+.PHONY : ex4/src/client/gtest_src/gtest-all.cc.i
+
+ex4/src/client/gtest_src/gtest-all.s: ex4/src/client/gtest_src/gtest-all.cc.s
+
+.PHONY : ex4/src/client/gtest_src/gtest-all.s
+
+# target to generate assembly for a file
+ex4/src/client/gtest_src/gtest-all.cc.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/gtest_src/gtest-all.cc.s
+.PHONY : ex4/src/client/gtest_src/gtest-all.cc.s
+
 ex4/src/client/src/AiPlayer.o: ex4/src/client/src/AiPlayer.cpp.o
 
 .PHONY : ex4/src/client/src/AiPlayer.o
@@ -366,6 +393,87 @@ ex4/src/client/src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/src/main.cpp.s
 .PHONY : ex4/src/client/src/main.cpp.s
 
+ex4/src/client/test/TestManager.o: ex4/src/client/test/TestManager.cpp.o
+
+.PHONY : ex4/src/client/test/TestManager.o
+
+# target to build an object file
+ex4/src/client/test/TestManager.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.o
+.PHONY : ex4/src/client/test/TestManager.cpp.o
+
+ex4/src/client/test/TestManager.i: ex4/src/client/test/TestManager.cpp.i
+
+.PHONY : ex4/src/client/test/TestManager.i
+
+# target to preprocess a source file
+ex4/src/client/test/TestManager.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.i
+.PHONY : ex4/src/client/test/TestManager.cpp.i
+
+ex4/src/client/test/TestManager.s: ex4/src/client/test/TestManager.cpp.s
+
+.PHONY : ex4/src/client/test/TestManager.s
+
+# target to generate assembly for a file
+ex4/src/client/test/TestManager.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/TestManager.cpp.s
+.PHONY : ex4/src/client/test/TestManager.cpp.s
+
+ex4/src/client/test/test-all.o: ex4/src/client/test/test-all.cpp.o
+
+.PHONY : ex4/src/client/test/test-all.o
+
+# target to build an object file
+ex4/src/client/test/test-all.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.o
+.PHONY : ex4/src/client/test/test-all.cpp.o
+
+ex4/src/client/test/test-all.i: ex4/src/client/test/test-all.cpp.i
+
+.PHONY : ex4/src/client/test/test-all.i
+
+# target to preprocess a source file
+ex4/src/client/test/test-all.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.i
+.PHONY : ex4/src/client/test/test-all.cpp.i
+
+ex4/src/client/test/test-all.s: ex4/src/client/test/test-all.cpp.s
+
+.PHONY : ex4/src/client/test/test-all.s
+
+# target to generate assembly for a file
+ex4/src/client/test/test-all.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/client/test/test-all.cpp.s
+.PHONY : ex4/src/client/test/test-all.cpp.s
+
+ex4/src/server/Server.o: ex4/src/server/Server.cpp.o
+
+.PHONY : ex4/src/server/Server.o
+
+# target to build an object file
+ex4/src/server/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.o
+.PHONY : ex4/src/server/Server.cpp.o
+
+ex4/src/server/Server.i: ex4/src/server/Server.cpp.i
+
+.PHONY : ex4/src/server/Server.i
+
+# target to preprocess a source file
+ex4/src/server/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.i
+.PHONY : ex4/src/server/Server.cpp.i
+
+ex4/src/server/Server.s: ex4/src/server/Server.cpp.s
+
+.PHONY : ex4/src/server/Server.s
+
+# target to generate assembly for a file
+ex4/src/server/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex4/src/server/Server.cpp.s
+.PHONY : ex4/src/server/Server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -375,6 +483,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdvancedProgramming1"
+	@echo "... ex4/src/client/gtest_src/gtest-all.o"
+	@echo "... ex4/src/client/gtest_src/gtest-all.i"
+	@echo "... ex4/src/client/gtest_src/gtest-all.s"
 	@echo "... ex4/src/client/src/AiPlayer.o"
 	@echo "... ex4/src/client/src/AiPlayer.i"
 	@echo "... ex4/src/client/src/AiPlayer.s"
@@ -402,6 +513,15 @@ help:
 	@echo "... ex4/src/client/src/main.o"
 	@echo "... ex4/src/client/src/main.i"
 	@echo "... ex4/src/client/src/main.s"
+	@echo "... ex4/src/client/test/TestManager.o"
+	@echo "... ex4/src/client/test/TestManager.i"
+	@echo "... ex4/src/client/test/TestManager.s"
+	@echo "... ex4/src/client/test/test-all.o"
+	@echo "... ex4/src/client/test/test-all.i"
+	@echo "... ex4/src/client/test/test-all.s"
+	@echo "... ex4/src/server/Server.o"
+	@echo "... ex4/src/server/Server.i"
+	@echo "... ex4/src/server/Server.s"
 .PHONY : help
 
 

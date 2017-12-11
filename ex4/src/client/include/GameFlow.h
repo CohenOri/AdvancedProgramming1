@@ -1,5 +1,5 @@
 /**
- * # Ori Cohen
+# Ori Cohen
 # ID: 207375783
 # Yana Patyuk
 # ID:317106755
@@ -19,6 +19,7 @@ class GameFlow {
 	 * @param board - game board
 	 * @param player1
 	 * @param player2
+	 * @param server if its a game using server or not
 	 */
   GameFlow(LogicInterface* logic, Board* board, PlayerInterface* player1, PlayerInterface* player2, bool server);
   /**
@@ -28,7 +29,7 @@ class GameFlow {
  private:
   LogicInterface* logic;
   Board* board;
-  PlayerInterface* player[2];
+  PlayerInterface* player[2]; // holds both players
   EnumDeclration::CellStatus currentTurn;
   bool clentServer;
   /**
