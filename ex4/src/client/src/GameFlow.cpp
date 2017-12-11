@@ -3,6 +3,7 @@
 # ID: 207375783
 # Yana Patyuk
 # ID:317106755
+
  */
 
 #include "../include/GameFlow.h"
@@ -29,7 +30,7 @@ void GameFlow::Run() {
       // if player has possible slots to place.
    if (this->logic->SlotsToPlace(this->player[turnCounter % 2]->getEnumSymbol()).size() != 0) {
        // player makes a move.
-	   if(clentServer && this->player[turnCounter % 2] == NULL) continue;
+	   //if(clentServer && this->player[turnCounter % 2] == NULL) continue;
      this->player[turnCounter % 2]->MakeAMove(this->board, this->logic);
 		if(!(clentServer && turnCounter % 2 == 0)) {
 			cout << endl;
@@ -65,8 +66,10 @@ bool GameFlow::GameOver() {
     return false;
   }//if its the end of board and we made last move- send to server end.
   if(this->board->GetLastMove().compare("End") != 0) {
+	  //send to other player your last move.
 	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
 	  this->board->SetLastMove("End");
+  } else {//send to other player end.
 	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
   }
   return true;

@@ -104,6 +104,7 @@ void HostPlayer::MakeAMove(Board* b, LogicInterface* logic) {
 	if (answer.compare("End") == 0) {
 		//update boards last move.
 		b->SetLastMove("End");
+		return;
 		//if NoMove means other player have no moves
 	} else if (answer.compare("NoMove") == 0) {
 		b->SetLastMove("NoMove");
@@ -126,6 +127,11 @@ void HostPlayer::ReceiveMove(Board *b, LogicInterface *logic, Slot move) {
 	  move.Print();
 	  cout << endl;
 		b->Print();
+		//check if its the last move-if it is-update the board.
+		if((logic->SlotsToPlace(EnumDeclration::X).size() == 0
+      && logic->SlotsToPlace(EnumDeclration::O).size() == 0)) {
+			b->SetLastMove("End");
+		}
 }
 
 void HostPlayer::SendMove(string move) {
