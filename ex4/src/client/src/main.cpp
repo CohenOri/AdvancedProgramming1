@@ -5,8 +5,8 @@
 # ID:317106755
  */
 
-#define BOARD_ROWS 4
-#define BOARD_COLS 4
+#define BOARD_ROWS 8
+#define BOARD_COLS 8
 
 #include <iostream>
 #include <limits>
@@ -96,9 +96,7 @@ int main() {
 
     //delete members-free memory.
     delete b;
-    if (userChoice == 2 || userChoice == 1) {
-        delete p2;
-    }
+    delete p2;
     delete p1;
     return 0;
 }
