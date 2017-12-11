@@ -30,7 +30,6 @@ void GameFlow::Run() {
       // if player has possible slots to place.
    if (this->logic->SlotsToPlace(this->player[turnCounter % 2]->getEnumSymbol()).size() != 0) {
        // player makes a move.
-	   //if(clentServer && this->player[turnCounter % 2] == NULL) continue;
      this->player[turnCounter % 2]->MakeAMove(this->board, this->logic);
 		if(!(clentServer && turnCounter % 2 == 0)) {
 			cout << endl;
