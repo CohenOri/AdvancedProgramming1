@@ -30,7 +30,29 @@ public:
 	  * stop the connection.
 	  */
 	 void stop();
+	 /**
+	  * accepts new clients.
+	  */
+	 void ConnectNewClients();
+	 /**
+	  * close connection between client and server.
+	  * @param players socket number
+	  */
+	 void CloseClientSocket(int player);
+	 /**
+	  * @param players socket number
+	  * @param massage string to send.
+	  * send to client
+	  */
+	 void SendMessageToClient(int player, char* massage);
+	 /**
+	  * @param players socket number.
+	  * @return string massage
+	  * read massage from player.
+	  */
+	 char* GetMessageFromClient(int player);
 	virtual ~Server();
+
 private:
  int port;
  int serverSocket;
