@@ -12,15 +12,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75eaf499-18fe-4358-b393-b0214f68ca82" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ex4/src/client/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ex4/src/client/hostInfo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ex4/src/server/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ex4/src/server/hostInfo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/info.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ex5/server/src/GameControl.cpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ex5/server/include/GameControll.cpp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ex5/server/include/GameControll.h" afterPath="$PROJECT_DIR$/ex5/server/include/GameControl.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex4/src/client/makefile" afterPath="$PROJECT_DIR$/ex4/src/client/makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex4/src/client/src/main.cpp" afterPath="$PROJECT_DIR$/ex4/src/client/src/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex4/src/server/makefile" afterPath="$PROJECT_DIR$/ex4/src/server/makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/AdvancedProgramming1.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/AdvancedProgramming1.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/cmake_clean.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/progress.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,12 +37,65 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="GameControl.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ex5/server/src/GameControl.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+              <folding>
+                <element signature="e#96#119#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameControl.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex5/server/include/GameControl.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex5/server/src/Server.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex5/server/include/Server.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1064">
+              <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <folding>
+                <element signature="e#132#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandProtocol.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex5/server/include/CommandProtocol.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new</find>
-      <find>max_m</find>
       <find>max_m_slot</find>
       <find>min_s</find>
       <find>ILLEGAL PLACE FOR TAG</find>
@@ -65,6 +124,8 @@
       <find>GameOv</find>
       <find>played</find>
       <find>waiting</find>
+      <find>push</find>
+      <find>read</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -82,10 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/TerminalPlayer.cpp" />
-        <option value="$PROJECT_DIR$/TerminalPlayer.h" />
-        <option value="$PROJECT_DIR$/RegularLogic.h" />
-        <option value="$PROJECT_DIR$/LogicInterface.h" />
         <option value="$PROJECT_DIR$/SlotWithRank.h" />
         <option value="$PROJECT_DIR$/Slot.h" />
         <option value="$PROJECT_DIR$/Slot.cpp" />
@@ -133,6 +190,10 @@
         <option value="$PROJECT_DIR$/ex4/src/server/main.cpp" />
         <option value="$PROJECT_DIR$/ex4/src/client/src/HostPlayer.cpp" />
         <option value="$PROJECT_DIR$/ex4/src/client/src/main.cpp" />
+        <option value="$PROJECT_DIR$/ex5/server/include/GameControl.cpp" />
+        <option value="$PROJECT_DIR$/ex5/client/src/AiPlayer.cpp" />
+        <option value="$PROJECT_DIR$/ex5/server/include/GameControl.h" />
+        <option value="$PROJECT_DIR$/ex5/server/src/GameControl.cpp" />
       </list>
     </option>
   </component>
@@ -174,35 +235,40 @@
             <path>
               <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdvancedProgramming1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
+              <item name="ex5" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -215,6 +281,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ex2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex5/server/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -281,25 +352,29 @@
       <workItem from="1512989221045" duration="1887000" />
       <workItem from="1512996265012" duration="190000" />
       <workItem from="1512997995105" duration="120000" />
+      <workItem from="1514223353992" duration="1240000" />
+      <workItem from="1514313156534" duration="245000" />
+      <workItem from="1514313404499" duration="9061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110709000" />
+    <option name="totallyTimeSpent" value="121255000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1215" height="804" extended-state="6" />
+    <frame x="65" y="70" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16509837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18629077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2910995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3859375" sideWeight="0.35" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2711111" sideWeight="0.65" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3696335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2712042" sideWeight="0.65" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37172773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32670158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -363,13 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/PlayerInterface.h" />
-    <entry file="file://$PROJECT_DIR$/include/TerminalPlayer.h" />
-    <entry file="file://$PROJECT_DIR$/src/AiPlayer.cpp" />
-    <entry file="file://$PROJECT_DIR$/include/Board.h" />
-    <entry file="file://$PROJECT_DIR$/src/Board.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/GameFlow.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/RegularLogic.cpp" />
     <entry file="file://$PROJECT_DIR$/include/LogicInterface.h" />
     <entry file="file://$PROJECT_DIR$/include/RegularLogic.h" />
     <entry file="file://$PROJECT_DIR$/include/Slot.h" />
@@ -379,21 +447,9 @@
     <entry file="file://$PROJECT_DIR$/test/AdvanceTestGame.h" />
     <entry file="file://$PROJECT_DIR$/gtest_src/gtest-all.cc" />
     <entry file="file://$PROJECT_DIR$/src/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/ex3/src/TerminalPlayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="54" column="11" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ex3/src/TerminalPlayer.cpp" />
     <entry file="file://$PROJECT_DIR$/ex4/src/client/src/hostInfo.txt" />
-    <entry file="file://$PROJECT_DIR$/ex4/src/client/hostInfo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4/src/client/hostInfo.txt" />
     <entry file="file:///usr/include/c++/5/bits/predefined_ops.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -408,13 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ex3/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ex3/src/main.cpp" />
     <entry file="file://$PROJECT_DIR$/ex4/src/client/gtest_src/gtest.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -432,8 +482,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state relative-caret-position="-417">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -577,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ex4/src/server/Server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ex4/src/client/src/HostPlayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -609,7 +653,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="96" column="18" lean-forward="true" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4/src/server/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="89" column="37" lean-forward="false" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/sys/socket.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="232" column="11" lean-forward="false" selection-start-line="232" selection-start-column="11" selection-end-line="232" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/client/src/AiPlayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/server/include/CommandProtocol.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/server/include/Server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding>
+            <element signature="e#132#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/server/include/GameControl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/server/src/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex5/server/src/GameControl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+          <folding>
+            <element signature="e#96#119#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
