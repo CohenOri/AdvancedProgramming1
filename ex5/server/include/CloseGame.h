@@ -13,6 +13,7 @@
 class CloseGame: public CommandProtocol {
 public:
 	CloseGame();
+	virtual void Execute(vector<string> args);
 	virtual ~CloseGame();
 };
 

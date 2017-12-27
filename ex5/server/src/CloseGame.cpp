@@ -5,7 +5,7 @@
  *      Author: yanap
  */
 
-#include "CloseGame.h"
+#include "../include/CloseGame.h"
 
 CloseGame::CloseGame() {
 	// TODO Auto-generated constructor stub

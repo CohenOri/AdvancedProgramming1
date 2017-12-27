@@ -33,7 +33,7 @@ public:
 	 /**
 	  * accepts new clients.
 	  */
-	 void ConnectNewClients();
+	 int ConnectNewClients();
 	 /**
 	  * close connection between client and server.
 	  * @param players socket number

@@ -13,6 +13,7 @@
 class PlayMove: public CommandProtocol {
 public:
 	PlayMove();
+	virtual void Execute(vector<string> args);
 	virtual ~PlayMove();
 };
 

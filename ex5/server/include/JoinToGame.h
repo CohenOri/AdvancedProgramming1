@@ -7,10 +7,12 @@
 
 #ifndef SERVER_INCLUDE_JOINTOGAME_H_
 #define SERVER_INCLUDE_JOINTOGAME_H_
+#include "CommandProtocol.h"
 
 class JoinToGame: public CommandProtocol {
 public:
 	JoinToGame();
+	virtual void Execute(vector<string> args);
 	virtual ~JoinToGame();
 };
 

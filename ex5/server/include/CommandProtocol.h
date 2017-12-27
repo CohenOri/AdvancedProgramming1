@@ -12,6 +12,10 @@ using namespace std;
 
 class CommandProtocol {
 public:
+	/**
+	 * @param args: paramters for command.
+	 * (soket number/name of game/moves)
+	 */
 	 virtual void Execute(vector<string> args) = 0;
 	 virtual ~CommandProtocol() {}
 };

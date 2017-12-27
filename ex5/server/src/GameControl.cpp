@@ -1,27 +1,16 @@
 
 
+
 #include "../include/GameControl.h"
-#ifndef SRC_SERVER_SERVER_H_
-#define SRC_SERVER_SERVER_H_
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <string.h>
-#include <iostream>
-#include <stdio.h>
 
+GameControl::GameControl(Server* server) {
+	this->server = server;
 
-#include <pthread.h>
-
-
-// CHANGE IT to UNLIMITED
-#define MAX_CONNECTED_CLIENTS 10
-
-
-using namespace std;
-
-GameControl::GameControl(): listGames(listGames), commandsMap(commandsMap) {
-
+	this->commandsMap["start"] = new StartNewGame();
+	this->commandsMap["list_games"] = new PrintGames();
+	this->commandsMap["join"] = new JoinToGame();
+	this->commandsMap["play"] = new PlayMove();
+	this->commandsMap["close"] = new CloseGame();
 }
 
 GameControl::~GameControl() {
@@ -31,7 +20,7 @@ GameControl::~GameControl() {
 void GameControl::Run() {
     // list to hold all the client threads
     vector<pthread_t> threads;
-    int threadCounter = 0;
+  /*  int threadCounter = 0;
 
     // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -74,15 +63,20 @@ void GameControl::Run() {
             exit(-1);
         }
         threadCounter++;
-        /*//check what command the clientSocket sent and do it
+        //check what command the clientSocket sent and do it
         HandleClient(clientSocket, threads, threadCounter-1);*/
 
 
 
         // Where to do it?!
         // Close communication with the clientSocket
-        close(clientSocket);
-    }
+      //  close(clientSocket);
+//    }
+/**********************************************************************************************/
+    //here we need to see while function
+    //calls     server.ConnectNewClients()
+    //create new thread -handle cliend.
+    //note:who will close threads or sockets? commands or hanndle client?
 
 }
 
@@ -96,7 +90,7 @@ void* GameControl::HandleClient(void *clientArgs) {
     int indexAtThreadArr = cArgs->indexAtThreadArr;
 
     // Read massage from player.
-    char ma[10];
+    char ma[50];
     char* massage = ma;
     int n = read(client, massage, sizeof(massage));
     if (n == -1) {
@@ -111,7 +105,9 @@ void* GameControl::HandleClient(void *clientArgs) {
     if (this->commandsMap.find(massage) != this->commandsMap.end() ) {
         // found the command - execute her
         CommandProtocol* cmdPtr = this->commandsMap[massage];
-        cmdPtr->Execute(); // what to insert here?!
+        cmdPtr->Execute(); // what to insert here?! >>> its should have vector paramters that containes number socket and every othermassage.
+        																				//usually massage: command + something(game name)
+        																			         //you should btake the massage to 2 parts.
     } else {
         // not found
         throw "read Unknown Command from client";

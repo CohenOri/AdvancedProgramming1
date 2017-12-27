@@ -5,20 +5,30 @@
  *      Author: yanap
  */
 
-#ifndef SERVER_INCLUDE_GAMECONTROLL_H_
-#define SERVER_INCLUDE_GAMECONTROLL_H_
+#ifndef SERVER_INCLUDE_GAMECONTROL_H_
+#define SERVER_INCLUDE_GAMECONTROL_H_
 
 #include <iostream>
 #include <map>
 #include <string>
 #include "CommandProtocol.h"
+#include "Server.h"
+#include "PlayMove.h"
+#include "StartNewGame.h"
+#include "JoinToGame.h"
+#include "CloseGame.h"
+#include "PrintGames.h"
 
 using namespace std;
 
 class GameControl {
 public:
-    GameControl();
-
+	/**
+	 * constractor.
+	 * @param server which will connect between clients.
+	 */
+    GameControl(Server* server);
+    virtual void Execute(vector<string> args);
     virtual ~GameControl();
     /**
      * Start to run the server
@@ -28,10 +38,10 @@ public:
     void* HandleClient(void *clientArgs);
 
 private:
-    int port;
-    int serverSocket;
-    map<string, int> listGames;
+    map<string, int> listGamesAndSockets;
     map<string, CommandProtocol *> commandsMap;
+    Server* server;
+    vector<string> gamesNameList;//optional
 };
 
 struct ClientArgs {
@@ -40,4 +50,4 @@ struct ClientArgs {
     int indexAtThreadArr;
 };
 
-#endif /* SERVER_INCLUDE_GAMECONTROLL_H_ */
+#endif /* SERVER_INCLUDE_GAMECONTROL_H_ */
