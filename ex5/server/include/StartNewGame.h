@@ -13,6 +13,7 @@
 class StartNewGame: public CommandProtocol {
 public:
 	StartNewGame();
+	virtual void Execute(vector<string> args);
 	virtual ~StartNewGame();
 };
 

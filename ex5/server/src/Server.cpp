@@ -6,7 +6,7 @@
  */
 
 #include "../include/Server.h"
-
+#define THREADS_NUM 10
 
 Server::Server(int port, CheckNewClient checker): port(port), serverSocket(0) {
 	this->chkr = checker;
@@ -30,9 +30,14 @@ void Server::start() {
 	 }
 	 // Start listening to incoming connections
 	 listen(serverSocket, MAX_CONNECTED_CLIENTS);
+
+
+
 	 // Define the client socket's structures
-	  struct sockaddr_in clientAddress;
+	/**  struct sockaddr_in clientAddress;
 	  socklen_t clientAddressLen;
+	  pthread_t threads[THREADS_NUM];
+
 	  while (true) {
 		   cout << "Waiting for client connections..." << endl;
 		   // Accept a new client connection
@@ -49,7 +54,7 @@ void Server::start() {
 		   close(clientSocket);
 		   close(playerTwo);*/
 
-	  }
+	  }**/
 }
 
 void Server::stop() {
@@ -57,9 +62,13 @@ void Server::stop() {
 }
 
 Server::~Server() {
+
 }
 
 void Server::handleClient(int playerX, int playerO) {
+	/**
+	 * not rellevnt for now.
+	 *
 	int player[] =  { playerX, playerO };
 	int turnCounter = 0;
 	 char ma[10];
@@ -89,6 +98,50 @@ void Server::handleClient(int playerX, int playerO) {
 		if (strcmp(massage,"End") == 0) {
 			 return;
 		 }
-	 }
+	 }***/
 }
 
+int Server::ConnectNewClients() {
+	  struct sockaddr_in clientAddress;
+	  socklen_t clientAddressLen;
+
+	   int player = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
+	   cout << "Client 1 connected" << endl;
+	   if (player == -1)
+		   throw "Error on accept";
+	   return player;
+}
+
+void Server::CloseClientSocket(int player) {
+	//close clients socket.
+	close(player);
+}
+
+void Server::SendMessageToClient(int player, char* massage) {
+	int n = write(player, massage, sizeof(massage));
+	 if (n == -1) {
+		 cout << "Error writing to socket" << endl;
+		 return;
+	 } else if (n == 0) {
+		  cout << "Client disconnected" << endl;
+	    return;
+	}
+}
+
+char* Server::GetMessageFromClient(int player) {
+	char massage[50];
+	char* buffer = massage;
+	//read from client massage.
+	 int n = read(player, buffer, sizeof(buffer));
+	 //if reading didnt work-return null/
+	 if (n == -1) {
+		 cout << "Error reading point" << endl;
+		 return NULL;
+		 //if client dosconnected-return null
+	 } else if (n == 0) {
+		 cout << "Client disconnected" << endl;
+		 return NULL;
+	 }
+	 //return massage from client.
+	 return buffer;
+}

@@ -1,16 +1,18 @@
 /*
  * PrintGames.cpp
  *
- *  Created on: 24 בדצמ׳ 2017
+ *  Created on: 27 בדצמ׳ 2017
  *      Author: yanap
  */
 
 #include "../include/PrintGames.h"
 
-PrintGames::PrintGames(map<string, CommandProtocol*>* gamesMap) {
-	this->gamesMap = gamesMap;
-}
+PrintGames::PrintGames() {}
 
 void PrintGames::Execute(vector<string> args) {
-	//send items
 }
+
+PrintGames::~PrintGames() {
+	// TODO Auto-generated destructor stub
+}
+
