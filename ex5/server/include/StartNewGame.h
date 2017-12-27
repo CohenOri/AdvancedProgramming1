@@ -16,7 +16,7 @@ class StartNewGame: public CommandProtocol {
 public:
 	StartNewGame(CommandManager* cmdManagerPtr);
 	//virtual void Execute(struct CommandInfo);
-    int Execute(struct CommandInfo info);
+    void Execute(struct CommandInfo info);
 	virtual ~StartNewGame();
 
 private:

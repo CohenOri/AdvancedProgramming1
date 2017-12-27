@@ -14,10 +14,19 @@ StartNewGame::StartNewGame(CommandManager* cmdManagerPtr) {
 StartNewGame::~StartNewGame() {
 }
 
-int StartNewGame::Execute(struct CommandInfo info) {
+void StartNewGame::Execute(struct CommandInfo info) {
+    // if successfully added the game
     if(this->cmdManager->AddGame(info.gameName, info.clientSocket)){
-     return 0;
+        int n = write(info.clientSocket, "0", strlen("0"));
+        if (n == -1) {
+            throw "Error writing to socket";
+        }
+        return;
     }
-    return -1;
+    int n = write(info.clientSocket, "-1", strlen("-1"));
+    close(info.clientSocket);
+    if (n == -1) {
+        throw "Error writing to socket";
+    }
 }
 

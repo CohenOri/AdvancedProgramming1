@@ -20,7 +20,7 @@ public:
 	 * first vector is number of player's socket.
 	 * send to player the list.
 	 */
-	vector<string> Execute(struct CommandInfo info);
+	void Execute(struct CommandInfo info);
 	virtual ~PrintGames();
 private:
     CommandManager* cmdManager;
