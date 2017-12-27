@@ -12,12 +12,14 @@
 #include <map>
 #include <string>
 #include "CommandProtocol.h"
+#include "Server.h"
+#include "CheckNewClient.h"
 
 using namespace std;
 
 class GameControl {
 public:
-    GameControl();
+    GameControl(int port);
 
     virtual ~GameControl();
     /**
@@ -29,9 +31,12 @@ public:
 
 private:
     int port;
-    int serverSocket;
+    //int serverSocket;
+    Server server;
     map<string, int> listGames;
     map<string, CommandProtocol *> commandsMap;
+    CheckNewClient chkr;
+
 };
 
 struct ClientArgs {

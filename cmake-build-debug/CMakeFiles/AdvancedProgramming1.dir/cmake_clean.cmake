@@ -11,7 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/TerminalPlayer.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.o"
-  "CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/GameControll.cpp.o"
+  "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/JoinToGame.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/main.cpp.o"
@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PrintGames.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/Server.cpp.o"
   "CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/StartNewGame.cpp.o"
+  "CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.o"
   "AdvancedProgramming1.pdb"
   "AdvancedProgramming1"
 )

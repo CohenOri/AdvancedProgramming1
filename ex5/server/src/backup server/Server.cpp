@@ -8,8 +8,7 @@
 #include "../include/Server.h"
 
 
-Server::Server(int port, CheckNewClient checker): port(port), serverSocket(0) {
-	this->chkr = checker;
+Server::Server(int port): port(port), serverSocket(0) {
 	cout << "Server" << endl;
 }
 
@@ -36,18 +35,49 @@ void Server::start() {
 	  while (true) {
 		   cout << "Waiting for client connections..." << endl;
 		   // Accept a new client connection
-		   int clientSocket = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
+		   int playerOne = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
 		   cout << "Client 1 connected" << endl;
-		   if (clientSocket == -1)
+		   if (playerOne == -1)
 			   throw "Error on accept";
-
-		  // notify that there's new client and save his socket
-		  this->chkr.NewClientConnected(clientSocket);
-
-          /* where to put this?!
+		   int first = 1;
+		   //send to the first client-that he is the first.
+		   int n = write(playerOne, &first, sizeof(first));
+		    if (n == -1) {
+		    		cout << "Error writing to socket" << endl;
+		    		return;
+		    	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		    //connect another client
+		   int playerTwo = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
+		   cout << "Client 2 connected" << endl;
+		   if (playerTwo == -1)
+			   throw "Error on accept";
+		   int second = 2;
+		   //send him he is the second.
+		   n = write(playerTwo, &second, sizeof(second));
+		   if (n == -1) {
+		   	cout << "Error writing to socket" << endl;
+		   	return;
+		   	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		   //send to the first player that he can sarts the game.
+		  int m = write(playerOne, &second, sizeof(second));
+		   if (m == -1) {
+		 		   	cout << "Error writing to socket" << endl;
+			    	return;
+		 	} else if (n == 0) {
+				 cout << "Client disconnected" << endl;
+				 return;
+			 }
+		   //start the game.
+		   handleClient(playerOne, playerTwo);
 		   // Close communication with the client
-		   close(clientSocket);
-		   close(playerTwo);*/
+		   close(playerOne);
+		   close(playerTwo);
 
 	  }
 }

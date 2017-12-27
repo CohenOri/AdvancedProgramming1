@@ -47,6 +47,6 @@ set(SOURCE_FILES
         ex5/server/src/PrintGames.cpp
         ex5/server/src/Server.cpp
         ex5/server/src/StartNewGame.cpp
-        ex5/info.txt)
+        ex5/info.txt ex5/server/src/CheckNewClient.cpp ex5/server/include/CheckNewClient.h)
 
 add_executable(AdvancedProgramming1 ${SOURCE_FILES})

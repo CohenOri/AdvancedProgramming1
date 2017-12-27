@@ -447,32 +447,32 @@ ex5/client/test/test-all.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.s
 .PHONY : ex5/client/test/test-all.cpp.s
 
-ex5/server/include/GameControll.o: ex5/server/include/GameControll.cpp.o
+ex5/server/include/NewClientChecker.o: ex5/server/include/NewClientChecker.cpp.o
 
-.PHONY : ex5/server/include/GameControll.o
+.PHONY : ex5/server/include/NewClientChecker.o
 
 # target to build an object file
-ex5/server/include/GameControll.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/GameControll.cpp.o
-.PHONY : ex5/server/include/GameControll.cpp.o
+ex5/server/include/NewClientChecker.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.o
+.PHONY : ex5/server/include/NewClientChecker.cpp.o
 
-ex5/server/include/GameControll.i: ex5/server/include/GameControll.cpp.i
+ex5/server/include/NewClientChecker.i: ex5/server/include/NewClientChecker.cpp.i
 
-.PHONY : ex5/server/include/GameControll.i
+.PHONY : ex5/server/include/NewClientChecker.i
 
 # target to preprocess a source file
-ex5/server/include/GameControll.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/GameControll.cpp.i
-.PHONY : ex5/server/include/GameControll.cpp.i
+ex5/server/include/NewClientChecker.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.i
+.PHONY : ex5/server/include/NewClientChecker.cpp.i
 
-ex5/server/include/GameControll.s: ex5/server/include/GameControll.cpp.s
+ex5/server/include/NewClientChecker.s: ex5/server/include/NewClientChecker.cpp.s
 
-.PHONY : ex5/server/include/GameControll.s
+.PHONY : ex5/server/include/NewClientChecker.s
 
 # target to generate assembly for a file
-ex5/server/include/GameControll.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/GameControll.cpp.s
-.PHONY : ex5/server/include/GameControll.cpp.s
+ex5/server/include/NewClientChecker.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.s
+.PHONY : ex5/server/include/NewClientChecker.cpp.s
 
 ex5/server/src/CloseGame.o: ex5/server/src/CloseGame.cpp.o
 
@@ -500,6 +500,33 @@ ex5/server/src/CloseGame.s: ex5/server/src/CloseGame.cpp.s
 ex5/server/src/CloseGame.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.s
 .PHONY : ex5/server/src/CloseGame.cpp.s
+
+ex5/server/src/GameControl.o: ex5/server/src/GameControl.cpp.o
+
+.PHONY : ex5/server/src/GameControl.o
+
+# target to build an object file
+ex5/server/src/GameControl.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.o
+.PHONY : ex5/server/src/GameControl.cpp.o
+
+ex5/server/src/GameControl.i: ex5/server/src/GameControl.cpp.i
+
+.PHONY : ex5/server/src/GameControl.i
+
+# target to preprocess a source file
+ex5/server/src/GameControl.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.i
+.PHONY : ex5/server/src/GameControl.cpp.i
+
+ex5/server/src/GameControl.s: ex5/server/src/GameControl.cpp.s
+
+.PHONY : ex5/server/src/GameControl.s
+
+# target to generate assembly for a file
+ex5/server/src/GameControl.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.s
+.PHONY : ex5/server/src/GameControl.cpp.s
 
 ex5/server/src/JoinToGame.o: ex5/server/src/JoinToGame.cpp.o
 
@@ -708,12 +735,15 @@ help:
 	@echo "... ex5/client/test/test-all.o"
 	@echo "... ex5/client/test/test-all.i"
 	@echo "... ex5/client/test/test-all.s"
-	@echo "... ex5/server/include/GameControll.o"
-	@echo "... ex5/server/include/GameControll.i"
-	@echo "... ex5/server/include/GameControll.s"
+	@echo "... ex5/server/include/NewClientChecker.o"
+	@echo "... ex5/server/include/NewClientChecker.i"
+	@echo "... ex5/server/include/NewClientChecker.s"
 	@echo "... ex5/server/src/CloseGame.o"
 	@echo "... ex5/server/src/CloseGame.i"
 	@echo "... ex5/server/src/CloseGame.s"
+	@echo "... ex5/server/src/GameControl.o"
+	@echo "... ex5/server/src/GameControl.i"
+	@echo "... ex5/server/src/GameControl.s"
 	@echo "... ex5/server/src/JoinToGame.o"
 	@echo "... ex5/server/src/JoinToGame.i"
 	@echo "... ex5/server/src/JoinToGame.s"
