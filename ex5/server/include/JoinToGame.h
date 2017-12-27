@@ -7,13 +7,25 @@
 
 #ifndef SERVER_INCLUDE_JOINTOGAME_H_
 #define SERVER_INCLUDE_JOINTOGAME_H_
+
 #include "CommandProtocol.h"
+#include "CommandManager.h"
+
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <string.h>
+#include <iostream>
+#include <stdio.h>
 
 class JoinToGame: public CommandProtocol {
 public:
-	JoinToGame();
-	virtual void Execute(vector<string> args);
+	JoinToGame(CommandManager* cmdManagerPtr);
+	void Execute(struct CommandInfo info);
 	virtual ~JoinToGame();
+private:
+	CommandManager* cmdManager;
+
 };
 
 #endif /* SERVER_INCLUDE_JOINTOGAME_H_ */

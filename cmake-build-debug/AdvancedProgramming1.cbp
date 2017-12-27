@@ -165,10 +165,19 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/test-all.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/info.txt">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CheckNewClient.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CloseGame.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandInfo.h">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandProtocol.h">
@@ -180,15 +189,6 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/JoinToGame.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/NewClientChecker.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/NewClientChecker.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/ObservableInterface.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/PlayMove.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -198,10 +198,10 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/Server.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/ServerListenerInterface.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/StartNewGame.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/StartNewGame.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CheckNewClient.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp">
@@ -223,6 +223,12 @@
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/StartNewGame.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/backup server/Server.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/backup server/Server.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/main.cpp">

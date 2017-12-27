@@ -9,12 +9,16 @@
 #define SERVER_INCLUDE_PLAYMOVE_H_
 
 #include "CommandProtocol.h"
+#include "CommandManager.h"
+
 
 class PlayMove: public CommandProtocol {
 public:
-	PlayMove();
-	virtual void Execute(vector<string> args);
+	PlayMove(CommandManager* cmdManagerPtr);
+	void Execute(struct CommandInfo info);
 	virtual ~PlayMove();
+private:
+	CommandManager* cmdManager;
 };
 
 #endif /* SERVER_INCLUDE_PLAYMOVE_H_ */

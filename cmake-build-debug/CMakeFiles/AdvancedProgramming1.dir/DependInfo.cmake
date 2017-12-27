@@ -16,7 +16,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/main.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/main.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/TestManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/test-all.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.o"
-  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/NewClientChecker.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.o"
+  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.o"
+  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CheckNewClient.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/GameControl.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/JoinToGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/JoinToGame.cpp.o"
@@ -24,6 +25,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/PrintGames.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PrintGames.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/Server.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/Server.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/StartNewGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/StartNewGame.cpp.o"
+  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/backup server/Server.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/main.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

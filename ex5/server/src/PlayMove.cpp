@@ -5,14 +5,21 @@
  *      Author: yanap
  */
 
-#include "PlayMove.h"
+#include "../include/PlayMove.h"
 
-PlayMove::PlayMove() {
-	// TODO Auto-generated constructor stub
 
+PlayMove::PlayMove(CommandManager *cmdManagerPtr) {
+    this->cmdManager = cmdManagerPtr;
 }
 
 PlayMove::~PlayMove() {
-	// TODO Auto-generated destructor stub
+
 }
+
+void PlayMove::Execute(struct CommandInfo info) {
+    int otherPlayerSocket = this->cmdManager->GetGameSocket(info.gameName);
+
+    // idk how to send the Play?!
+}
+
 

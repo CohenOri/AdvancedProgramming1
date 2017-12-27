@@ -7,12 +7,17 @@
 
 #include "../include/StartNewGame.h"
 
-StartNewGame::StartNewGame() {
-	// TODO Auto-generated constructor stub
-
+StartNewGame::StartNewGame(CommandManager* cmdManagerPtr) {
+    this->cmdManager = cmdManagerPtr;
 }
 
 StartNewGame::~StartNewGame() {
-	// TODO Auto-generated destructor stub
+}
+
+int StartNewGame::Execute(struct CommandInfo info) {
+    if(this->cmdManager->AddGame(info.gameName, info.clientSocket)){
+     return 0;
+    }
+    return -1;
 }
 

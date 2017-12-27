@@ -447,32 +447,59 @@ ex5/client/test/test-all.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.s
 .PHONY : ex5/client/test/test-all.cpp.s
 
-ex5/server/include/NewClientChecker.o: ex5/server/include/NewClientChecker.cpp.o
+ex5/server/include/CommandManager.o: ex5/server/include/CommandManager.cpp.o
 
-.PHONY : ex5/server/include/NewClientChecker.o
+.PHONY : ex5/server/include/CommandManager.o
 
 # target to build an object file
-ex5/server/include/NewClientChecker.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.o
-.PHONY : ex5/server/include/NewClientChecker.cpp.o
+ex5/server/include/CommandManager.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.o
+.PHONY : ex5/server/include/CommandManager.cpp.o
 
-ex5/server/include/NewClientChecker.i: ex5/server/include/NewClientChecker.cpp.i
+ex5/server/include/CommandManager.i: ex5/server/include/CommandManager.cpp.i
 
-.PHONY : ex5/server/include/NewClientChecker.i
+.PHONY : ex5/server/include/CommandManager.i
 
 # target to preprocess a source file
-ex5/server/include/NewClientChecker.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.i
-.PHONY : ex5/server/include/NewClientChecker.cpp.i
+ex5/server/include/CommandManager.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.i
+.PHONY : ex5/server/include/CommandManager.cpp.i
 
-ex5/server/include/NewClientChecker.s: ex5/server/include/NewClientChecker.cpp.s
+ex5/server/include/CommandManager.s: ex5/server/include/CommandManager.cpp.s
 
-.PHONY : ex5/server/include/NewClientChecker.s
+.PHONY : ex5/server/include/CommandManager.s
 
 # target to generate assembly for a file
-ex5/server/include/NewClientChecker.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/NewClientChecker.cpp.s
-.PHONY : ex5/server/include/NewClientChecker.cpp.s
+ex5/server/include/CommandManager.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.s
+.PHONY : ex5/server/include/CommandManager.cpp.s
+
+ex5/server/src/CheckNewClient.o: ex5/server/src/CheckNewClient.cpp.o
+
+.PHONY : ex5/server/src/CheckNewClient.o
+
+# target to build an object file
+ex5/server/src/CheckNewClient.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.o
+.PHONY : ex5/server/src/CheckNewClient.cpp.o
+
+ex5/server/src/CheckNewClient.i: ex5/server/src/CheckNewClient.cpp.i
+
+.PHONY : ex5/server/src/CheckNewClient.i
+
+# target to preprocess a source file
+ex5/server/src/CheckNewClient.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.i
+.PHONY : ex5/server/src/CheckNewClient.cpp.i
+
+ex5/server/src/CheckNewClient.s: ex5/server/src/CheckNewClient.cpp.s
+
+.PHONY : ex5/server/src/CheckNewClient.s
+
+# target to generate assembly for a file
+ex5/server/src/CheckNewClient.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.s
+.PHONY : ex5/server/src/CheckNewClient.cpp.s
 
 ex5/server/src/CloseGame.o: ex5/server/src/CloseGame.cpp.o
 
@@ -663,6 +690,33 @@ ex5/server/src/StartNewGame.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/StartNewGame.cpp.s
 .PHONY : ex5/server/src/StartNewGame.cpp.s
 
+ex5/server/src/backup_server/Server.o: ex5/server/src/backup_server/Server.cpp.o
+
+.PHONY : ex5/server/src/backup_server/Server.o
+
+# target to build an object file
+ex5/server/src/backup_server/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.o
+.PHONY : ex5/server/src/backup_server/Server.cpp.o
+
+ex5/server/src/backup_server/Server.i: ex5/server/src/backup_server/Server.cpp.i
+
+.PHONY : ex5/server/src/backup_server/Server.i
+
+# target to preprocess a source file
+ex5/server/src/backup_server/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.i
+.PHONY : ex5/server/src/backup_server/Server.cpp.i
+
+ex5/server/src/backup_server/Server.s: ex5/server/src/backup_server/Server.cpp.s
+
+.PHONY : ex5/server/src/backup_server/Server.s
+
+# target to generate assembly for a file
+ex5/server/src/backup_server/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.s
+.PHONY : ex5/server/src/backup_server/Server.cpp.s
+
 ex5/server/src/main.o: ex5/server/src/main.cpp.o
 
 .PHONY : ex5/server/src/main.o
@@ -735,9 +789,12 @@ help:
 	@echo "... ex5/client/test/test-all.o"
 	@echo "... ex5/client/test/test-all.i"
 	@echo "... ex5/client/test/test-all.s"
-	@echo "... ex5/server/include/NewClientChecker.o"
-	@echo "... ex5/server/include/NewClientChecker.i"
-	@echo "... ex5/server/include/NewClientChecker.s"
+	@echo "... ex5/server/include/CommandManager.o"
+	@echo "... ex5/server/include/CommandManager.i"
+	@echo "... ex5/server/include/CommandManager.s"
+	@echo "... ex5/server/src/CheckNewClient.o"
+	@echo "... ex5/server/src/CheckNewClient.i"
+	@echo "... ex5/server/src/CheckNewClient.s"
 	@echo "... ex5/server/src/CloseGame.o"
 	@echo "... ex5/server/src/CloseGame.i"
 	@echo "... ex5/server/src/CloseGame.s"
@@ -759,6 +816,9 @@ help:
 	@echo "... ex5/server/src/StartNewGame.o"
 	@echo "... ex5/server/src/StartNewGame.i"
 	@echo "... ex5/server/src/StartNewGame.s"
+	@echo "... ex5/server/src/backup_server/Server.o"
+	@echo "... ex5/server/src/backup_server/Server.i"
+	@echo "... ex5/server/src/backup_server/Server.s"
 	@echo "... ex5/server/src/main.o"
 	@echo "... ex5/server/src/main.i"
 	@echo "... ex5/server/src/main.s"

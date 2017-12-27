@@ -7,12 +7,14 @@
 
 #include "../include/PrintGames.h"
 
-PrintGames::PrintGames() {}
-
-void PrintGames::Execute(vector<string> args) {
+PrintGames::PrintGames(CommandManager *cmdManagerPtr) {
+    this->cmdManager = cmdManagerPtr;
 }
 
 PrintGames::~PrintGames() {
-	// TODO Auto-generated destructor stub
+}
+
+vector<string> PrintGames::Execute(struct CommandInfo info) {
+    return this->cmdManager->ListOfGamesNames();
 }
 

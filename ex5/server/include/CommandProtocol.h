@@ -8,15 +8,20 @@
 #include <string>
 #include <iostream>
 
+#include "CommandInfo.h"
+
 using namespace std;
 
+/**
+ * Interface for commands
+ */
 class CommandProtocol {
 public:
 	/**
 	 * @param args: paramters for command.
 	 * (soket number/name of game/moves)
 	 */
-	 virtual void Execute(vector<string> args) = 0;
+	 //virtual void* Execute(struct CommandInfo info) = 0;
 	 virtual ~CommandProtocol() {}
 };
 
