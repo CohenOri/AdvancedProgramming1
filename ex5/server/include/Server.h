@@ -61,7 +61,7 @@ private:
  int port;
  int serverSocket;
  GameControl* controller;
- vector<pthread_t> threads;
+ map<int, pthread_t> threads;
 
  /**
   * start a game between players.
@@ -72,9 +72,8 @@ private:
 };
 struct ClientArgs {
     int clientSocket;
-    vector<pthread_t> &threadArr;
+    map<int, pthread_t> *threadArr;
     int indexAtThreadArr;
-    //map<string, CommandProtocol *>* commandsMap;
     GameControl * controller;
 };
 void* HandleClient(void *clientArgs);

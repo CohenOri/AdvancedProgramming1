@@ -64,18 +64,22 @@ bool CommandManager::RemoveGame(string gameName) {
 
 void CommandManager::addPlayer(int player) {
     pthread_mutex_lock(&this->mutex);
+    this->connectedPlayers.push_back(player);
     pthread_mutex_unlock(&this->mutex);
-
 }
 
-void CommandManager::deletePlayer(int pkayer) {
+void CommandManager::deletePlayer(int player) {
     pthread_mutex_lock(&this->mutex);
-
+    for(unsigned int i = 0; i < this->connectedPlayers.size(); i++) {
+    	if (this->connectedPlayers.at(i) == player) {
+    		this->connectedPlayers.erase(connectedPlayers.begin()+ i);
+    	}
+    }
     pthread_mutex_unlock(&this->mutex);
 }
 
 void CommandManager::closeAllPlayers() {
-	for(int i = 0; i < this->connectedPlayers.size(); i++) {
+	for(unsigned int i = 0; i < this->connectedPlayers.size(); i++) {
 		close(this->connectedPlayers.at(i));
 	}
 }

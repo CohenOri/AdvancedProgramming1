@@ -28,19 +28,25 @@ void Server::start() {
 	 if (bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == -1) {
 		 throw "Error on binding";
 	 }
+
 	 // Start listening to incoming connections
 	 listen(serverSocket, MAX_CONNECTED_CLIENTS);
+
 	 struct sockaddr_in clientAddress;
 	 socklen_t clientAddressLen;
-	 int threadCounter = 0;
+	 int threadCounter = 1;
 
 	 pthread_t end;
-	 struct ClientArgs* arg;
-	 arg->clientSocket = 0;
-	 arg->indexAtThreadArr = 0;
-	 arg->controller = this->controller;
 
-	 int rc = pthread_create(&end, NULL, closeAllGames, (void *)arg);
+	 ClientArgs arg;
+	 arg.clientSocket = 0;
+
+	 arg.indexAtThreadArr = 0;
+
+	 arg.controller = this->controller;
+	 arg.threadArr = &this->threads;
+
+	 int rc = pthread_create(&end, NULL, closeAllGames, (void *)&arg);
 	 if (rc) {
 				   cout << "Error: unable to create thread, " << rc << endl;
 	   	    	 return;
@@ -51,16 +57,35 @@ void Server::start() {
 		   int playerNumber = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
 		   cout << "Client " <<  playerNumber << " connected" << endl;
 
+			 pthread_t newOne;
+			 cout << "cehck1" << endl;
+			 this->threads[threadCounter] = newOne;
+			 cout << "cehck1" << endl;
+
 		   struct ClientArgs* cArgs;
-		   cArgs->clientSocket = playerNumber;
+			 cout << "cehck2" << endl;
+		   cArgs->clientSocket = this->serverSocket;
+			 cout << "cehck3" << endl;
+
 		   cArgs->controller = this->controller;
+			 cout << "cehck4" << endl;
+
 		   cArgs->indexAtThreadArr = threadCounter;
-		   int rc = pthread_create(&threads.at(threadCounter), NULL, HandleClient, (void *)cArgs);
+			 cout << "cehck5" << endl;
+
+		   cArgs->threadArr = &this->threads;
+			 cout << "cehck6" << endl;
+
+		   int rc = pthread_create(&cArgs->threadArr->at(threadCounter), NULL, HandleClient, (void *)cArgs);
 		   if (rc) {
 			   cout << "Error: unable to create thread, " << rc << endl;
    	    	 return;
 		   }
 		   threadCounter++;
+		   if(this->threads.size() == 1) {
+			   stop();
+			   return;
+		   }
    	 }
 
 	 }
@@ -125,9 +150,10 @@ char* Server::GetMessageFromClient(int player) {
 void* HandleClient(void *clientArgs) {
     // break the struct back to parameters
     // cast back from void* to struct
+	cout << "we are starting!! " << endl;
     struct ClientArgs* playersInfo = (struct ClientArgs*)clientArgs;
     int client = playersInfo->clientSocket;
-    vector<pthread_t>& refToThreadArr = playersInfo->threadArr;
+    map<int, pthread_t>* refToThreadArr = playersInfo->threadArr;
     int indexAtThreadArr = playersInfo->indexAtThreadArr;
     GameControl* control = playersInfo->controller;
     // Read massage from player.
@@ -139,7 +165,7 @@ void* HandleClient(void *clientArgs) {
     if (n == -1) {
         cout << "Error reading point" << endl;
         // remove the thread from threadArr
-        refToThreadArr.erase(refToThreadArr.begin()+indexAtThreadArr);
+      //  refToThreadArr.erase(refToThreadArr.begin()+indexAtThreadArr);
         pthread_exit (NULL); // NULL is to be insert here?!
     } else if (n == 0) {
         cout << "Client disconnected" << endl;
@@ -166,23 +192,31 @@ void* HandleClient(void *clientArgs) {
 	  args.gameName = val;
 	  if(!control->executeCommand(command, args)) {
 		  endReading = true;
+		  refToThreadArr->erase(indexAtThreadArr);
 	  }
-
 
     } while(!endReading);
 }
 
 void* closeAllGames(void *args) {
+	cout << "for close write exit: ";
     struct ClientArgs* playersInfo = (struct ClientArgs*)args;
     GameControl* control = playersInfo->controller;
+    map<int, pthread_t> *b = playersInfo->threadArr;
     string checkToclose;
     bool stop = false;
     while(!stop) {
      cin >> checkToclose;
-     if (checkToclose.compare("exit")) {
+     cout << "you types: " << checkToclose << endl;
+     if (checkToclose.compare("exit") == 0) {
     	 stop = true;
     	 control->End();
-    	 pthread_exit(NULL);
+    	 for (unsigned int i = 0; i < b->size(); i++) {
+    		 pthread_t m = b->at(i);
+    		 pthread_cancel(m);
+    		 cout << "close the thresds" << endl;
+    	 }
+    	 //pthread_exit(NULL);
      }
     }
 }

@@ -41,7 +41,7 @@ int main() {
        }
        CommandManager manager;
        GameControl controller(&manager);
-       Server server(port, &controller);
+       Server server(8000, &controller);
 
  try {
 	 server.start();

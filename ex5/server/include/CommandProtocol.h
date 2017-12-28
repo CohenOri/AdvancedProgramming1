@@ -24,7 +24,7 @@ public:
 	 * @param args: paramters for command.
 	 * (soket number/name of game/moves)
 	 */
-	 virtual void Execute(struct CommandInfo info);
+	 virtual void Execute(struct CommandInfo info) = 0;
 	 virtual ~CommandProtocol() {}
 };
 

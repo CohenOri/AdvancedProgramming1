@@ -29,6 +29,15 @@ void PrintGames::Execute(struct CommandInfo info) {
             throw "Error writing to socket";
         }
     }
+    char buf[50] = {0};
+    string end = "end_open_games";
+      size_t length = (end).copy(buf,(end).size(),0);
+      buf[length]='\0';
+      //send the buffer.
+      int n = write(info.clientSocket, buf, strlen(buf));
+      if (n == -1) {
+          throw "Error writing to socket";
+      }
     cmdManager->deletePlayer(info.clientSocket);
     close(info.clientSocket);
 }

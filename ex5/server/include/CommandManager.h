@@ -38,7 +38,7 @@ public:
     int GetGameSocket(string gameName);
     vector<string> ListOfGamesNames();
     void addPlayer(int player);
-    void deletePlayer(int pkayer);
+    void deletePlayer(int player);
     void closeAllPlayers();
     /**
      * @param gameName
