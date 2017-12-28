@@ -58,6 +58,13 @@ public:
      */
     EnumDeclration::CellStatus getEnumSymbol();
 
+    void SendStart(string gameName);
+
+    void JoinGame(string gameName);
+
+    void PrintGamesList();
+
+
 private:
     EnumDeclration::CellStatus player;
     char symbol;
@@ -78,6 +85,13 @@ private:
      * sends to the server last move on the board.
      */
     void SendMove(string move);
+
+    /**
+     * Writes/sends the given command (start/join etc.) and gameName to server
+     * @param command start/join etc.
+     * @param gameName gameName..
+     */
+    void WriteCommand(const string &command, const string &gameName) const;
 };
 
 #endif /* SRC_CLIENT_INCLUDE_HOSTPLAYER_H_ */

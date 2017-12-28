@@ -22,9 +22,9 @@ using namespace std;
 class Slot {
 public:
     /**
-     * create slot from string.
+     * create Empty slot from string.
      */
-    Slot(string values, EnumDeclration::CellStatus status);
+    Slot(string values);
 
     /**
      * Create a slot with E (Empty status)

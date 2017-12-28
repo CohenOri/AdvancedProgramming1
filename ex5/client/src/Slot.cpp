@@ -8,7 +8,7 @@
 #include "../include/Slot.h"
 
 using namespace std;
-Slot::Slot(string values, EnumDeclration::CellStatus status) {
+Slot::Slot(string values) {
 	  vector<int> vect;
 	  int i;
 	  stringstream ss(values);
@@ -19,7 +19,6 @@ Slot::Slot(string values, EnumDeclration::CellStatus status) {
 	  }
 	  this->row = vect.at(0);
 	  this->col = vect.at(1);
-	  //his->status = status;
 	  this->status = EnumDeclration::E;
 	  this->s = values;
 }

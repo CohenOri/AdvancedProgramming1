@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CheckNewClient.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.o"
+  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CommandManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CommandManager.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/GameControl.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/GameControl.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/JoinToGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/JoinToGame.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/PlayMove.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PlayMove.cpp.o"

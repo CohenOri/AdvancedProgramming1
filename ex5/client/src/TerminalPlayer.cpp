@@ -22,7 +22,7 @@ Slot TerminalPlayer::Play() {
     cout << "\n\n" << "Please enter your row,col: ";
     getline(cin, str);
     try {
-        return Slot(str, this->player);
+        return Slot(str);
     }
     catch (exception exception) {
         cout << "Are you serious? enter something in the row, col format!";

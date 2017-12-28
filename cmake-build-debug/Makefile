@@ -528,6 +528,33 @@ ex5/server/src/CloseGame.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.s
 .PHONY : ex5/server/src/CloseGame.cpp.s
 
+ex5/server/src/CommandManager.o: ex5/server/src/CommandManager.cpp.o
+
+.PHONY : ex5/server/src/CommandManager.o
+
+# target to build an object file
+ex5/server/src/CommandManager.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CommandManager.cpp.o
+.PHONY : ex5/server/src/CommandManager.cpp.o
+
+ex5/server/src/CommandManager.i: ex5/server/src/CommandManager.cpp.i
+
+.PHONY : ex5/server/src/CommandManager.i
+
+# target to preprocess a source file
+ex5/server/src/CommandManager.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CommandManager.cpp.i
+.PHONY : ex5/server/src/CommandManager.cpp.i
+
+ex5/server/src/CommandManager.s: ex5/server/src/CommandManager.cpp.s
+
+.PHONY : ex5/server/src/CommandManager.s
+
+# target to generate assembly for a file
+ex5/server/src/CommandManager.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CommandManager.cpp.s
+.PHONY : ex5/server/src/CommandManager.cpp.s
+
 ex5/server/src/GameControl.o: ex5/server/src/GameControl.cpp.o
 
 .PHONY : ex5/server/src/GameControl.o
@@ -798,6 +825,9 @@ help:
 	@echo "... ex5/server/src/CloseGame.o"
 	@echo "... ex5/server/src/CloseGame.i"
 	@echo "... ex5/server/src/CloseGame.s"
+	@echo "... ex5/server/src/CommandManager.o"
+	@echo "... ex5/server/src/CommandManager.i"
+	@echo "... ex5/server/src/CommandManager.s"
 	@echo "... ex5/server/src/GameControl.o"
 	@echo "... ex5/server/src/GameControl.i"
 	@echo "... ex5/server/src/GameControl.s"

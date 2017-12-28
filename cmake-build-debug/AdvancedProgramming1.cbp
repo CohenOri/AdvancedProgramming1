@@ -207,6 +207,9 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CommandManager.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/GameControl.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
