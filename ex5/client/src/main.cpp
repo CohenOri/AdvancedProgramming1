@@ -80,7 +80,7 @@ int main() {
             HostPlayer *p3 = new HostPlayer(ip.c_str(), port);
             try {
                 p3->connectToServer();
-                p3->getSymbolFromServer();
+            //    p3->getSymbolFromServer();
                 p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
             } catch (const char *msg) {
                 cout << "Failed to connect to server. Reason:" << msg << endl;
@@ -109,9 +109,10 @@ int main() {
                 else if (command == 1) {
                     cout << "Name your game:\n" << endl;
                     string name;
-                    cin.clear();
+                    /*cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    getline(cin, name);
+                    getline(cin, name);**/
+                    cin >> name;
                     // sends start game command to server
                     try {
                         p3->SendStart(name);
@@ -123,7 +124,7 @@ int main() {
                 }
                     // Print open games
                 else if (command == 2) {
-                    cout << "Open games:\n" << endl;
+                    cout << "list of gamed:\n" << endl;
                     // prints the games using the server
                     p3->PrintGamesList();
                 }
@@ -135,8 +136,9 @@ int main() {
                     cout << "Enter game's name:\n" << endl;
                     string name;
                     cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    getline(cin, name);
+                   /* std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    getline(cin, name);**/
+                    cin >> name;
                     // sends join game command to server
                     try {
                         p3->JoinGame(name);

@@ -183,7 +183,8 @@ void HostPlayer::WriteCommand(const string &command, const string &gameName) con
 }
 
 void HostPlayer::PrintGamesList() {
-    cout << "Open Games:" << endl;
+    cout << "print Games:" << endl;
+    SendMove("list_games");
     while (true) {
         //initialize buffer. read from server array.
         char buffer[50] = {0};

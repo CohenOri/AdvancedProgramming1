@@ -62,6 +62,7 @@ private:
  int serverSocket;
  GameControl* controller;
  map<int, pthread_t> threads;
+ int stopGame;
 
  /**
   * start a game between players.
@@ -72,6 +73,8 @@ private:
 };
 struct ClientArgs {
     int clientSocket;
+    int *stop;
+    int serverSocket;
     map<int, pthread_t> *threadArr;
     int indexAtThreadArr;
     GameControl * controller;
@@ -79,5 +82,7 @@ struct ClientArgs {
 void* HandleClient(void *clientArgs);
 
 void* closeAllGames(void *args);
+
+void* ServerAcceptClients(void *args);
 
 #endif /* SRC_SERVER_SERVER_H_ */
