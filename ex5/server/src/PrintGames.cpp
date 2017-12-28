@@ -25,10 +25,11 @@ void PrintGames::Execute(struct CommandInfo info) {
         buf[length]='\0';
         //send the buffer.
         int n = write(info.clientSocket, buf, strlen(buf));
-        close(info.clientSocket);
         if (n == -1) {
             throw "Error writing to socket";
         }
     }
+    cmdManager->deletePlayer(info.clientSocket);
+    close(info.clientSocket);
 }
 

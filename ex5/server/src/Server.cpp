@@ -3,14 +3,13 @@
  *
  *  Created on: 2 בדצמ׳ 2017
  *      Author: yanap
- *      11
  */
 
 #include "../include/Server.h"
 #define THREADS_NUM 10
 
-Server::Server(int port, CheckNewClient checker): port(port), serverSocket(0) {
-	this->chkr = checker;
+Server::Server(int port, GameControl* controller): port(port), serverSocket(0) {
+	this->controller = controller;
 	cout << "Server" << endl;
 }
 
@@ -31,32 +30,40 @@ void Server::start() {
 	 }
 	 // Start listening to incoming connections
 	 listen(serverSocket, MAX_CONNECTED_CLIENTS);
+	 struct sockaddr_in clientAddress;
+	 socklen_t clientAddressLen;
+	 int threadCounter = 0;
 
+	 pthread_t end;
+	 struct ClientArgs* arg;
+	 arg->clientSocket = 0;
+	 arg->indexAtThreadArr = 0;
+	 arg->controller = this->controller;
 
-
-	 // Define the client socket's structures
-	/**  struct sockaddr_in clientAddress;
-	  socklen_t clientAddressLen;
-	  pthread_t threads[THREADS_NUM];
-
-	  while (true) {
+	 int rc = pthread_create(&end, NULL, closeAllGames, (void *)arg);
+	 if (rc) {
+				   cout << "Error: unable to create thread, " << rc << endl;
+	   	    	 return;
+	 }
+	 while (true) {
 		   cout << "Waiting for client connections..." << endl;
 		   // Accept a new client connection
-		   int clientSocket = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
-		   cout << "Client 1 connected" << endl;
-		   if (clientSocket == -1)
-			   throw "Error on accept";
+		   int playerNumber = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
+		   cout << "Client " <<  playerNumber << " connected" << endl;
 
-		  // notify that there's new client and save his socket
-		  this->chkr.NewClientConnected(clientSocket);
+		   struct ClientArgs* cArgs;
+		   cArgs->clientSocket = playerNumber;
+		   cArgs->controller = this->controller;
+		   cArgs->indexAtThreadArr = threadCounter;
+		   int rc = pthread_create(&threads.at(threadCounter), NULL, HandleClient, (void *)cArgs);
+		   if (rc) {
+			   cout << "Error: unable to create thread, " << rc << endl;
+   	    	 return;
+		   }
+		   threadCounter++;
+   	 }
 
-          /* where to put this?!
-		   // Close communication with the client
-		   close(clientSocket);
-		   close(playerTwo);*/
-
-	  }**/
-}
+	 }
 
 void Server::stop() {
 	 close(serverSocket);
@@ -67,45 +74,12 @@ Server::~Server() {
 }
 
 void Server::handleClient(int playerX, int playerO) {
-	/**
-	 * not rellevnt for now.
-	 *
-	int player[] =  { playerX, playerO };
-	int turnCounter = 0;
-	 char ma[10];
-	 char* massage = ma;
-	 while (true) {
-		 memset(ma,0,10);//empty the values.
-	 // Read massage from player.
-		 int n = read(player[turnCounter%2], massage, sizeof(massage));
-		 if (n == -1) {
-			 cout << "Error reading point" << endl;
-			 return;
-		 } else if (n == 0) {
-			 cout << "Client disconnected" << endl;
-			 return;
-		 }
-		 // Write the massage back to the other player
-		 n = write(player[(turnCounter + 1) % 2], massage, sizeof(massage));
-		 if (n == -1) {
-			 cout << "Error writing to socket" << endl;
-			 return;
-		 } else if (n == 0) {
-					 cout << "Client disconnected" << endl;
-					 return;
-		}
-		 turnCounter++;
-		 //if the message is end-return to close connections with players.
-		if (strcmp(massage,"End") == 0) {
-			 return;
-		 }
-	 }***/
+//not relevent
 }
 
 int Server::ConnectNewClients() {
 	  struct sockaddr_in clientAddress;
 	  socklen_t clientAddressLen;
-
 	   int player = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
 	   cout << "Client 1 connected" << endl;
 	   if (player == -1)
@@ -138,11 +112,77 @@ char* Server::GetMessageFromClient(int player) {
 	 if (n == -1) {
 		 cout << "Error reading point" << endl;
 		 return NULL;
-		 //if client dosconnected-return null
+		 //if client disconnected-return null
 	 } else if (n == 0) {
 		 cout << "Client disconnected" << endl;
 		 return NULL;
 	 }
 	 //return massage from client.
 	 return buffer;
+}
+
+
+void* HandleClient(void *clientArgs) {
+    // break the struct back to parameters
+    // cast back from void* to struct
+    struct ClientArgs* playersInfo = (struct ClientArgs*)clientArgs;
+    int client = playersInfo->clientSocket;
+    vector<pthread_t>& refToThreadArr = playersInfo->threadArr;
+    int indexAtThreadArr = playersInfo->indexAtThreadArr;
+    GameControl* control = playersInfo->controller;
+    // Read massage from player.
+    char ma[50];
+    char* buffer = ma;
+    bool endReading = false;
+    do {
+    int n = read(client, buffer, sizeof(buffer));
+    if (n == -1) {
+        cout << "Error reading point" << endl;
+        // remove the thread from threadArr
+        refToThreadArr.erase(refToThreadArr.begin()+indexAtThreadArr);
+        pthread_exit (NULL); // NULL is to be insert here?!
+    } else if (n == 0) {
+        cout << "Client disconnected" << endl;
+        pthread_exit (NULL); // NULL is to be insert here?!
+        }
+    //concert array to string.
+    string massage(buffer);
+    //split the massage to the command and valus clients send.
+    //value will be name.
+	  string i;
+	  vector<string> vect;
+	  stringstream ss(massage);
+	  while (ss >> i) {
+	    vect.push_back(i);
+	   if (ss.peek() == ' ')
+	      ss.ignore();
+	  }
+	  string command = vect.at(0);
+	  string val = vect.at(1);
+
+	  //create struct of rguments command will get.
+	  CommandInfo args;
+	  args.clientSocket = client;
+	  args.gameName = val;
+	  if(!control->executeCommand(command, args)) {
+		  endReading = true;
+	  }
+
+
+    } while(!endReading);
+}
+
+void* closeAllGames(void *args) {
+    struct ClientArgs* playersInfo = (struct ClientArgs*)args;
+    GameControl* control = playersInfo->controller;
+    string checkToclose;
+    bool stop = false;
+    while(!stop) {
+     cin >> checkToclose;
+     if (checkToclose.compare("exit")) {
+    	 stop = true;
+    	 control->End();
+    	 pthread_exit(NULL);
+     }
+    }
 }

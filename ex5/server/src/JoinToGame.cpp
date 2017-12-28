@@ -28,6 +28,8 @@ void JoinToGame::Execute(struct CommandInfo info) {
             cout << "Client disconnected" << endl;
             return;
         }
+        cmdManager->deletePlayer(otherPlayerSocket);
+
         close(info.clientSocket);
         return;
     }
@@ -78,6 +80,9 @@ void JoinToGame::Execute(struct CommandInfo info) {
         turnCounter++;
         //if the message is Close-return to close connections with players.
         if (strcmp(massage, "Close") == 0) {
+            cmdManager->deletePlayer(otherPlayerSocket);
+            cmdManager->deletePlayer(info.clientSocket);
+
             close(player[0]);
             close(player[1]);
         }

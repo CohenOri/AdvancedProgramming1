@@ -24,6 +24,7 @@ void StartNewGame::Execute(struct CommandInfo info) {
         return;
     }
     int n = write(info.clientSocket, "-1", strlen("-1"));
+    cmdManager->deletePlayer(info.clientSocket);
     close(info.clientSocket);
     if (n == -1) {
         throw "Error writing to socket";

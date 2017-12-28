@@ -21,7 +21,7 @@
 class JoinToGame: public CommandProtocol {
 public:
 	JoinToGame(CommandManager* cmdManagerPtr);
-	void Execute(struct CommandInfo info);
+	virtual void Execute(struct CommandInfo info);
 	virtual ~JoinToGame();
 private:
 	CommandManager* cmdManager;

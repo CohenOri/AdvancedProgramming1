@@ -9,15 +9,12 @@
 #define SERVER_INCLUDE_CLOSEGAME_H_
 
 #include "CommandProtocol.h"
-#include "CommandManager.h"
 
 class CloseGame: public CommandProtocol {
 public:
-	CloseGame(CommandManager* cmdManagerPtr);
-	void Execute(struct CommandInfo info);
+	CloseGame();
+	virtual void Execute(vector<string> args);
 	virtual ~CloseGame();
-private:
-	CommandManager* cmdManager;
 };
 
 #endif /* SERVER_INCLUDE_CLOSEGAME_H_ */

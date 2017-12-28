@@ -11,12 +11,10 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <sstream>
 #include "CommandProtocol.h"
-#include "Server.h"
-#include "PlayMove.h"
 #include "StartNewGame.h"
 #include "JoinToGame.h"
-#include "CloseGame.h"
 #include "PrintGames.h"
 
 using namespace std;
@@ -27,27 +25,24 @@ public:
 	 * constractor.
 	 * @param server which will connect between clients.
 	 */
-    GameControl(Server* server);
-    virtual void Execute(vector<string> args);
+    GameControl(CommandManager* game);
     virtual ~GameControl();
     /**
-     * Start to run the server
+     * start a command
      */
-	void Run();
+    bool executeCommand(string command, CommandInfo args);
 
-    void* HandleClient(void *clientArgs);
-
+    /**
+     * stop all players and close them.
+     */
+	void End();
 private:
     map<string, int> listGamesAndSockets;
+    CommandManager* gameList;
     map<string, CommandProtocol *> commandsMap;
-    Server* server;
-    vector<string> gamesNameList;//optional
+
+
 };
 
-struct ClientArgs {
-    int clientSocket;
-    vector<pthread_t> &threadArr;
-    int indexAtThreadArr;
-};
 
 #endif /* SERVER_INCLUDE_GAMECONTROL_H_ */

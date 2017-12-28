@@ -4,22 +4,29 @@
 
 #ifndef ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
 #define ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
+#include <vector>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <string>
+#include <iostream>
+#include <stdio.h>
+using namespace std;
 
-#include "CommandProtocol.h"
+//#include "CommandProtocol.h"
 #include <map>
-
+/**
 #include "PlayMove.h"
 #include "StartNewGame.h"
 #include "JoinToGame.h"
 #include "CloseGame.h"
 #include "PrintGames.h"
-
-#include <pthread.h>
+**/
 
 class CommandManager {
 public:
     CommandManager();
-    CommandProtocol GetCommand(string cmdName);
+   // CommandProtocol* GetCommand(string cmdName);
     /**
      *
      * @param gameName
@@ -28,8 +35,11 @@ public:
      * game with this name)
      */
     bool AddGame(string gameName, int gameSocket);
-    int GetGameSocket(string gameName) const;
-    vector<string> ListOfGamesNames() const;
+    int GetGameSocket(string gameName);
+    vector<string> ListOfGamesNames();
+    void addPlayer(int player);
+    void deletePlayer(int pkayer);
+    void closeAllPlayers();
     /**
      * @param gameName
      * @return true if successfully closed the game, false otherwise
@@ -37,7 +47,7 @@ public:
     bool RemoveGame(string gameName);
 
 private:
-    map<string, CommandProtocol> commandsMap;
+    vector<int> connectedPlayers;
     map<string, int> nameToGameMap;
     pthread_mutex_t mutex;
 

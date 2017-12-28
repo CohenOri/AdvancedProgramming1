@@ -9,6 +9,9 @@
 #include <fstream>
 #include <limits>
 #include <pthread.h>
+#include "../include/GameControl.h"
+#include "../include/CommandManager.h"
+
 
 
 using namespace std;
@@ -36,7 +39,10 @@ int main() {
        } else {
            cout << "Unable to open file" << endl;
        }
- Server server(port);
+       CommandManager manager;
+       GameControl controller(&manager);
+       Server server(port, &controller);
+
  try {
 	 server.start();
  } catch (const char *msg) {
