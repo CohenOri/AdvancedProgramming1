@@ -64,10 +64,10 @@ bool GameFlow::GameOver() {
       || this->logic->SlotsToPlace(EnumDeclration::O).size() != 0) {
     return false;
   }//if its the end of board and we made last move- send to server end.
-  if(this->board->GetLastMove().compare("End") != 0) {
+  if(this->board->GetLastMove().compare("Close") != 0) {
 	  //send to other player your last move.
 	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
-	  this->board->SetLastMove("End");
+	  this->board->SetLastMove("Close");
   } else {//send to other player end.
 	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
   }

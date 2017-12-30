@@ -11,6 +11,8 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <string.h>
+#include <limits>
+
 #include <iostream>
 #include <stdio.h>
 #include "GameControl.h"

@@ -60,19 +60,18 @@ void GameFlow::Run() {
 }
 
 bool GameFlow::GameOver() {
-  if (this->logic->SlotsToPlace(EnumDeclration::X).size() != 0
-      || this->logic->SlotsToPlace(EnumDeclration::O).size() != 0) {
-    return false;
-  }//if its the end of board and we made last move- send to server end.
-  if(this->board->GetLastMove().compare("End") != 0) {
-	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
-	  this->board->SetLastMove("End");
-	  //if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
-  } else {
-	  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
-
-  }
-  return true;
+	  if (this->logic->SlotsToPlace(EnumDeclration::X).size() != 0
+	      || this->logic->SlotsToPlace(EnumDeclration::O).size() != 0) {
+	    return false;
+	  }//if its the end of board and we made last move- send to server end.
+	  if(this->board->GetLastMove().compare("Close") != 0) {
+		  //send to other player your last move.
+		  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
+		  this->board->SetLastMove("Close");
+	  } else {//send to other player end.
+		  if(this->clentServer) this->player[0]->MakeAMove(this->board, this->logic);
+	  }
+	  return true;
 }
 
 void GameFlow::EndGame() {

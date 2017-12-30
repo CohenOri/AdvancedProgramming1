@@ -13,6 +13,7 @@ using namespace std;
 struct CommandInfo {
     int clientSocket;
     string gameName;
+    //string allComand;
     map<string, int>* openGames;
 
 };

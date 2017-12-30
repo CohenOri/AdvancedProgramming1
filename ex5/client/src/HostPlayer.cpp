@@ -58,14 +58,15 @@ void HostPlayer::getSymbolFromServer() {
         //symbol type here referees to enemy.
         this->symbol = 'O';
         //other player connect when we receive num2 from server.
-        cout << "waiting for other player to connect.." << endl;
+   /*     cout << "waiting for other player to connect.." << endl;
         int n = read(clientSocket, &start, sizeof(start));
         if (n == -1) {
             throw "Error reading result from socket";
-        }
+        }**/
         //print to player who is he.
         cout << "you are: X" << endl;
     } else {//if player is 2-he is second.
+    	cout << player <<" is what we get" << endl;
         this->player = EnumDeclration::O;
         //symbol type here referees to enemy.
         this->symbol = 'X';
@@ -150,54 +151,91 @@ void HostPlayer::SendMove(string move) {
 
 EnumDeclration::CellStatus HostPlayer::getEnumSymbol() { return EnumDeclration::OtherPlayer((this->player)); }
 
-void HostPlayer::SendStart(string gameName) {
+bool HostPlayer::SendStart(string gameName) {
     // write/send start command to server
-    WriteCommand("start", gameName);
+    string fullCommand = "start " + gameName;
+    WriteCommand(fullCommand);
+    int buf;
+    //size_t length = fullCommand.copy(buf, fullCommand.size(), 0);
+    //buf[length] = '\0';
+  //  cout << buf << endl;
+    //send the buffer.
+    int n = read(clientSocket, &buf, sizeof(buf));
+    if (n == -1) {
+        throw "Error writing command to socket";
+    }
+    // validate that server successfully preformed the command
+    if(buf == 0) {
+    	cout << "wait for other player to conncet" << endl;
+    	return true;
+    } else if(buf == -1) {
+    	cout << "their is such name in the list" << endl;
+    	return false;
+    }
+
 }
 
-void HostPlayer::JoinGame(string gameName) {
+bool HostPlayer::JoinGame(string gameName) {
     // write/send join command to server
-    WriteCommand("join", gameName);
+    string fullCommand = "join " + gameName;
+    WriteCommand(fullCommand);
+    int buf;
+    //size_t length = fullCommand.copy(buf, fullCommand.size(), 0);
+    //buf[length] = '\0';
+  //  cout << buf << endl;
+    //send the buffer.
+    int n = read(clientSocket, &buf, sizeof(buf));
+    if (n == -1) {
+        throw "Error writing command to socket";
+    }
+    // validate that server successfully preformed the command
+    if(n == 0) {
+    	cout << "0 is answer" << endl;
+    	return true;
+    } else if(n == 1) {
+    	cout << "1 is answer" << endl;
+    	return false;
+    }
+
 }
 
-void HostPlayer::WriteCommand(const string &command, const string &gameName) const {
-    string fullCommand = command + " " + gameName;
+void HostPlayer::WriteCommand(const string &command) const {
+    string fullCommand = command;
     //initialize the buffer array and copy the command.
     char buf[50] = {0};
     size_t length = fullCommand.copy(buf, fullCommand.size(), 0);
     buf[length] = '\0';
+    cout << buf << endl;
     //send the buffer.
     int n = write(clientSocket, buf, strlen(buf));
     if (n == -1) {
         throw "Error writing command to socket";
     }
-    // validate that server successfully preformed the command
-    int validate;
-    n = read(clientSocket, &validate, sizeof(player));
-    if (n == -1) {
-        throw "Error writing command to socket";
-    }
-    if (validate == -1) { // server couldn't preform what it was asked
-        throw "Server returned an error, because it couldn't preform what it was asked (-1)";
-    }
 }
 
 void HostPlayer::PrintGamesList() {
     cout << "print Games:" << endl;
-    SendMove("list_games");
-    while (true) {
+    try{
+    WriteCommand("list_games");
+    } catch (const char *msg) {
+    	cout << "error sending: " <<  msg << endl;
+    	return;
+    }
+    bool stop = true;
+    while (stop) {
         //initialize buffer. read from server array.
-        char buffer[50] = {0};
-        int n = read(clientSocket, buffer, sizeof(buffer));
+        char massage[50] = {0};
+        char* buffer = massage;
+        int n = read(clientSocket, buffer, 50);
         if (n == -1) {
             throw "Error reading open games from socket";
         }
         //create a string from the array.
-        string answer(buffer);
+        string answer(massage);
         //if we got end_open_games stop printing.
         if (answer.compare("end_open_games") == 0) {
             // no more open games to print, stop
-            return;
+            stop = false;
         }
         // prints the games
         cout << answer << endl;

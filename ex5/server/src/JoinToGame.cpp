@@ -17,10 +17,23 @@ JoinToGame::~JoinToGame() {
 
 void JoinToGame::Execute(struct CommandInfo info) {
     int otherPlayerSocket;
+    int secces;
     try {
-        otherPlayerSocket= this->cmdManager->GetGameSocket(info.gameName);}
+    	secces = 0;
+        otherPlayerSocket= this->cmdManager->GetGameSocket(info.gameName);
+        cout << "this is other " << otherPlayerSocket << "and this is" << info.clientSocket << endl;
+        int n = write(info.clientSocket, &secces, sizeof(secces));
+              if (n == -1) {
+                  cout << "Error writing to socket" << endl;
+                  return;
+              } else if (n == 0) {
+                  cout << "Client disconnected" << endl;
+                  return;
+              }
+    }
     catch(int e) {
-        int n = write(info.clientSocket, "-1", sizeof("-1"));
+    	secces = -1;
+        int n = write(info.clientSocket, &secces, sizeof(secces));
         if (n == -1) {
             cout << "Error writing to socket" << endl;
             return;
@@ -35,11 +48,13 @@ void JoinToGame::Execute(struct CommandInfo info) {
     }
 
     // Write 1/2 to the player in order to later detrmine which one is the first and second (X/O)
-    int n = write(otherPlayerSocket, "1", sizeof("1"));
+    int playerMode = 1;
+    int n = write(otherPlayerSocket, &playerMode, sizeof(playerMode));
     if (n == -1 || n == 0) {
         cout << "Error writing to socket Or Client disconnected" << endl;
         return;}
-    n = write(info.clientSocket, "2", sizeof("2"));
+    playerMode = 2;
+    n = write(info.clientSocket, &playerMode, sizeof(playerMode));
     if (n == -1 || n == 0) {
         cout << "Error writing to socket Or Client disconnected" << endl;
         return;}
@@ -53,7 +68,7 @@ void JoinToGame::Execute(struct CommandInfo info) {
     }
 
     // Read the plays from each client until game is over
-    int player[] = {info.clientSocket, otherPlayerSocket};
+    int player[] = { otherPlayerSocket, info.clientSocket};
     int turnCounter = 0;
     char buffer[50];
     char *massage = buffer;
@@ -78,6 +93,7 @@ void JoinToGame::Execute(struct CommandInfo info) {
             return;
         }
         turnCounter++;
+        cout << "this is the move " << massage << endl;
         //if the message is Close-return to close connections with players.
         if (strcmp(massage, "Close") == 0) {
             cmdManager->deletePlayer(otherPlayerSocket);
@@ -85,6 +101,7 @@ void JoinToGame::Execute(struct CommandInfo info) {
 
             close(player[0]);
             close(player[1]);
+            return;
         }
     }
 }

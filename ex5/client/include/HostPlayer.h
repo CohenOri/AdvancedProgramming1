@@ -58,9 +58,9 @@ public:
      */
     EnumDeclration::CellStatus getEnumSymbol();
 
-    void SendStart(string gameName);
+    bool SendStart(string gameName);
 
-    void JoinGame(string gameName);
+    bool JoinGame(string gameName);
 
     void PrintGamesList();
 
@@ -91,7 +91,7 @@ private:
      * @param command start/join etc.
      * @param gameName gameName..
      */
-    void WriteCommand(const string &command, const string &gameName) const;
+    void WriteCommand(const string &command) const;
 };
 
 #endif /* SRC_CLIENT_INCLUDE_HOSTPLAYER_H_ */

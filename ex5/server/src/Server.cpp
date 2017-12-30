@@ -11,11 +11,11 @@
 Server::Server(int port, GameControl* controller): port(port), serverSocket(0) {
 	this->controller = controller;
 	cout << "Server" << endl;
+	this->stopGame = 0;
 }
 
 void Server::start() {
 	// Create a socket point
-	this->stopGame = 0;
 	 serverSocket = socket(AF_INET, SOCK_STREAM, 0);
 	 if (serverSocket == -1) {
 		 throw "Error opening socket";
@@ -39,26 +39,32 @@ void Server::start() {
 
 	 ClientArgs arg;
 	 arg.serverSocket = serverSocket;
+	 //no clients gor now.
 	 arg.clientSocket = 0;
+	 //this argument used only for exit thread.
 	 arg.stop = &this->stopGame;
 	 arg.indexAtThreadArr = 0;
+	 //gameConrol
 	 arg.controller = this->controller;
+	 //map of threads.
 	 arg.threadArr = &this->threads;
+
+
 	 //this thread controll  when to stop the server and exit.
 	 int rc = pthread_create(&end, NULL, closeAllGames, (void *)&arg);
 	 if (rc) {
-				   cout << "Error: unable to create thread, " << rc << endl;
-	   	    	 return;
+		 cout << "Error: unable to create thread, " << rc << endl;
+	   return;
 	 }
 
 	 //this thread accept new clients and hendel them.
 
-	 //insert thread to list
+	 //first insert thread to list
 	 threads.insert(pair<int, pthread_t>(0, serverOperation));
 	 rc = pthread_create(&serverOperation, NULL, ServerAcceptClients, (void *)&arg);
 	 if (rc) {
-				   cout << "Error: unable to create thread, " << rc << endl;
-	   	    	 return;
+		cout << "Error: unable to create thread, " << rc << endl;
+	  return;
 	 }
 
 	 //wait the exit to stop
@@ -66,7 +72,7 @@ void Server::start() {
 		 continue;
 	 }
 	 cout << "stop the server" << endl;
-	 //stop the server
+	 //stop the server-close srvers socket.
 	 stop();
 }
 
@@ -131,17 +137,22 @@ void* HandleClient(void *clientArgs) {
     // break the struct back to parameters
     // cast back from void* to struct
 	cout << "we are starting!! " << endl;
+
+	//get all arguments we sent by struct.
     struct ClientArgs* playersInfo = (struct ClientArgs*)clientArgs;
     int client = playersInfo->clientSocket;
     map<int, pthread_t>* refToThreadArr = playersInfo->threadArr;
     int indexAtThreadArr = playersInfo->indexAtThreadArr;
     GameControl* control = playersInfo->controller;
+
+
     // Read massage from player.
     char ma[50];
     char* buffer = ma;
+    memset(ma,0,50);
     bool endReading = false;
     do {
-    int n = read(client, buffer, sizeof(buffer));
+    int n = read(client, ma, 50);
     if (n == -1) {
         cout << "Error reading point" << endl;
         // remove the thread from threadArr
@@ -151,28 +162,39 @@ void* HandleClient(void *clientArgs) {
         cout << "Client disconnected" << endl;
         pthread_exit (NULL); // NULL is to be insert here?!
         }
+    cout << buffer << endl;
     //concert array to string.
     string massage(buffer);
+    cout << massage << " and size: " << massage.size() << endl;
     //split the massage to the command and valus clients send.
     //value will be name.
 	  string i;
 	  vector<string> vect;
 	  stringstream ss(massage);
+	  bool twoWords = false;
 	  while (ss >> i) {
 	    vect.push_back(i);
-	   if (ss.peek() == ' ')
-	      ss.ignore();
+	   if (ss.peek() == ' ') {
+		      ss.ignore();
+		      twoWords = true;
+	   }
 	  }
-	  string command = vect.at(0);
-	  string val = vect.at(1);
-
 	  //create struct of rguments command will get.
 	  CommandInfo args;
-	  args.clientSocket = client;
+	  string command = vect.at(0);
+	  cout << "client asks for: " << command << endl;
+	  if (twoWords) {
+	  string val = vect.at(1);
+	  cout << "client game name choine: " << val << endl;
 	  args.gameName = val;
-	  if(!control->executeCommand(command, args)) {
+	  }
+	  args.clientSocket = client;
+
+	  if(control->executeCommand(command, args)) {
 		  endReading = true;
 		  refToThreadArr->erase(indexAtThreadArr);
+	  } else {
+		  cout << "no such command" << endl;
 	  }
 
     } while(!endReading);
@@ -234,7 +256,9 @@ void* closeAllGames(void *args) {
     	 *playersInfo->stop = 1;
      } else {
     	 cout << "not exit \n";
+         cin.clear();
+         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
      }
-     pthread_exit (NULL);
     }
+    pthread_exit (NULL);
 }
