@@ -31,6 +31,15 @@ class LogicInterface {
    * @param b for copy.
    */
   virtual LogicInterface* CopyLogic(Board *b) = 0;
+  void SetForcedClose() {
+	  this->forcedClose = true;
+  }
+ bool GetForcedCloseStat() {
+	 return this->forcedClose;
+ }
+ protected:
+  bool forcedClose;
+
 };
 
 inline LogicInterface::~LogicInterface() { }

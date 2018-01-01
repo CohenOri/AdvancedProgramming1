@@ -52,7 +52,10 @@ void HostPlayer::getSymbolFromServer() {
     int n = read(clientSocket, &player, sizeof(player));
     if (n == -1) {
         throw "Error reading result from socket";
-    }//if you 1 mean you are X.
+    } else if (n == 0) {
+    	throw "Error: Server Dosconnected";
+    }
+    //if you 1 mean you are X.
     if (player == 1) {
         this->player = EnumDeclration::X;
         //symbol type here referees to enemy.
@@ -82,8 +85,13 @@ char HostPlayer::GetSymbol() { return this->symbol; }
 void HostPlayer::MakeAMove(Board *b, LogicInterface *logic) {
     //first if we End the game-just send Close and return.
     if (b->GetLastMove().compare("Close") == 0) {
+    	try{
         SendMove("Close");
         return;
+    	} catch(const char* mag) {
+    		    	logic->SetForcedClose();
+    		    	return;
+    	}
         //if its the first move-check if the player is X
         //if X return to get from TerminalPlayer a move.
     } else if (firstMove) {
@@ -92,7 +100,13 @@ void HostPlayer::MakeAMove(Board *b, LogicInterface *logic) {
             return;
         }
         //if its not first move-send players move to server.
-    } else if (!firstMove) SendMove(b->GetLastMove());
+    } else if (!firstMove) {
+    	try {
+    		SendMove(b->GetLastMove());
+    	} catch(const char* msg) {
+    		  logic->SetForcedClose();
+    	}
+    }
     this->firstMove = false;
     //instalize buffer. read from server array.
     char buffer[50] = {0};
@@ -100,6 +114,10 @@ void HostPlayer::MakeAMove(Board *b, LogicInterface *logic) {
     int n = read(clientSocket, buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error reading result from socket";
+    } else if(n == 0) {
+    	cout << "Error: Server discinnected" << endl;
+    	logic->SetForcedClose();
+    	return;
     }
     //create a string from the array.
     string answer(buffer);
@@ -147,6 +165,9 @@ void HostPlayer::SendMove(string move) {
     if (n == -1) {
         throw "Error writing move to socket";
     }
+    if( n == 0) {
+    	throw "Error server disconnected";
+    }
 }
 
 EnumDeclration::CellStatus HostPlayer::getEnumSymbol() { return EnumDeclration::OtherPlayer((this->player)); }
@@ -163,6 +184,8 @@ bool HostPlayer::SendStart(string gameName) {
     int n = read(clientSocket, &buf, sizeof(buf));
     if (n == -1) {
         throw "Error writing command to socket";
+    } else if (n == 0) {
+    	throw "Error: Server disconnected";
     }
     // validate that server successfully preformed the command
     if(buf == 0) {
@@ -187,6 +210,8 @@ bool HostPlayer::JoinGame(string gameName) {
     int n = read(clientSocket, &buf, sizeof(buf));
     if (n == -1) {
         throw "Error writing command to socket";
+    } else if(n == 0) {
+    	throw "Error: Server disconnected";
     }
     // validate that server successfully preformed the command
     if(buf == 0) {
@@ -210,6 +235,8 @@ void HostPlayer::WriteCommand(const string &command) const {
     int n = write(clientSocket, buf, strlen(buf));
     if (n == -1) {
         throw "Error writing command to socket";
+    } else if(n == 0) {
+    	throw "Error: server disconnected";
     }
 }
 
@@ -229,6 +256,9 @@ void HostPlayer::PrintGamesList() {
         int n = read(clientSocket, buffer, 50);
         if (n == -1) {
             throw "Error reading open games from socket";
+        } else if (n == 0) {
+        	cout << "Server Disconnected" << endl;
+        	return;
         }
         //create a string from the array.
         string answer(massage);

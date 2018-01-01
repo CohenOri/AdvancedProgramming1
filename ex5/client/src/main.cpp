@@ -124,13 +124,18 @@ int main() {
                     // sends start game command to server
                     try {
                        correct = p3->SendStart(name);
-                       p3->getSymbolFromServer();
+                       if(!correct) {
+                    	   correct = false;
+                    	   break;
+                       }
+                    	  p3->getSymbolFromServer();
                        p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
                        p1 = p3;
                        	   	   	   	   break;
-                    } catch (int e) {
-                        cout << "Something went wrong, you probably tried to open an already opened game" << endl;
-                        continue;
+                    } catch (const char* e) {
+                    	cout << e << endl;
+                        correct =  false;
+                        break;
                     				}
 
                 			}
@@ -155,12 +160,17 @@ int main() {
                     // sends join game command to server
                     try {
                        correct = p3->JoinGame(name);
+                       if(!correct) {
+                    	   correct = false;
+                       }
                        p3->getSymbolFromServer();
                        p1 = p3;
                        p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
-                    } catch (int e) {
-                        cout << "Something went wrong, you probably tried to join non valid game" << endl;
-                    continue;
+                    } catch (const char* e) {
+                    	cout << e << endl;
+                    	correct = false;
+                        //cout << "Something went wrong, you probably tried to join non valid game" << endl;
+                    break;
                     			}
                 		}
                 break;

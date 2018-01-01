@@ -9,6 +9,7 @@
 
 RegularLogic::RegularLogic(Board *b) {
   this->board = b;
+  this->forcedClose = false;
 }
 vector<Slot> RegularLogic::SlotsToPlace(EnumDeclration::CellStatus cellStatus) {
   Board *b = this->board;

@@ -68,9 +68,11 @@ void Server::start() {
 	 }
 
 	 //wait the exit to stop
-	 while(this->stopGame == 0) {
+	/* while(this->stopGame == 0) {
 		 continue;
-	 }
+	 }**/
+	 void * status;
+	 pthread_join(end, &status);
 	 cout << "stop the server" << endl;
 	 //stop the server-close srvers socket.
 	 stop();
@@ -252,6 +254,7 @@ void* closeAllGames(void *args) {
     		 pthread_t m = b->at(i);
     		 pthread_cancel(m);
     		 cout << "close the thresds" << endl;
+    		 cout << "this is the size of b" << b->size() << endl;
     	 }
     	 *playersInfo->stop = 1;
      } else {
@@ -260,5 +263,5 @@ void* closeAllGames(void *args) {
          std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
      }
     }
-    pthread_exit (NULL);
+    //pthread_exit (NULL);
 }

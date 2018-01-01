@@ -60,6 +60,7 @@ void GameFlow::Run() {
 }
 
 bool GameFlow::GameOver() {
+	if(this->logic->GetForcedCloseStat()) return true;
 	  if (this->logic->SlotsToPlace(EnumDeclration::X).size() != 0
 	      || this->logic->SlotsToPlace(EnumDeclration::O).size() != 0) {
 	    return false;
@@ -76,7 +77,9 @@ bool GameFlow::GameOver() {
 
 void GameFlow::EndGame() {
 	  Board *b = this->board;
-
+	  if(this->logic->GetForcedCloseStat()) {
+		  return;
+	  }
     int numOfSlotsInBoard = b->NumOfRows() * b->NumOfCols();
     int numOfUsedSlots = b->GetXSlots().size() + b->GetOSlots().size();
     if (numOfUsedSlots >= numOfSlotsInBoard) {
