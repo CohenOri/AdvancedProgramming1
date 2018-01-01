@@ -22,7 +22,7 @@
 #include "../include/AiPlayer.h"
 #include "../include/PlayerInterface.h"
 #include "../include/HostPlayer.h"
-
+void SetIPAndPortFrpmFile(string file, int * port, string * ip);
 using namespace std;
 
 int main() {
@@ -32,153 +32,131 @@ int main() {
     RegularLogic rl = RegularLogic(b);
     PlayerInterface *p1 = NULL;
     PlayerInterface *p2 = NULL;
-    short userChoice;
+    HostPlayer *p3 = NULL;
+    string ip;
+    int port;
+    string name;
+    short userChoice = 0;
     bool correct = false;
     bool server = false;
+
+
     cout << "Let The Game Begin!" << endl;
     cout << "May the odds be ever in your favor\n" << endl;
-    do {//ask user against who he wants to play.
-        cout << "Choose against who to play\n1-Human local player" << endl;
-        cout << "2-AI player" << endl;
-        cout << "3-Remote player" << endl;
-        cin >> userChoice;
-        if (cin.fail() || userChoice > 3 || userChoice < 1) {//check if users input wrong.
-            cout << "Illegal input entered or there isn't such option (not in rage 1-3). try again" << endl;
-            cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            continue;
-        } else if (userChoice == 1) {//play against human.
-            correct = true;
-            p1 = new TerminalPlayer(EnumDeclration::X);
-            p2 = new TerminalPlayer(EnumDeclration::O);
-        } else if (userChoice == 2) {//play against computer.
-            correct = true;
-            p1 = new TerminalPlayer(EnumDeclration::X);
-            p2 = new AiPlayer(EnumDeclration::O);
-        } else if (userChoice == 3) {//play against remote player.
-            // Read IP and port of remote Host from file
-        	cout << "we arw here" << endl;
-     /*       string ip, line;
-            int port;
-            try {
-            ifstream hostInfo("hostInfo.txt");
-            if (hostInfo.is_open()) {
-                // break the first line into IP
-                // break the second line to Port No.
-                string delimiter = ":";
-                getline(hostInfo, line);
-                string token = line.substr(line.find(delimiter) + 1, line.length());
-                std::stringstream stream(token);
-                stream >> token;
-                ip = token;
-                getline(hostInfo, line);
-                token = line.substr(line.find(delimiter) + 1, line.length());
-                std::istringstream(token) >> port; //convert to int
-                hostInfo.close();
-            } else {
-                throw "Unable to open file";
-            }
-            } catch(const char* msg) {
-            	cout << "errorrrrrssss" << msg << endl;
-            }
-        	cout << "we arw here2" << endl;
-**/
-            //HostPlayer *p3 = new HostPlayer(ip.c_str(), port);
-            HostPlayer *p3 = new HostPlayer("127.0.0.1", 8000);
-            try {
-                p3->connectToServer();
-            //    p3->getSymbolFromServer();
-            // p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
-            } catch (const char *msg) {
-                cout << "Failed to connect to server. Reason:" << msg << endl;
+    do {
+    	//ask user against who he wants to play.
+    	cout << "Choose against who to play\n1-Human local player" << endl;
+    	cout << "2-AI player" << endl;
+    	cout << "3-Remote player" << endl;
+    	cin >> userChoice;
+    	//check witch option user choose.
+    	switch(userChoice) {
+    	case -1://secret choice-exit.
+    		cout << "This is a secret ending game. Goodbye :)" << endl;
+    		delete b;
+    		return 0;
+
+    	case 1://play against human local player.
+    		correct = true;
+			server = false;
+       p1 = new TerminalPlayer(EnumDeclration::X);
+       p2 = new TerminalPlayer(EnumDeclration::O);
+    		break;
+
+    	case 2://play against AI
+       correct = true;
+			server = false;
+       p1 = new TerminalPlayer(EnumDeclration::X);
+       p2 = new AiPlayer(EnumDeclration::O);
+    		break;
+
+    	case 3://play against server.-open connection with server firsrt;
+    		//get ip and port from file.
+    		SetIPAndPortFrpmFile("hostInfo.txt", &port, &ip);
+    		//create host player.
+       p3 = new HostPlayer(ip.c_str(), port);
+       /**
+     * this try-catch used for any disconnections with server.
+     * if something went wrong we go back to menu.
+        */
+    		try {
+    			p3->connectToServer();
+    			p1 = p3;
+    			correct = true;
+    			server = true;
+    			//we exit loop only after correct choice.
+    			while(true) {
+    				try{//if server disconnected at this part we go back to menu and
+    					//print user the error.
+
+    				   //ask user what he wants to do.
+    					//nose: this part users choice is only a number for convince.
+    					//when sending command to server we add commands name.
+    					cout << "What would you like to do?\n1-Start new game" << endl;
+        			cout << "2-Get a list of all open games" << endl;
+        			cout << "3-Join specific game" << endl;
+        			int command = 0;
+        			cin >> command;
+
+        			//check users input. after each operation go back to main loop.
+        			switch(command) {
+      				case 1://strat a new game-ask for game name.
+      					cout << "Name your game:\n";
+        				cin.clear();
+        				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        				cin >> name;
+        				//send server start command.
+        				correct = p3->SendStart(name);
+      					break;
+
+      				case 2://print list of games
+      					//send server list command.
+      					p3->PrintGamesList();
+      					correct = false;
+      					server = false;
+      					break;
+
+      				case 3://connect to a game
+      					cout << "Enter game's name you would like to connect:" << endl;
+      					cin.clear();
+      					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin >> name;
+                correct = p3->JoinGame(name);
+      					break;
+
+      				default://for any other input.
+        				cout << "Illegal input. integers only!" << endl;
+                cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
                 continue;
-            		}
-            p1 = p3;
-            // in order to stop the loop - we've got what we needed (two players)
-            correct = true;
-            // in order later tell gameFlow that we play with server and not local player
-            server = true;
-
-            // Choose command to send the server
-            while (true) {
-                // print commands menu
-                cout << "What would you like to do?\n1-Start new game" << endl;
-                cout << "2-Get a list of all open games" << endl;
-                cout << "3-Join specific game" << endl;
-                int command;
-                cin >> command;
-                if (cin.fail() || command > 3 || command < 1) {//check if users input wrong.
-                    cout << "Illegal input. integers only!" << endl;
-                    cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    continue;
-                			}
-                    // Start new Game
-                else if (command == 1) {
-                    cout << "Name your game:\n";
-                    string name;
-                    cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    //getline(cin, name);
-                    cin >> name;
-                    // sends start game command to server
-                    try {
-                       correct = p3->SendStart(name);
-                       if(!correct) {
-                    	   correct = false;
-                    	   break;
-                       }
-                    	  p3->getSymbolFromServer();
-                       p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
-                       p1 = p3;
-                       	   	   	   	   break;
-                    } catch (const char* e) {
-                    	cout << e << endl;
-                        correct =  false;
-                        break;
-                    				}
-
-                			}
-                    // Print open games
-                else if (command == 2) {
-                    cout << "list of gamed:\n" << endl;
-                    // prints the games using the server
-                    p3->PrintGamesList();
-
-                    			  correct = false;
-                    			  break;
-                			}
-                    // Join specific game
-                else if (command == 3) {
-                    cout << "Connect to game:" << endl;
-                    cout << "Enter game's name:" << endl;
-                    string name;
-                    cin.clear();
-                   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                   // getline(cin, name);
-                    cin >> name;
-                    // sends join game command to server
-                    try {
-                       correct = p3->JoinGame(name);
-                       if(!correct) {
-                    	   correct = false;
-                       }
-                       p3->getSymbolFromServer();
-                       p1 = p3;
-                       p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
-                    } catch (const char* e) {
-                    	cout << e << endl;
-                    	correct = false;
-                        //cout << "Something went wrong, you probably tried to join non valid game" << endl;
-                    break;
-                    			}
-                		}
-                break;
-            }
-
-        }
-
-    } while (!correct);
+        				}
+        			//if their was a problem with sending request go back to menu;
+        			if(!correct) break;
+        			//get symbols of player.  and create a humen player to work with.
+        			p3->getSymbolFromServer();
+        			p2 = new TerminalPlayer(EnumDeclration::OtherPlayer(p3->getEnumSymbol()));
+        			break;
+        			//if their was any problem
+    				} catch (const char* msg) {
+    					cout << msg << endl;
+    					correct = false;
+      				server = false;
+    					break;
+    				}
+    			}
+    		} catch (const char* msg) {
+    			cout << "Failed to connect to server. Reason:" << msg << endl;
+				server = false;
+    			continue;
+    		}
+    		break;
+    	default:
+    		cout << "Illegal input entered or there isn't such option" +
+    				"(not in rage 1-3). try again" << endl;
+       cin.clear();
+       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    	}
+    } while (!correct);//untill users input is correct.
     cin.ignore();
     GameFlow gameFlow(&rl, b, p1, p2, server);
     gameFlow.Run();
@@ -188,4 +166,25 @@ int main() {
     delete p2;
     delete p1;
     return 0;
+}
+
+void SetIPAndPortFrpmFile(string file, int * port, string * ip) {
+    ifstream hostInfo(file.c_str());
+    string line;
+    if (hostInfo.is_open()) {
+   // break the first line into IP
+   // break the second line to Port No.
+        string delimiter = ":";
+        getline(hostInfo, line);
+        string token = line.substr(line.find(delimiter) + 1, line.length());
+        std::stringstream stream(token);
+        stream >> token;
+        *ip = token;
+        getline(hostInfo, line);
+        token = line.substr(line.find(delimiter) + 1, line.length());
+        std::istringstream(token) >> *port; //convert to int
+        hostInfo.close();
+    } else {
+  	  	  	  	  cout << "Unable to open file" << endl;
+    }
 }
