@@ -59,7 +59,7 @@ void PrintGames::Execute(struct CommandInfo info) {
       if (n == -1) {
           throw "Error writing to socket";
       }
-    cmdManager->deletePlayer(info.clientSocket);
     close(info.clientSocket);
+    cmdManager->deletePlayer(info.clientSocket);
 }
 

@@ -4,18 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/gtest_src/gtest-all.cc" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/gtest_src/gtest-all.cc.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/AiPlayer.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/AiPlayer.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/Board.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/Board.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/GameFlow.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/GameFlow.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/HostPlayer.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/HostPlayer.cpp.o"
+  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/PrintGames.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/RegularLogic.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/RegularLogic.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/Slot.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/Slot.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/SlotWithRank.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/SlotWithRank.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/TerminalPlayer.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/TerminalPlayer.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/main.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/main.cpp.o"
-  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/TestManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.o"
-  "/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/test-all.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CheckNewClient.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.o"
   "/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp" "/home/ori/CLionProjects/AdvancedProgramming1/cmake-build-debug/CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.o"

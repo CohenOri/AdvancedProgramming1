@@ -80,6 +80,6 @@ void CommandManager::deletePlayer(int player) {
 
 void CommandManager::closeAllPlayers() {
 	for(unsigned int i = 0; i < this->connectedPlayers.size(); i++) {
-		close(this->connectedPlayers.at(i));
+		close(this->connectedPlayers[i]);
 	}
 }

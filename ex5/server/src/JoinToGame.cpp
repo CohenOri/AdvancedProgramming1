@@ -31,7 +31,7 @@ void JoinToGame::Execute(struct CommandInfo info) {
                   return;
               }
     }
-    catch(int e) {
+    catch(char const* e) {
     	secces = -1;
         int n = write(info.clientSocket, &secces, sizeof(secces));
         if (n == -1) {

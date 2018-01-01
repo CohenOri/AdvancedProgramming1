@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/gtest_src/gtest-all.cc">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/gtest_src/gtest.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/AiPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -135,6 +129,9 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/HostPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/PrintGames.cpp">
+			<Option target="AdvancedProgramming1"/>
+		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/RegularLogic.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -148,21 +145,6 @@
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/main.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/AdvanceTestGame.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/TestAiPlayer.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/TestClassicLogic.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/TestManager.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/test/test-all.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CheckNewClient.h">

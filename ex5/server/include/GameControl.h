@@ -32,6 +32,8 @@ public:
      */
     bool executeCommand(string command, CommandInfo args);
 
+    void AddPlayerSocket(int socketNumber);
+
     /**
      * stop all players and close them.
      */

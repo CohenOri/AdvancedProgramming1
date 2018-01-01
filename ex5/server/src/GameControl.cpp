@@ -22,7 +22,6 @@ GameControl::~GameControl() {
 bool GameControl::executeCommand(string command, CommandInfo args) {
 	if (this->commandsMap.find(command) != this->commandsMap.end() )  {
 		CommandProtocol* cmdPtr = this->commandsMap[command];
-		this->gameList->addPlayer(args.clientSocket);
 		cmdPtr->Execute(args);
 		return true;
 	}
@@ -31,6 +30,10 @@ bool GameControl::executeCommand(string command, CommandInfo args) {
 
 void GameControl::End() {
 	this->gameList->closeAllPlayers();
+}
+
+void GameControl::AddPlayerSocket(int socketNumber) {
+	this->gameList->addPlayer(socketNumber);
 }
 
 

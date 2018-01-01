@@ -189,11 +189,11 @@ bool HostPlayer::JoinGame(string gameName) {
         throw "Error writing command to socket";
     }
     // validate that server successfully preformed the command
-    if(n == 0) {
+    if(buf == 0) {
     	cout << "0 is answer" << endl;
     	return true;
-    } else if(n == 1) {
-    	cout << "1 is answer" << endl;
+    } else if(buf == -1) {
+    	cout << "-1 is answer" << endl;
     	return false;
     }
 

@@ -181,10 +181,10 @@ void* HandleClient(void *clientArgs) {
 	  }
 	  //create struct of rguments command will get.
 	  CommandInfo args;
-	  string command = vect.at(0);
+	  string command = vect.at(0).c_str();
 	  cout << "client asks for: " << command << endl;
 	  if (twoWords) {
-	  string val = vect.at(1);
+	  string val = vect.at(1).c_str();
 	  cout << "client game name choine: " << val << endl;
 	  args.gameName = val;
 	  }
@@ -214,7 +214,7 @@ void* ServerAcceptClients(void *args) {
 		   // Accept a new client connection
 		   int playerNumber = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLen);
 		   cout << "Client " <<  playerNumber << " connected" << endl;
-
+         playersInfo->controller->AddPlayerSocket(playerNumber);
 			 pthread_t newOne;
 			 threads->insert(pair<int, pthread_t>(threadCounter, newOne));
 

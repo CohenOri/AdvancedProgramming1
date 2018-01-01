@@ -123,33 +123,6 @@ AdvancedProgramming1/fast:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/build
 .PHONY : AdvancedProgramming1/fast
 
-ex5/client/gtest_src/gtest-all.o: ex5/client/gtest_src/gtest-all.cc.o
-
-.PHONY : ex5/client/gtest_src/gtest-all.o
-
-# target to build an object file
-ex5/client/gtest_src/gtest-all.cc.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/gtest_src/gtest-all.cc.o
-.PHONY : ex5/client/gtest_src/gtest-all.cc.o
-
-ex5/client/gtest_src/gtest-all.i: ex5/client/gtest_src/gtest-all.cc.i
-
-.PHONY : ex5/client/gtest_src/gtest-all.i
-
-# target to preprocess a source file
-ex5/client/gtest_src/gtest-all.cc.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/gtest_src/gtest-all.cc.i
-.PHONY : ex5/client/gtest_src/gtest-all.cc.i
-
-ex5/client/gtest_src/gtest-all.s: ex5/client/gtest_src/gtest-all.cc.s
-
-.PHONY : ex5/client/gtest_src/gtest-all.s
-
-# target to generate assembly for a file
-ex5/client/gtest_src/gtest-all.cc.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/gtest_src/gtest-all.cc.s
-.PHONY : ex5/client/gtest_src/gtest-all.cc.s
-
 ex5/client/src/AiPlayer.o: ex5/client/src/AiPlayer.cpp.o
 
 .PHONY : ex5/client/src/AiPlayer.o
@@ -257,6 +230,33 @@ ex5/client/src/HostPlayer.s: ex5/client/src/HostPlayer.cpp.s
 ex5/client/src/HostPlayer.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/HostPlayer.cpp.s
 .PHONY : ex5/client/src/HostPlayer.cpp.s
+
+ex5/client/src/PrintGames.o: ex5/client/src/PrintGames.cpp.o
+
+.PHONY : ex5/client/src/PrintGames.o
+
+# target to build an object file
+ex5/client/src/PrintGames.cpp.o:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.o
+.PHONY : ex5/client/src/PrintGames.cpp.o
+
+ex5/client/src/PrintGames.i: ex5/client/src/PrintGames.cpp.i
+
+.PHONY : ex5/client/src/PrintGames.i
+
+# target to preprocess a source file
+ex5/client/src/PrintGames.cpp.i:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.i
+.PHONY : ex5/client/src/PrintGames.cpp.i
+
+ex5/client/src/PrintGames.s: ex5/client/src/PrintGames.cpp.s
+
+.PHONY : ex5/client/src/PrintGames.s
+
+# target to generate assembly for a file
+ex5/client/src/PrintGames.cpp.s:
+	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.s
+.PHONY : ex5/client/src/PrintGames.cpp.s
 
 ex5/client/src/RegularLogic.o: ex5/client/src/RegularLogic.cpp.o
 
@@ -392,60 +392,6 @@ ex5/client/src/main.s: ex5/client/src/main.cpp.s
 ex5/client/src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/main.cpp.s
 .PHONY : ex5/client/src/main.cpp.s
-
-ex5/client/test/TestManager.o: ex5/client/test/TestManager.cpp.o
-
-.PHONY : ex5/client/test/TestManager.o
-
-# target to build an object file
-ex5/client/test/TestManager.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.o
-.PHONY : ex5/client/test/TestManager.cpp.o
-
-ex5/client/test/TestManager.i: ex5/client/test/TestManager.cpp.i
-
-.PHONY : ex5/client/test/TestManager.i
-
-# target to preprocess a source file
-ex5/client/test/TestManager.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.i
-.PHONY : ex5/client/test/TestManager.cpp.i
-
-ex5/client/test/TestManager.s: ex5/client/test/TestManager.cpp.s
-
-.PHONY : ex5/client/test/TestManager.s
-
-# target to generate assembly for a file
-ex5/client/test/TestManager.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/TestManager.cpp.s
-.PHONY : ex5/client/test/TestManager.cpp.s
-
-ex5/client/test/test-all.o: ex5/client/test/test-all.cpp.o
-
-.PHONY : ex5/client/test/test-all.o
-
-# target to build an object file
-ex5/client/test/test-all.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.o
-.PHONY : ex5/client/test/test-all.cpp.o
-
-ex5/client/test/test-all.i: ex5/client/test/test-all.cpp.i
-
-.PHONY : ex5/client/test/test-all.i
-
-# target to preprocess a source file
-ex5/client/test/test-all.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.i
-.PHONY : ex5/client/test/test-all.cpp.i
-
-ex5/client/test/test-all.s: ex5/client/test/test-all.cpp.s
-
-.PHONY : ex5/client/test/test-all.s
-
-# target to generate assembly for a file
-ex5/client/test/test-all.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/test/test-all.cpp.s
-.PHONY : ex5/client/test/test-all.cpp.s
 
 ex5/server/include/CommandManager.o: ex5/server/include/CommandManager.cpp.o
 
@@ -780,9 +726,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdvancedProgramming1"
-	@echo "... ex5/client/gtest_src/gtest-all.o"
-	@echo "... ex5/client/gtest_src/gtest-all.i"
-	@echo "... ex5/client/gtest_src/gtest-all.s"
 	@echo "... ex5/client/src/AiPlayer.o"
 	@echo "... ex5/client/src/AiPlayer.i"
 	@echo "... ex5/client/src/AiPlayer.s"
@@ -795,6 +738,9 @@ help:
 	@echo "... ex5/client/src/HostPlayer.o"
 	@echo "... ex5/client/src/HostPlayer.i"
 	@echo "... ex5/client/src/HostPlayer.s"
+	@echo "... ex5/client/src/PrintGames.o"
+	@echo "... ex5/client/src/PrintGames.i"
+	@echo "... ex5/client/src/PrintGames.s"
 	@echo "... ex5/client/src/RegularLogic.o"
 	@echo "... ex5/client/src/RegularLogic.i"
 	@echo "... ex5/client/src/RegularLogic.s"
@@ -810,12 +756,6 @@ help:
 	@echo "... ex5/client/src/main.o"
 	@echo "... ex5/client/src/main.i"
 	@echo "... ex5/client/src/main.s"
-	@echo "... ex5/client/test/TestManager.o"
-	@echo "... ex5/client/test/TestManager.i"
-	@echo "... ex5/client/test/TestManager.s"
-	@echo "... ex5/client/test/test-all.o"
-	@echo "... ex5/client/test/test-all.i"
-	@echo "... ex5/client/test/test-all.s"
 	@echo "... ex5/server/include/CommandManager.o"
 	@echo "... ex5/server/include/CommandManager.i"
 	@echo "... ex5/server/include/CommandManager.s"
