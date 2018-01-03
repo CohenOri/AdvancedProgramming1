@@ -9,18 +9,22 @@
 #define SERVER_INCLUDE_STARTNEWGAME_H_
 
 #include "CommandProtocol.h"
-#include "CommandManager.h"
+#include "GameControl.h"
 
 
-class StartNewGame: public CommandProtocol {
+class StartNewGame : public CommandProtocol {
 public:
-	StartNewGame(CommandManager* cmdManagerPtr);
-	//virtual void Execute(struct CommandInfo);
-	virtual void Execute(struct CommandInfo info);
-	virtual ~StartNewGame();
+    StartNewGame(GameControl *gameControl);
+    /**
+     * Start (open) new game with given name and player (info needed (playerSocket and name is stored at CommandInfo)
+     * @param info
+     */
+    virtual void Execute(struct CommandInfo info);
+
+    virtual ~StartNewGame();
 
 private:
-    CommandManager* cmdManager;
+    GameControl *gameControl;
 
 };
 

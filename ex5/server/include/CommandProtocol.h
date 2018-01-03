@@ -20,10 +20,9 @@ using namespace std;
  */
 class CommandProtocol {
 public:
-	/**
-	 * @param args: paramters for command.
-	 * (soket number/name of game/moves)
-	 */
+    /**
+     * @param info CommandInfo struct with the needed data in order to execute the command
+     */
 	 virtual void Execute(struct CommandInfo info) = 0;
 	 virtual ~CommandProtocol() {}
 };

@@ -1,50 +1,64 @@
-/*
- * GameControll.h
- *
- *  Created on: 26 בדצמ׳ 2017
- *      Author: yanap
- */
+//
+// Created by ori on 12/27/17.
+//
 
-#ifndef SERVER_INCLUDE_GAMECONTROL_H_
-#define SERVER_INCLUDE_GAMECONTROL_H_
-
-#include <iostream>
-#include <map>
+#ifndef ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
+#define ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
+#include <vector>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
 #include <string>
-#include <sstream>
-#include "CommandProtocol.h"
-#include "StartNewGame.h"
-#include "JoinToGame.h"
-#include "PrintGames.h"
-
+#include <iostream>
+#include <stdio.h>
+#include <map>
 using namespace std;
+
 
 class GameControl {
 public:
-	/**
-	 * constractor.
-	 * @param server which will connect between clients.
-	 */
-    GameControl(CommandManager* game);
-    virtual ~GameControl();
-    /**
-     * start a command
-     */
-    bool executeCommand(string command, CommandInfo args);
-
-    void AddPlayerSocket(int socketNumber);
+    GameControl();
 
     /**
-     * stop all players and close them.
+     * @param gameName
+     * @param gameSocket
+     * @return true if added new game, false if didn't add new game (there's already
+     * game with this name)
      */
-	void End();
+    bool AddGame(string gameName, int gameSocket);
+    /**
+     * @param gameName
+     * @return the socket of the given game
+     */
+    int GetGameSocket(string gameName);
+    /**
+     * @return vector holds the gameNames
+     */
+    vector<string> ListOfGamesNames();
+    /**
+     * @param player adds the given player to connectedPlayers vector
+     */
+    void AddPlayer(int player);
+    /**
+     * @param player removes the given player to connectedPlayers vector
+     */
+    void DeletePlayer(int player);
+    /**
+     * Disconnects (Close) all the player in connectedPlayers vector
+     */
+    void CloseAllPlayers();
+    /**
+     * @param gameName
+     * @return true if successfully closed the game, false otherwise
+     */
+    bool RemoveGame(string gameName);
+
 private:
-    map<string, int> listGamesAndSockets;
-    CommandManager* gameList;
-    map<string, CommandProtocol *> commandsMap;
-
+    vector<int> connectedPlayers;
+    map<string, int> nameToGameMap;
+    pthread_mutex_t mutex;
 
 };
 
 
-#endif /* SERVER_INCLUDE_GAMECONTROL_H_ */
+#endif //ADVANCEDPROGRAMMING1_COMMANDMANAGER_H

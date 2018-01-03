@@ -129,9 +129,6 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/HostPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/PrintGames.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/RegularLogic.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -147,16 +144,7 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/main.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CheckNewClient.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CloseGame.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandInfo.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.h">
@@ -171,9 +159,6 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/JoinToGame.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/PlayMove.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/PrintGames.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -181,12 +166,6 @@
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/StartNewGame.h">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CheckNewClient.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CloseGame.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CommandManager.cpp">
@@ -198,9 +177,6 @@
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/JoinToGame.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/PlayMove.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/PrintGames.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
@@ -208,12 +184,6 @@
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/StartNewGame.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/backup server/Server.cpp">
-			<Option target="AdvancedProgramming1"/>
-		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/backup server/Server.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/main.cpp">

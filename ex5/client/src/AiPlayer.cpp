@@ -6,6 +6,7 @@
  */
 
 #include "../include/AiPlayer.h"
+
 AiPlayer::AiPlayer(EnumDeclration::CellStatus player) {
 	this->logic = NULL;
 	this->board= NULL;
@@ -17,7 +18,7 @@ AiPlayer::AiPlayer(EnumDeclration::CellStatus player) {
   }
 }
 
-AiPlayer::AiPlayer(EnumDeclration::CellStatus player, Board * b, LogicInterface* l) {
+AiPlayer::AiPlayer(EnumDeclration::CellStatus player, Board* b, LogicInterface* l) {
 	this->logic = l;
   this->player = player;
   if (player == EnumDeclration::X) {

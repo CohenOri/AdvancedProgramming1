@@ -23,16 +23,16 @@ public:
     HostPlayer(const char *serverIP, int serverPort);
 
     /**
-     * conntect to the sever by the ip and port.
+     * connect to the sever by the ip and port.
      */
-    void connectToServer();
+    void ConnectToServer();
 
     /**
      * read from the server for the first time.
      * if the number is 1 the player is X and wait to other player.
      * else player is O.
      */
-    void getSymbolFromServer();
+    void GetPlayerSymbolFromServer();
 
     /**
      * do nothing.
@@ -56,14 +56,24 @@ public:
     /**
      * @return symbol (X/O) as CellStatus enum
      */
-    EnumDeclration::CellStatus getEnumSymbol();
+    EnumDeclration::CellStatus GetEnumSymbol();
 
+    /**
+     * Starts (opens) new game in the given name at the server
+     * @param gameName
+     * @return if successfully started the new game or failed, prints the reason for failure
+     */
     bool SendStart(string gameName);
-
+    /**
+     * Joins the given game
+     * @param gameName
+     * @return if successfully joined the game, prints the reason for failure
+     */
     bool JoinGame(string gameName);
-
+    /**
+     * Prints the open (started) games list
+     */
     void PrintGamesList();
-
 
 private:
     EnumDeclration::CellStatus player;
@@ -76,7 +86,7 @@ private:
     /**
      * place enemy's move on the board and flip the slots.
      * @param b pointer for board.
-     * @param logic - for the game rulls.
+     * @param logic - for the game rules.
      * @param slot to place.
      */
     void ReceiveMove(Board *b, LogicInterface *logic, Slot move);
@@ -88,7 +98,7 @@ private:
 
     /**
      * Writes/sends the given command (start/join etc.) and gameName to server
-     * @param command start/join etc.
+     * @param command start/join/list_games etc.
      * @param gameName gameName..
      */
     void WriteCommand(const string &command) const;

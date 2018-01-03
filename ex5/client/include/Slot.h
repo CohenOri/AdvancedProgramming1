@@ -24,7 +24,7 @@ public:
     /**
      * create Empty slot from string.
      */
-    Slot(string values);
+    Slot(string slotValues);
 
     /**
      * Create a slot with E (Empty status)

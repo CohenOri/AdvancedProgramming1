@@ -7,84 +7,95 @@
 
 #ifndef SRC_SERVER_SERVER_H_
 #define SRC_SERVER_SERVER_H_
+
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
 #include <string.h>
 #include <limits>
-
 #include <iostream>
 #include <stdio.h>
-#include "GameControl.h"
+#include "CommandManager.h"
 #include "CommandProtocol.h"
 #include "CommandInfo.h"
+
 using namespace std;
 #define MAX_CONNECTED_CLIENTS 10
+
 class Server {
 
 public:
-	/**
-	 * Constructor.
-	 * @param port to connect to.
-	 */
-	 Server(int port, GameControl* controller);
-	 /**
-	  * start the connection.
-	  */
-	 void start();
-	 /**
-	  * stop the connection.
-	  */
-	 void stop();
-	 /**
-	  * accepts new clients.
-	  */
-	 int ConnectNewClients();
-	 /**
-	  * close connection between client and server.
-	  * @param players socket number
-	  */
-	 void CloseClientSocket(int player);
-	 /**
-	  * @param players socket number
-	  * @param massage string to send.
-	  * send to client
-	  */
-	 void SendMessageToClient(int player, char* massage);
-	 /**
-	  * @param players socket number.
-	  * @return string massage
-	  * read massage from player.
-	  */
-	 char* GetMessageFromClient(int player);
-	virtual ~Server();
+    /**
+     * Constructor.
+     * @param port to connect to.
+     */
+    Server(int port, CommandManager *controller);
+
+    /**
+     * start the connection.
+     */
+    void start();
+
+    /**
+     * stop the connection.
+     */
+    void stop();
+
+    /**
+     * accepts new clients.
+     */
+    int ConnectNewClients();
+
+    /**
+     * close connection between client and server.
+     * @param players socket number
+     */
+    void CloseClientSocket(int player);
+
+    /**
+     * @param players socket number
+     * @param massage string to send.
+     * send to client
+     */
+    void SendMessageToClient(int player, char *massage);
+
+    /**
+     * @param players socket number.
+     * @return string massage
+     * read massage from player.
+     */
+    char *GetMessageFromClient(int player);
+
+    virtual ~Server();
 
 private:
- int port;
- int serverSocket;
- GameControl* controller;
- map<int, pthread_t> threads;
- int stopGame;
-
- /**
-  * start a game between players.
-  * @param palyerX number given from server.
-  * @playerY number given from server.
-  */
- void handleClient(int playerX, int playerO);
-};
-struct ClientArgs {
-    int clientSocket;
-    int *stop;
+    int port;
     int serverSocket;
-    map<int, pthread_t> *threadArr;
-    int indexAtThreadArr;
-    GameControl * controller;
+    CommandManager *controller;
+    map<int, pthread_t> threads;
+    int stopGame;
+/**
+ * Holds all ClientArgs
+ */
+    struct ClientArgs {
+        int clientSocket;
+        int *stop;
+        int serverSocket;
+        map<int, pthread_t> *threadArr;
+        int indexAtThreadArr;
+        CommandManager *controller;
+    };
+
+/**
+ * Re
+ * @param clientArgs
+ * @return
+ */
+    void *HandleClient(void *clientArgs);
+
+    void *CloseAllGames(void *args);
+
+    void *ServerAcceptClients(void *args);
 };
-void* HandleClient(void *clientArgs);
-
-void* closeAllGames(void *args);
-
-void* ServerAcceptClients(void *args);
 
 #endif /* SRC_SERVER_SERVER_H_ */

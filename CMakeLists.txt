@@ -24,9 +24,7 @@ set(SOURCE_FILES
         ex5/client/src/Slot.cpp
         ex5/client/src/SlotWithRank.cpp
         ex5/client/src/TerminalPlayer.cpp
-        ex5/server/include/CheckNewClient.h
         ex5/server/include/CommandInfo.h
-        ex5/server/include/CommandManager.cpp
         ex5/server/include/CommandManager.h
         ex5/server/include/CommandProtocol.h
         ex5/server/include/GameControl.h
@@ -34,9 +32,6 @@ set(SOURCE_FILES
         ex5/server/include/PrintGames.h
         ex5/server/include/Server.h
         ex5/server/include/StartNewGame.h
-        "ex5/server/src/backup server/Server.cpp"
-        "ex5/server/src/backup server/Server.h"
-        ex5/server/src/CheckNewClient.cpp
         ex5/server/src/CommandManager.cpp
         ex5/server/src/GameControl.cpp
         ex5/server/src/JoinToGame.cpp

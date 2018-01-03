@@ -1,57 +1,55 @@
-//
-// Created by ori on 12/27/17.
-//
+/*
+ * GameControll.h
+ *
+ *  Created on: 26 בדצמ׳ 2017
+ *      Author: yanap
+ */
 
-#ifndef ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
-#define ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
-#include <vector>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <string>
+#ifndef SERVER_INCLUDE_GAMECONTROL_H_
+#define SERVER_INCLUDE_GAMECONTROL_H_
+
 #include <iostream>
-#include <stdio.h>
-using namespace std;
-
-//#include "CommandProtocol.h"
 #include <map>
-/**
-#include "PlayMove.h"
+#include <string>
+#include <sstream>
+#include "CommandProtocol.h"
 #include "StartNewGame.h"
 #include "JoinToGame.h"
-#include "CloseGame.h"
 #include "PrintGames.h"
-**/
+
+using namespace std;
 
 class CommandManager {
 public:
-    CommandManager();
-   // CommandProtocol* GetCommand(string cmdName);
     /**
-     *
-     * @param gameName
-     * @param gameSocket
-     * @return true if added new game, false if didn't add new game (there's already
-     * game with this name)
+     * constructor.
+     * @param server which will connect between clients.
      */
-    bool AddGame(string gameName, int gameSocket);
-    int GetGameSocket(string gameName);
-    vector<string> ListOfGamesNames();
-    void addPlayer(int player);
-    void deletePlayer(int player);
-    void closeAllPlayers();
+    CommandManager(GameControl *game);
+
+    virtual ~CommandManager();
+
     /**
-     * @param gameName
-     * @return true if successfully closed the game, false otherwise
+     * start a command, return true if found one otherwise false
      */
-    bool RemoveGame(string gameName);
+    bool ExecuteCommand(string command, CommandInfo args);
+
+    /**
+     * add the socket to gameControl
+     * @param socketNumber
+     */
+    void AddPlayerSocket(int socketNumber);
+
+    /**
+     * stop all players and close them.
+     */
+    void End();
 
 private:
-    vector<int> connectedPlayers;
-    map<string, int> nameToGameMap;
-    pthread_mutex_t mutex;
-
+    map<string, int> listGamesAndSockets;
+    GameControl *gameControl;
+    map<string, CommandProtocol *> commandsMap;
 };
 
 
-#endif //ADVANCEDPROGRAMMING1_COMMANDMANAGER_H
+#endif /* SERVER_INCLUDE_GAMECONTROL_H_ */

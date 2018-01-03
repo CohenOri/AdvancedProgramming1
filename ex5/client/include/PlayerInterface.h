@@ -33,7 +33,7 @@ public:
     /**
     * @return symbol (X/O) as CellStatus enum
     */
-    virtual EnumDeclration::CellStatus getEnumSymbol() = 0;
+    virtual EnumDeclration::CellStatus GetEnumSymbol() = 0;
 
     virtual ~PlayerInterface() {}
 };

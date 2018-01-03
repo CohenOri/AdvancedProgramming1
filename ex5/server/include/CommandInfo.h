@@ -10,12 +10,11 @@
 #include <map>
 using namespace std;
 
+// Public Struct object which holds all the info the commands needs,
 struct CommandInfo {
     int clientSocket;
     string gameName;
-    //string allComand;
     map<string, int>* openGames;
-
 };
 
 #endif //ADVANCEDPROGRAMMING1_COMMANDINFO_H

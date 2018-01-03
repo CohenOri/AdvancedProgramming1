@@ -231,33 +231,6 @@ ex5/client/src/HostPlayer.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/HostPlayer.cpp.s
 .PHONY : ex5/client/src/HostPlayer.cpp.s
 
-ex5/client/src/PrintGames.o: ex5/client/src/PrintGames.cpp.o
-
-.PHONY : ex5/client/src/PrintGames.o
-
-# target to build an object file
-ex5/client/src/PrintGames.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.o
-.PHONY : ex5/client/src/PrintGames.cpp.o
-
-ex5/client/src/PrintGames.i: ex5/client/src/PrintGames.cpp.i
-
-.PHONY : ex5/client/src/PrintGames.i
-
-# target to preprocess a source file
-ex5/client/src/PrintGames.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.i
-.PHONY : ex5/client/src/PrintGames.cpp.i
-
-ex5/client/src/PrintGames.s: ex5/client/src/PrintGames.cpp.s
-
-.PHONY : ex5/client/src/PrintGames.s
-
-# target to generate assembly for a file
-ex5/client/src/PrintGames.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/PrintGames.cpp.s
-.PHONY : ex5/client/src/PrintGames.cpp.s
-
 ex5/client/src/RegularLogic.o: ex5/client/src/RegularLogic.cpp.o
 
 .PHONY : ex5/client/src/RegularLogic.o
@@ -393,87 +366,6 @@ ex5/client/src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/client/src/main.cpp.s
 .PHONY : ex5/client/src/main.cpp.s
 
-ex5/server/include/CommandManager.o: ex5/server/include/CommandManager.cpp.o
-
-.PHONY : ex5/server/include/CommandManager.o
-
-# target to build an object file
-ex5/server/include/CommandManager.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.o
-.PHONY : ex5/server/include/CommandManager.cpp.o
-
-ex5/server/include/CommandManager.i: ex5/server/include/CommandManager.cpp.i
-
-.PHONY : ex5/server/include/CommandManager.i
-
-# target to preprocess a source file
-ex5/server/include/CommandManager.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.i
-.PHONY : ex5/server/include/CommandManager.cpp.i
-
-ex5/server/include/CommandManager.s: ex5/server/include/CommandManager.cpp.s
-
-.PHONY : ex5/server/include/CommandManager.s
-
-# target to generate assembly for a file
-ex5/server/include/CommandManager.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/include/CommandManager.cpp.s
-.PHONY : ex5/server/include/CommandManager.cpp.s
-
-ex5/server/src/CheckNewClient.o: ex5/server/src/CheckNewClient.cpp.o
-
-.PHONY : ex5/server/src/CheckNewClient.o
-
-# target to build an object file
-ex5/server/src/CheckNewClient.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.o
-.PHONY : ex5/server/src/CheckNewClient.cpp.o
-
-ex5/server/src/CheckNewClient.i: ex5/server/src/CheckNewClient.cpp.i
-
-.PHONY : ex5/server/src/CheckNewClient.i
-
-# target to preprocess a source file
-ex5/server/src/CheckNewClient.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.i
-.PHONY : ex5/server/src/CheckNewClient.cpp.i
-
-ex5/server/src/CheckNewClient.s: ex5/server/src/CheckNewClient.cpp.s
-
-.PHONY : ex5/server/src/CheckNewClient.s
-
-# target to generate assembly for a file
-ex5/server/src/CheckNewClient.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CheckNewClient.cpp.s
-.PHONY : ex5/server/src/CheckNewClient.cpp.s
-
-ex5/server/src/CloseGame.o: ex5/server/src/CloseGame.cpp.o
-
-.PHONY : ex5/server/src/CloseGame.o
-
-# target to build an object file
-ex5/server/src/CloseGame.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.o
-.PHONY : ex5/server/src/CloseGame.cpp.o
-
-ex5/server/src/CloseGame.i: ex5/server/src/CloseGame.cpp.i
-
-.PHONY : ex5/server/src/CloseGame.i
-
-# target to preprocess a source file
-ex5/server/src/CloseGame.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.i
-.PHONY : ex5/server/src/CloseGame.cpp.i
-
-ex5/server/src/CloseGame.s: ex5/server/src/CloseGame.cpp.s
-
-.PHONY : ex5/server/src/CloseGame.s
-
-# target to generate assembly for a file
-ex5/server/src/CloseGame.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/CloseGame.cpp.s
-.PHONY : ex5/server/src/CloseGame.cpp.s
-
 ex5/server/src/CommandManager.o: ex5/server/src/CommandManager.cpp.o
 
 .PHONY : ex5/server/src/CommandManager.o
@@ -554,33 +446,6 @@ ex5/server/src/JoinToGame.s: ex5/server/src/JoinToGame.cpp.s
 ex5/server/src/JoinToGame.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/JoinToGame.cpp.s
 .PHONY : ex5/server/src/JoinToGame.cpp.s
-
-ex5/server/src/PlayMove.o: ex5/server/src/PlayMove.cpp.o
-
-.PHONY : ex5/server/src/PlayMove.o
-
-# target to build an object file
-ex5/server/src/PlayMove.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PlayMove.cpp.o
-.PHONY : ex5/server/src/PlayMove.cpp.o
-
-ex5/server/src/PlayMove.i: ex5/server/src/PlayMove.cpp.i
-
-.PHONY : ex5/server/src/PlayMove.i
-
-# target to preprocess a source file
-ex5/server/src/PlayMove.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PlayMove.cpp.i
-.PHONY : ex5/server/src/PlayMove.cpp.i
-
-ex5/server/src/PlayMove.s: ex5/server/src/PlayMove.cpp.s
-
-.PHONY : ex5/server/src/PlayMove.s
-
-# target to generate assembly for a file
-ex5/server/src/PlayMove.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/PlayMove.cpp.s
-.PHONY : ex5/server/src/PlayMove.cpp.s
 
 ex5/server/src/PrintGames.o: ex5/server/src/PrintGames.cpp.o
 
@@ -663,33 +528,6 @@ ex5/server/src/StartNewGame.cpp.s:
 	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/StartNewGame.cpp.s
 .PHONY : ex5/server/src/StartNewGame.cpp.s
 
-ex5/server/src/backup_server/Server.o: ex5/server/src/backup_server/Server.cpp.o
-
-.PHONY : ex5/server/src/backup_server/Server.o
-
-# target to build an object file
-ex5/server/src/backup_server/Server.cpp.o:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.o
-.PHONY : ex5/server/src/backup_server/Server.cpp.o
-
-ex5/server/src/backup_server/Server.i: ex5/server/src/backup_server/Server.cpp.i
-
-.PHONY : ex5/server/src/backup_server/Server.i
-
-# target to preprocess a source file
-ex5/server/src/backup_server/Server.cpp.i:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.i
-.PHONY : ex5/server/src/backup_server/Server.cpp.i
-
-ex5/server/src/backup_server/Server.s: ex5/server/src/backup_server/Server.cpp.s
-
-.PHONY : ex5/server/src/backup_server/Server.s
-
-# target to generate assembly for a file
-ex5/server/src/backup_server/Server.cpp.s:
-	$(MAKE) -f CMakeFiles/AdvancedProgramming1.dir/build.make CMakeFiles/AdvancedProgramming1.dir/ex5/server/src/backup_server/Server.cpp.s
-.PHONY : ex5/server/src/backup_server/Server.cpp.s
-
 ex5/server/src/main.o: ex5/server/src/main.cpp.o
 
 .PHONY : ex5/server/src/main.o
@@ -738,9 +576,6 @@ help:
 	@echo "... ex5/client/src/HostPlayer.o"
 	@echo "... ex5/client/src/HostPlayer.i"
 	@echo "... ex5/client/src/HostPlayer.s"
-	@echo "... ex5/client/src/PrintGames.o"
-	@echo "... ex5/client/src/PrintGames.i"
-	@echo "... ex5/client/src/PrintGames.s"
 	@echo "... ex5/client/src/RegularLogic.o"
 	@echo "... ex5/client/src/RegularLogic.i"
 	@echo "... ex5/client/src/RegularLogic.s"
@@ -756,15 +591,6 @@ help:
 	@echo "... ex5/client/src/main.o"
 	@echo "... ex5/client/src/main.i"
 	@echo "... ex5/client/src/main.s"
-	@echo "... ex5/server/include/CommandManager.o"
-	@echo "... ex5/server/include/CommandManager.i"
-	@echo "... ex5/server/include/CommandManager.s"
-	@echo "... ex5/server/src/CheckNewClient.o"
-	@echo "... ex5/server/src/CheckNewClient.i"
-	@echo "... ex5/server/src/CheckNewClient.s"
-	@echo "... ex5/server/src/CloseGame.o"
-	@echo "... ex5/server/src/CloseGame.i"
-	@echo "... ex5/server/src/CloseGame.s"
 	@echo "... ex5/server/src/CommandManager.o"
 	@echo "... ex5/server/src/CommandManager.i"
 	@echo "... ex5/server/src/CommandManager.s"
@@ -774,9 +600,6 @@ help:
 	@echo "... ex5/server/src/JoinToGame.o"
 	@echo "... ex5/server/src/JoinToGame.i"
 	@echo "... ex5/server/src/JoinToGame.s"
-	@echo "... ex5/server/src/PlayMove.o"
-	@echo "... ex5/server/src/PlayMove.i"
-	@echo "... ex5/server/src/PlayMove.s"
 	@echo "... ex5/server/src/PrintGames.o"
 	@echo "... ex5/server/src/PrintGames.i"
 	@echo "... ex5/server/src/PrintGames.s"
@@ -786,9 +609,6 @@ help:
 	@echo "... ex5/server/src/StartNewGame.o"
 	@echo "... ex5/server/src/StartNewGame.i"
 	@echo "... ex5/server/src/StartNewGame.s"
-	@echo "... ex5/server/src/backup_server/Server.o"
-	@echo "... ex5/server/src/backup_server/Server.i"
-	@echo "... ex5/server/src/backup_server/Server.s"
 	@echo "... ex5/server/src/main.o"
 	@echo "... ex5/server/src/main.i"
 	@echo "... ex5/server/src/main.s"

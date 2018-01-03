@@ -6,9 +6,11 @@
  */
 
 #include "../include/StartNewGame.h"
+#define SUCCESS 0
+#define FAILURE -1
 
-StartNewGame::StartNewGame(CommandManager* cmdManagerPtr) {
-    this->cmdManager = cmdManagerPtr;
+StartNewGame::StartNewGame(GameControl* gameControl) {
+    this->gameControl = gameControl;
 }
 
 StartNewGame::~StartNewGame() {
@@ -16,18 +18,19 @@ StartNewGame::~StartNewGame() {
 
 void StartNewGame::Execute(struct CommandInfo info) {
     // if successfully added the game
-	int tru;
-    if(this->cmdManager->AddGame(info.gameName, info.clientSocket)){
-    	tru = 0;
-        int n = write(info.clientSocket, &tru, sizeof(tru));
+	int addedTheGameStatus;
+    if(this->gameControl->AddGame(info.gameName, info.clientSocket)){
+    	addedTheGameStatus = SUCCESS;
+        int n = write(info.clientSocket, &addedTheGameStatus, sizeof(addedTheGameStatus));
         if (n == -1) {
             throw "Error writing to socket";
         }
         return;
     }
-    tru = -1;
-    int n = write(info.clientSocket, &tru, sizeof(tru));
-    cmdManager->deletePlayer(info.clientSocket);
+    // failed to add the game, delete and disconnect client
+    addedTheGameStatus = FAILURE;
+    int n = write(info.clientSocket, &addedTheGameStatus, sizeof(addedTheGameStatus));
+    gameControl->DeletePlayer(info.clientSocket);
     close(info.clientSocket);
     if (n == -1) {
         throw "Error writing to socket";

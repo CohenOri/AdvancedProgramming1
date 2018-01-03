@@ -8,10 +8,10 @@
 #include "../include/Slot.h"
 
 using namespace std;
-Slot::Slot(string values) {
+Slot::Slot(string slotValues) {
 	  vector<int> vect;
 	  int i;
-	  stringstream ss(values);
+	  stringstream ss(slotValues);
 	  while (ss >> i) {
 	    vect.push_back(i);
 	   if (ss.peek() == ',')
@@ -20,7 +20,7 @@ Slot::Slot(string values) {
 	  this->row = vect.at(0);
 	  this->col = vect.at(1);
 	  this->status = EnumDeclration::E;
-	  this->s = values;
+	  this->s = slotValues;
 }
 
 Slot::Slot(int row, int col) {

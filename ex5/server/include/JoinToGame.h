@@ -9,7 +9,7 @@
 #define SERVER_INCLUDE_JOINTOGAME_H_
 
 #include "CommandProtocol.h"
-#include "CommandManager.h"
+#include "GameControl.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -18,13 +18,21 @@
 #include <iostream>
 #include <stdio.h>
 
-class JoinToGame: public CommandProtocol {
+class JoinToGame : public CommandProtocol {
 public:
-	JoinToGame(CommandManager* cmdManagerPtr);
-	virtual void Execute(struct CommandInfo info);
-	virtual ~JoinToGame();
+    JoinToGame(GameControl* gameControl);
+
+    /**
+     * Connects the given player (his info is stored at CommandInfo info struct)
+     * to other player and starting the game, sending moves trough the server etc.
+     * @param info
+     */
+    virtual void Execute(struct CommandInfo info);
+
+    virtual ~JoinToGame();
+
 private:
-	CommandManager* cmdManager;
+    GameControl *gameControl;
 
 };
 
