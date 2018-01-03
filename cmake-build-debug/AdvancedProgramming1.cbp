@@ -84,109 +84,109 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/AiPlayer.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/AiPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/Board.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/Board.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/EnumDeclration.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/EnumDeclration.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/GameFlow.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/GameFlow.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/HostPlayer.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/HostPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/LogicInterface.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/LogicInterface.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/PlayerInterface.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/PlayerInterface.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/RegularLogic.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/RegularLogic.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/Slot.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/Slot.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/SlotWithRank.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/SlotWithRank.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/include/TerminalPlayer.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/include/TerminalPlayer.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/AiPlayer.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/AiPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/Board.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/Board.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/GameFlow.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/GameFlow.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/HostPlayer.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/HostPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/RegularLogic.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/RegularLogic.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/Slot.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/Slot.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/SlotWithRank.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/SlotWithRank.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/TerminalPlayer.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/TerminalPlayer.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/client/src/main.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/client/src/main.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandInfo.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/CommandInfo.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandManager.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/CommandManager.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/CommandProtocol.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/CommandProtocol.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/GameControl.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/GameControl.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/JoinToGame.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/JoinToGame.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/PrintGames.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/PrintGames.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/Server.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/Server.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/include/StartNewGame.h">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/include/StartNewGame.h">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/CommandManager.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/CommandManager.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/GameControl.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/GameControl.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/JoinToGame.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/JoinToGame.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/PrintGames.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/PrintGames.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/Server.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/Server.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/StartNewGame.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/StartNewGame.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
-		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/server/src/main.cpp">
+		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/ex5/src/server/src/main.cpp">
 			<Option target="AdvancedProgramming1"/>
 		</Unit>
 		<Unit filename="/home/ori/CLionProjects/AdvancedProgramming1/CMakeLists.txt">
