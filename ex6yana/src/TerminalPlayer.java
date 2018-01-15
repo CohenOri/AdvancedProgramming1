@@ -46,22 +46,16 @@ public class TerminalPlayer implements Player {
 	     * @param logic logic to boards using in order to place tags
 	     */
 
-	public  void MakeAMove(Board b, Logic logic) {
-		System.out.print( this.GetSymbol() + " I'ts your move.\n Your possible moves: ");
-	    ArrayList<Slot> v = logic.SlotsToPlace(this.player);
-	    for (int i = 0; i < v.size(); i++) {
-	        v.get(i).Print();
-	    }
-	    // get the chosen slot from the player, confirm its legal slot and add it to the board_.
-	    Slot chosen_slot = Play();
-	    if (chosen_slot.ExistInArrayList(logic.SlotsToPlace(this.player))) {
-	        b.SetCellStatus(chosen_slot.GetRow(), chosen_slot.GetCol(), this.player);
-	        logic.FlipSlots(chosen_slot.GetRow(), chosen_slot.GetCol(), this.player);
+	public  boolean MakeAMove(Board b, Logic logic, Slot slot) {
+		ArrayList<Slot> v = logic.SlotsToPlace(this.player);
+		if (slot.ExistInArrayList(logic.SlotsToPlace(this.player))) {
+	        b.SetCellStatus(slot.GetRow(), slot.GetCol(), this.player);
+	        logic.FlipSlots(slot.GetRow(), slot.GetCol(), this.player);
+	        return true;
 	    } else {
-	    	System.out.print( "ILLEGAL PLACE FOR TAG " + GetSymbol()  + " try again" );
-	        MakeAMove(b, logic);
+	    	return false;
 	    }
-	}
+		}
 
 	    /**
 	     * @return symbol (X/O) as CellStatus enum

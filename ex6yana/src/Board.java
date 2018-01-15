@@ -37,7 +37,7 @@ public class Board {
 	}
 	public void SetPlayerImage(String path, int player) {
 		if(player == 1) {
-			this.player1 =  new ImageView(getClass().getResource(path).toExternalForm()));
+			this.player1 =  new ImageView(getClass().getResource(path).toExternalForm());
 		 } else if(player == 2) {
 			 this.player2 =  new ImageView(getClass().getResource(path).toExternalForm());
 		 }
@@ -177,5 +177,31 @@ public class Board {
 		    return (slot.GetRow() <= NumOfRows() && slot.GetRow() > 0
 		            && slot.GetCol() <= NumOfCols() && slot.GetCol() > 0);
 		}
+	 /**
+	  * @return size of the board.
+	  */
+	public double getSize() {
+		// TODO Auto-generated method stub
+		return this.cols;
+	}
+	/**
+	 * @param player12 number symbol of plyaer. 1 for x, 2 for o.
+	 * @return string represent number of slots on the board.
+	 */
+	public String getNumOfCells(int player12) {
+		if(player12 == 1) {
+			return "" + this.xSlots.size();
+		}
+		return "" + this.oSlots.size();
+	}
+	/**
+	 * get cells status. if empty. x or o.
+	 * @param i row.
+	 * @param j col.
+	 * @return the status.
+	 */
+	public CellStatus GetStatusOfCell(int i, int j) {
+		return this.board[i][j];
+	}
 
 }
