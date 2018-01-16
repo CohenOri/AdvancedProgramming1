@@ -5,7 +5,7 @@ import java.util.Vector;
 		  /**
 		   * @return pointer to an array including all the possible slots to place tag in.
 		   */
-	 public Vector<Slot> SlotsToPlace(CellStatus cellStatus);
+	 public ArrayList<Slot> SlotsToPlace(CellStatus cellStatus);
 		  /**
 		   * receives the row & col of the now placed tag, and the status we
 		   * are going to flip (if we placed X then we want to flip O)

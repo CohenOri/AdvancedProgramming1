@@ -2,23 +2,28 @@
 public class GameFlow {
 	
 	private  Logic logic;
-	private	  Board board;
-	private	  Player player[];
-	private    CellStatus currentTurn;
+	private	 Board board;
+	private	 Player player[];
+	private  CellStatus currentTurn;
+	private int turnCounter;
+	private GUI drawer;
 			/**
 			 * Class that holds all the information in order to run the game
 			 * @param logic - logic the game run with
 			 * @param board - game board
 			 * @param player1
 			 * @param player2
+			 * @param drawer 
 			 */
-	public  GameFlow(Logic logic, Board board, Player player1, Player player2) {
+	public  GameFlow(Logic logic, Board board, Player player1, Player player2, GUI drawer) {
 	    this.logic = logic;
 	    this.board = board;
-	    this.currentTurn = CellStatus.X;
+	    this.turnCounter = 0;
+	    //this.currentTurn = CellStatus.X;
 	    this.player = new Player[2];
 	    this.player[0] = player1;
 	    this.player[1] = player2;
+	    this.drawer = drawer;
 	    // some initialization
 	    board.SetCellStatus(board.NumOfRows() / 2, board.NumOfCols() / 2, CellStatus.O);
 	    board.SetCellStatus(board.NumOfRows() / 2 + 1, board.NumOfCols() / 2 + 1, CellStatus.O);
@@ -29,12 +34,13 @@ public class GameFlow {
 		   * Run the game
 		   */
 	public	  void Run() {
-		  Board b = this.board;
+	/*	  Board b = this.board;
 		  int tunrnConter = 0;
 		  b.Print();
 		  // run the game while it is still not over
 		  while (!GameOver()) {
 			  //check who's turn it is.
+			  System.out.print("here3\n");
 			  if(tunrnConter%2 == 1) {
 				  this.currentTurn = CellStatus.O;
 			  } else {
@@ -55,8 +61,9 @@ public class GameFlow {
 		   tunrnConter++;
 		   this.board.Print();//print the board.
 		  }
+		  System.out.print("here3\n");
 		  //print end game screen.
-		  EndGame();
+		  EndGame();**/
 	}
 		  /**
 		   * @return if Game is Over
@@ -69,25 +76,38 @@ public class GameFlow {
 			  return true;
 	}
 		  /**
-		   * prints why the game end and who is the winner
+		   * return who is the winner by string.
 		   */
-	public  void EndGame() {
+	public  String EndGame() {
 		  Board b = this.board;
-
-		    int num_of_slots_in_board = b.NumOfRows() * b.NumOfCols();
-		    int num_of_used_slots = b.GetXSlots().size() + b.GetOSlots().size();
-		    if (num_of_used_slots >= num_of_slots_in_board) {
-		    	System.out.print("Game is over, board is completely full\n");
-		    } else {
-		    	System.out.print("Game is over, both sides can't make any more moves\n");
-		    }
 		    // declare result
 		    if (b.GetXSlots().size() > b.GetOSlots().size()) {
-		    	System.out.print( "X is the WINNER!\n");
+		    	return "Player 1";
 		    } else if (b.GetXSlots().size() < b.GetOSlots().size()) {
-		    	System.out.print("O is the WINNER!\n");
+		    	return "player 2";
 		    } else {
-		    	System.out.print( "It's a tie\n");
+		    	return "It's a TIE!";
 		    }
 	}
+	/**
+	 * play players turn. if slot illigal-return false and don't change the turn;
+	 * @param slot
+	 * @return
+	 */
+		public boolean playOneTurn(Slot slot) {
+			 
+			boolean correctMove = this.player[this.turnCounter % 2].MakeAMove(this.board, this.logic, slot);
+			if(correctMove) this.turnCounter++;
+			if(this.logic.SlotsToPlace(this.player[this.turnCounter % 2].GetEnumSymbol()).size() == 0) this.drawer.drawMessage("next!");
+			this.drawer.drawPossibleMovesTitle(this.logic.SlotsToPlace(this.player[this.turnCounter % 2].GetEnumSymbol()));
+			this.drawer.SetPlayer(this.player[(this.turnCounter ) % 2].GetEnumSymbol());
+			this.drawer.drawGame();
+			return correctMove;
+		}
+		/**
+		 * @return board.
+		 */
+		public Board GetBoard() {
+			return this.board;
+		}
 }

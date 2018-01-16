@@ -1,14 +1,16 @@
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
 
+import javafx.scene.image.ImageView;
 
 public class Board {
-	private Vector<Slot>  oSlots;
-	private Vector<Slot> xSlots;
+	private ArrayList<Slot>  oSlots;
+	private ArrayList<Slot> xSlots;
 	private CellStatus[][] board;
 	private int rows;
 	private int cols;
+	private ImageView player1;
+	private ImageView player2;
+
 	
 	public Board(int numOfRows, int numOfCols) {
 		// num of rows
@@ -16,6 +18,29 @@ public class Board {
 		this.cols = numOfCols;
 		this.rows = numOfRows;
 		this.board = new CellStatus[numOfRows][numOfCols];
+		this.oSlots = new ArrayList<Slot>(64);
+		this.xSlots = new ArrayList<Slot>(64);
+		for(int i = 1; i <= this.rows; i++) {
+			for (int j = 1; j <= this.cols; j++) {
+				this.SetCellStatus(i, j, CellStatus.E);
+			}
+		}
+	}
+	/**
+	 * set size of board;
+	 * @param row size.
+	 * @param col size.
+	 */
+	public void SetSize(int row, int col) {
+		this.rows = row;
+		this.cols = col;
+	}
+	public void SetPlayerImage(String path, int player) {
+		if(player == 1) {
+			this.player1 =  new ImageView(getClass().getResource(path).toExternalForm());
+		 } else if(player == 2) {
+			 this.player2 =  new ImageView(getClass().getResource(path).toExternalForm());
+		 }
 	}
 	  /**
 	   * Print method which prints the board as requested.
@@ -80,11 +105,12 @@ public class Board {
 	   * @param status - the new status to set (E, O, X)
 	   */
 	  public void SetCellStatus(int xLocation, int yLocation, CellStatus status) {
-		    // if X or O add it to the vectors which holds list of X/O Slots
+		    // if X or O add it to the ArrayLists which holds list of X/O Slots
 		    if (status == CellStatus.X) {
 		        this.xSlots.add((new Slot(xLocation, yLocation, status)));
 		    } else if (status == CellStatus.O) {
-		        this.oSlots.add(new Slot(xLocation, yLocation, status));
+		    	Slot a = new Slot(xLocation, yLocation, status);
+		        this.oSlots.add(a);
 		    }
 		    // -1 because array starting from 0
 		    this.board[xLocation - 1][yLocation - 1] = status;
@@ -99,27 +125,27 @@ public class Board {
 	   */
 	  public int NumOfCols() {return this.cols; }
 	  /**
-	   * @reutrn vector slots for o
+	   * @reutrn ArrayList slots for o
 	   */
-	  public Vector<Slot> GetOSlots() {return this.oSlots; }
+	  public ArrayList<Slot> GetOSlots() {return this.oSlots; }
 	  /**
-	   * @reutrn vector slots for x
+	   * @reutrn ArrayList slots for x
 	   */
-	  public Vector<Slot> GetXSlots() {return this.xSlots;}
+	  public ArrayList<Slot> GetXSlots() {return this.xSlots;}
 	  /**
-	   * @reutrn vector slots for x
+	   * @reutrn ArrayList slots for x
 	   */
-	 public Vector<Slot> GetSlotsOfPlayer(CellStatus player){
+	 public ArrayList<Slot> GetSlotsOfPlayer(CellStatus player){
 		    if (player == CellStatus.X) {
 		        return this.xSlots;
 		    } else {
 		        return this.oSlots;
 		    }
 	 }
-	 public void SetOSlots(Vector<Slot> oSlots) {this.oSlots = oSlots;}
-	 public void SetXSlots(Vector<Slot> xSlots) {this.xSlots = xSlots;}
+	 public void SetOSlots(ArrayList<Slot> oSlots) {this.oSlots = oSlots;}
+	 public void SetXSlots(ArrayList<Slot> xSlots) {this.xSlots = xSlots;}
 	 
-	 public void SetSlotsOfPlayer(CellStatus player, Vector<Slot> slots) {
+	 public void SetSlotsOfPlayer(CellStatus player, ArrayList<Slot> slots) {
 		    if (player == CellStatus.X) {
 		        this.xSlots = slots;
 		    } else {
@@ -151,5 +177,31 @@ public class Board {
 		    return (slot.GetRow() <= NumOfRows() && slot.GetRow() > 0
 		            && slot.GetCol() <= NumOfCols() && slot.GetCol() > 0);
 		}
+	 /**
+	  * @return size of the board.
+	  */
+	public double getSize() {
+		// TODO Auto-generated method stub
+		return this.cols;
+	}
+	/**
+	 * @param player12 number symbol of plyaer. 1 for x, 2 for o.
+	 * @return string represent number of slots on the board.
+	 */
+	public String getNumOfCells(int player12) {
+		if(player12 == 1) {
+			return "" + this.xSlots.size();
+		}
+		return "" + this.oSlots.size();
+	}
+	/**
+	 * get cells status. if empty. x or o.
+	 * @param i row.
+	 * @param j col.
+	 * @return the status.
+	 */
+	public CellStatus GetStatusOfCell(int i, int j) {
+		return this.board[i][j];
+	}
 
 }

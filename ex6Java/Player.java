@@ -12,6 +12,13 @@ public interface Player {
 		   * input: pointer to board and gameLogic.
 		   * output:non
 		   * the function make players move-depended what kind of player it is.
+		 * @param slot 
+		 * @return 
 		   */
-	public void MakeAMove(Board b, Logic logic);
+	public boolean MakeAMove(Board b, Logic logic, Slot slot);
+	/**
+	 * @return enum symbol of player.
+	 */
+	
+	public CellStatus GetEnumSymbol();
 }
