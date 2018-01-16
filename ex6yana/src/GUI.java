@@ -34,8 +34,16 @@ public class GUI {
     public void drawMessage(String message) {
         this.gameController.setMessage(message);
     }
-
-    public void drawPlayerMoveTitle(Text player) {
+    public void SetPlayer(CellStatus player) {
+    	this.gameController.SetCurrentPlayer(player);
+    }
+    public void drawPlayerMoveTitle(CellStatus cellStatus) {
+    	Text player = new Text();
+    	if(cellStatus == CellStatus.X) {
+    		player.setText("player1"); 
+    	} else {
+    		player.setText("player2"); 
+    	}
         this.gameController.setCurrentPlayer(player);
     }
 

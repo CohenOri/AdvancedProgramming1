@@ -48,6 +48,7 @@ public class TerminalPlayer implements Player {
 
 	public  boolean MakeAMove(Board b, Logic logic, Slot slot) {
 		ArrayList<Slot> v = logic.SlotsToPlace(this.player);
+		  System.out.print(slot.GetCol() + "and " + slot.GetRow() + "\n");
 		if (slot.ExistInArrayList(logic.SlotsToPlace(this.player))) {
 	        b.SetCellStatus(slot.GetRow(), slot.GetCol(), this.player);
 	        logic.FlipSlots(slot.GetRow(), slot.GetCol(), this.player);

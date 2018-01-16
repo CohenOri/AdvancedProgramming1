@@ -4,10 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Cell;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -30,7 +27,8 @@ public class GameController implements Initializable {
     @FXML private Text currentPlayer;
     @FXML private Text player1Score;
     @FXML private Text player2Score;
-    @FXML private Text message;
+    @FXML private Text status;
+
     @FXML private Button backToMenuButton;
 
 
@@ -44,8 +42,8 @@ public class GameController implements Initializable {
     private int boardSize;
 
 
-    private ImageView playerOneTag;
-    private ImageView playerTwoTag;
+    private String playerOneTag;
+    private String playerTwoTag;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -53,11 +51,13 @@ public class GameController implements Initializable {
         // read the settings from the file
         GameFlow gameFlow = readGameFlowFromFile();
 
-        this.curentPlayerVal = CellStatus.X;
-        this.messageVal = "";
+
+       // this.curentPlayerVal = CellStatus.X;
 
         // create the gui board
         this.gameBoardController = new GameBoardController(gameFlow.GetBoard());
+        this.gameBoardController.setPlayerOneTag( this.playerOneTag);
+        this.gameBoardController.setPlayerTwoTag(this.playerTwoTag);
         this.gameBoardController.setPrefWidth(400);
         this.gameBoardController.setPrefHeight(400);
         root.getChildren().add(0, this.gameBoardController);
@@ -74,6 +74,8 @@ public class GameController implements Initializable {
             this.gameBoardController.setPrefHeight(newValue.doubleValue() - 40);
             this.gameBoardController.draw();
         });
+        //draw settings
+        this.draw();
 
         // listeners...
         gameBoardController.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
@@ -84,38 +86,39 @@ public class GameController implements Initializable {
                 int posX = (int) ((mouseXVal / gameBoardController.getWidth()) * gameBoardController.getBoard().getSize());// + 1;
                 int posY = (int) ((mouseYVal / gameBoardController.getHeight()) * gameBoardController.getBoard().getSize());// + 1;
 
-                boolean legalSlot = gameFlow.playOneTurn(new Slot(posX, posY));
+                boolean legalSlot = gameFlow.playOneTurn(new Slot(posX + 1, posY + 1));
                 if(!legalSlot){
                     setMessage("Illigal move!");
+                    
                 }
                 if(gameFlow.GameOver()){
-                    gameOver("string_whos the wnner");
+                    gameOver(gameFlow.EndGame());
                 }
             }
         });
 
         // define players imageView
-        this.gameBoardController.setPlayerOneTag(this.playerOneTag);
-        this.gameBoardController.setPlayerTwoTag(this.playerTwoTag);
 
         // initialize the game
        // gameFlow.initializeGame();
     }
-
+public void SetCurrentPlayer(CellStatus player) {
+	this.curentPlayerVal = player;
+}
     public void draw() {
         switch (this.curentPlayerVal.ordinal()) {
-            case PLAYER1:
+            case 1:
                 this.currentPlayer.setText("Player1");
                 break;
-            case PLAYER2:
+            case 2:
                 this.currentPlayer.setText("Player2");
                 break;
         }
         this.player1Score.setText("" + this.gameBoardController.getBoard().getNumOfCells(this.PLAYER1));
         this.player2Score.setText("" + this.gameBoardController.getBoard().getNumOfCells(this.PLAYER2));
+
+        setMessage("aswaem");
         this.gameBoardController.draw();
-        this.message.setText(this.messageVal);
-        this.messageVal = "";
     }
 
     public GameBoardController getGameBoardController() {
@@ -135,15 +138,26 @@ public class GameController implements Initializable {
     }
 
     public void setMessage(String message) {
-        this.message = new Text();
-        this.message.setText(message);
+        //this.status = new Text();
+        this.status.setText(message);
     }
 
 
     // if not copy SettingsController code
     public void menu() {
-        SettingsController s = new SettingsController();
-        s.goBackToMenu();
+        // then go back to menu
+        ScenesCallerUtility scu = new ScenesCallerUtility();
+        scu.goToMenu(this.backToMenuButton);
+        /*Stage stage = (Stage)this.backToMenuButton.getScene().getWindow();
+        try {
+            GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            Scene scene = new Scene(root, 300, 200);
+            stage.setTitle("Menu");
+            stage.setScene(scene);
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }*/
     }
 
     public void gameOver(String winnerText) {
@@ -171,30 +185,40 @@ public class GameController implements Initializable {
 		BufferedReader is = null;
         try {
 			is = new BufferedReader(new InputStreamReader(new FileInputStream("Settings.txt")));
+			StringBuilder sb = new StringBuilder();
 			String line ;
 			 while ((line = is.readLine()) != null ) { // ’null ’->no more data in the stream
+				// sb.append(line);
+			//	 sb.append(System.lineSeparator());
 				 String[] parts = line.split(":");
 				 String key = parts[0];//configurations.
 				 String val = parts[1];//the data user instert.
 				 if (key.equals("firstPlayer")) {
 				 //if first player is 1 means x starts.
-					 this.firstPlayer = Integer.parseInt(val);
-				 } else if(key.equals("firstImage:")) {
-					 this.playerOneTag = new ImageView(getClass().getResource(val).toExternalForm()); 
+					 this.firstPlayer = (int) Integer.parseInt(val);
+					 if(firstPlayer == 1) {
+						 this.curentPlayerVal = CellStatus.X;
+					 } else {
+						 this.curentPlayerVal = CellStatus.O;
+					 }
+				 } else if(key.equals("firstImage")) {
+					 this.playerOneTag = val; 
 				 } else if(key.equals("SecondImage")) {
-					 this.playerTwoTag = new ImageView(getClass().getResource(val).toExternalForm()); 
+					 this.playerTwoTag = val; 
 				 } else if(key.equals("boardSize")) {
 				 //set boards size.
-					 this.boardSize = Integer.parseInt(val);
+					 this.boardSize =(int) Integer.parseInt(val);
+				 } else {
+					 break;
 				 }
 			 }
+			 
         } catch (Exception e) {
             // assign default values
             this.firstPlayer = PLAYER1;
-            this.playerOneTag = new ImageView();
-            this.playerOneTag.setImage(new Image(new File("blackTag.png").toURI().toString()));
-            this.playerTwoTag = new ImageView();
-            this.playerTwoTag.setImage(new Image(new File("greyTag.png").toURI().toString()));
+            this.playerOneTag = "blackTag.png";
+            this.playerTwoTag = "greyTag.png";
+            this.boardSize = 8;
         } finally {
     		if( is != null ){ // Exception might have happened at constructor
     			try {

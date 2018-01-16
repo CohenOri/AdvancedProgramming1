@@ -35,7 +35,7 @@ public class MenuController {
         Stage stage = (Stage)this.settings.getScene().getWindow();
         try {
             GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("Settings.fxml"));
-            Scene scene = new Scene(root, 550, 430);
+            Scene scene = new Scene(root, 600, 400);
             stage.setTitle("Settings");
             stage.setScene(scene);
             stage.show();

@@ -1,33 +1,20 @@
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 public class SettingsController implements Initializable {
 
@@ -48,11 +35,12 @@ public class SettingsController implements Initializable {
     @FXML Slider tableSize;
 
     @FXML private Button doneButton;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        File settingsFile = new File("Settings.txt");
+        /*File settingsFile = new File("Settings.txt");
 		BufferedReader is = null;
         try {
 			is = new BufferedReader(new InputStreamReader(new FileInputStream("Settings.txt")));
@@ -92,23 +80,23 @@ public class SettingsController implements Initializable {
     				e.printStackTrace();
     			}
     	}
-        }
+        }*/
     	
     }
 
     @FXML
     public void saveToFile() {
-    	
+    	if(this.firstPlayer == 0) {
+    		this.firstPlayer = 1;
+    	}
 		PrintWriter os = null;
-		int first = 0, size = 0;
-		String path1 = null, path2 = null;
 		try {
 			
 			 os = new PrintWriter(new OutputStreamWriter(new FileOutputStream("Settings.txt")));
-			 os.write("firstPlayer:" + this.firstPlayer);
+			 os.println("firstPlayer:" + this.firstPlayer);
 			 os.println("firstImage:" + this.forstImagePath);
-			 os.println("secindImage:" + this.secondImagePath);
-			 os.println("boardSize:" + this.tableSize.getValue());
+			 os.println("SecondImage:" + this.secondImagePath);
+			 os.println("boardSize:" +(int) this.tableSize.getValue());
 			
 		} catch(IOException e) {
 			
@@ -123,17 +111,20 @@ public class SettingsController implements Initializable {
     public void goBackToMenu() {
         // first save the values
         saveToFile();
+        // go back to menu
+        ScenesCallerUtility scu = new ScenesCallerUtility();
+        scu.goToMenu(this.doneButton);
         // then go back to menu
-        Stage stage = (Stage)this.doneButton.getScene().getWindow();
+        /*Stage stage = (Stage)this.doneButton.getScene().getWindow();
         try {
             GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("Menu.fxml"));
-            Scene scene = new Scene(root, 550, 430);
+            Scene scene = new Scene(root, 300, 200);
             stage.setTitle("Menu");
             stage.setScene(scene);
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @FXML

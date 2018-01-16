@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         GridPane root = (GridPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root,550,410);
+        Scene scene = new Scene(root,300,200);
         primaryStage.setTitle("Menu");
         primaryStage.setScene(scene);
         primaryStage.show();
