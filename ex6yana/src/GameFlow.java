@@ -19,7 +19,7 @@ public class GameFlow {
 	    this.logic = logic;
 	    this.board = board;
 	    this.turnCounter = 0;
-	    //this.currentTurn = CellStatus.X;
+	    this.currentTurn = CellStatus.X;
 	    this.player = new Player[2];
 	    this.player[0] = player1;
 	    this.player[1] = player2;
@@ -69,6 +69,7 @@ public class GameFlow {
 		   * @return if Game is Over
 		   */
 	public	  boolean GameOver() {
+		  System.out.print("here1\n");
 		  if (this.logic.SlotsToPlace(CellStatus.X).size() != 0
 			      || this.logic.SlotsToPlace(CellStatus.O).size() != 0) {
 			    return false;
@@ -95,13 +96,9 @@ public class GameFlow {
 	 * @return
 	 */
 		public boolean playOneTurn(Slot slot) {
-			 
+			
 			boolean correctMove = this.player[this.turnCounter % 2].MakeAMove(this.board, this.logic, slot);
 			if(correctMove) this.turnCounter++;
-			if(this.logic.SlotsToPlace(this.player[this.turnCounter % 2].GetEnumSymbol()).size() == 0) this.drawer.drawMessage("next!");
-			this.drawer.drawPossibleMovesTitle(this.logic.SlotsToPlace(this.player[this.turnCounter % 2].GetEnumSymbol()));
-			this.drawer.SetPlayer(this.player[(this.turnCounter ) % 2].GetEnumSymbol());
-			this.drawer.drawGame();
 			return correctMove;
 		}
 		/**
