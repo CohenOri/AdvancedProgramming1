@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="ex6end:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ex6end_jar</output-path>
+    <root id="root">
+      <element id="archive" name="ex6end.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/exe/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="ex6end" />
+      </element>
+    </root>
+  </artifact>
+</component>
