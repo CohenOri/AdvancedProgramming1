@@ -57,7 +57,7 @@ public class GameBoardController extends GridPane {
 				stackPane = new StackPane();
 				slot = new Rectangle(cellWidth, cellHeight,   color[tone % 2]);
 				//check witch type slot we have and print it.
-				switch (this.board.GetStatusOfCell(j, i).ordinal()) {
+				switch (this.board.getStatusOfCell(j, i).ordinal()) {
 				case 0:// empty
 					this.add(slot, j, i);
 					break;

@@ -1,4 +1,0 @@
-firstPlayer:1
-firstImage:null
-SecondImage:null
-boardSize:8

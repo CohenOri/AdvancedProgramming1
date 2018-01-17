@@ -4,12 +4,16 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-// class with static methods to call another scene
+// class with methods to call another scenes
 public class ScenesCallerUtility {
 
 
     private Stage stage;
 
+    /**
+     * go to menu Scene when the button is pressed
+     * @param pressed
+     */
     public void goToMenu(Button pressed){
                 Stage stage = (Stage)pressed.getScene().getWindow();
                 try {
@@ -22,5 +26,4 @@ public class ScenesCallerUtility {
                     e.printStackTrace();
                 }
         }
-
 }

@@ -21,26 +21,26 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
-
-    @FXML private HBox root;
-    @FXML private Text currentPlayer;
-    @FXML private Text player1Score;
-    @FXML private Text player2Score;
-    @FXML private Text status;
-    @FXML private Button backToMenuButton;
-
-
+    @FXML
+    private HBox root;
+    @FXML
+    private Text currentPlayer;
+    @FXML
+    private Text player1Score;
+    @FXML
+    private Text player2Score;
+    @FXML
+    private Text status;
+    @FXML
+    private Button backToMenuButton;
     private GameBoardController gameBoardController;
     private double mouseXVal;
     private double mouseYVal;
-    private CellStatus curentPlayerVal;
-
+    private CellStatus currentPlayerVal;
     private int firstPlayer;
     private int boardSize;
-
-
-    private String playerOneTag;
-    private String playerTwoTag;
+    private String playerOneTagPath;
+    private String playerTwoTagPath;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,14 +50,14 @@ public class GameController implements Initializable {
 
         // create the gui board.
         this.gameBoardController = new GameBoardController(gameFlow.GetBoard());
-        this.gameBoardController.setPlayerOneTag( this.playerOneTag);
-        this.gameBoardController.setPlayerTwoTag(this.playerTwoTag);
+        this.gameBoardController.setPlayerOneTag(this.playerOneTagPath);
+        this.gameBoardController.setPlayerTwoTag(this.playerTwoTagPath);
         this.gameBoardController.setPrefWidth(400);
         this.gameBoardController.setPrefHeight(400);
         root.getChildren().add(0, this.gameBoardController);
         this.gameBoardController.draw();
 
-        // listeners to hold windows resize
+        // listeners in order to take care of windows resize
         root.widthProperty().addListener((observable, oldValue, newValue) -> {
             double boardNewWidth = newValue.doubleValue() - 200;
             this.gameBoardController.setPrefWidth(boardNewWidth);
@@ -79,7 +79,7 @@ public class GameController implements Initializable {
         gameBoardController.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-            	//get the place the user clicked.
+                //get the place the user clicked.
                 mouseXVal = mouseEvent.getX();
                 mouseYVal = mouseEvent.getY();
                 //calculate the slot values.
@@ -88,7 +88,7 @@ public class GameController implements Initializable {
                 //make a turn of the player.
                 gameFlow.playOneTurn(new Slot(slotXVal + 1, sloyYval + 1)); // we add 1 because in the origins slots statrs from 1 not 0
                 //check is its the end of game
-                if(gameFlow.GameOver()){
+                if (gameFlow.GameOver()) {
                     gameOver(gameFlow.EndGame());
                 }
 
@@ -96,19 +96,20 @@ public class GameController implements Initializable {
         });
 
     }
+
     /**
      * @param player symbol who now playes.
      */
-public void SetCurrentPlayer(CellStatus player) {
-	this.curentPlayerVal = player;
-}
+    public void setCurrentPlayer(CellStatus player) {
+        this.currentPlayerVal = player;
+    }
 
-/**
- * draw the inforamtion of the game.
- */
+    /**
+     * draw the inforamtion of the game.
+     */
     public void draw() {
-    	//set who's turn it is.
-        switch (this.curentPlayerVal.ordinal()) {
+        //set who's turn it is.
+        switch (this.currentPlayerVal.ordinal()) {
             case 1:
                 this.currentPlayer.setText("Player1");
                 break;
@@ -119,36 +120,40 @@ public void SetCurrentPlayer(CellStatus player) {
         //set the score.
         this.player1Score.setText("" + this.gameBoardController.getBoard().getNumOfCells(CellStatus.X.ordinal()));
         this.player2Score.setText("" + this.gameBoardController.getBoard().getNumOfCells(CellStatus.O.ordinal()));
-
         this.gameBoardController.draw();
     }
-/**
- * @return board controller.
- */
+
+    /**
+     * @return board controller.
+     */
     public GameBoardController getGameBoardController() {
         return gameBoardController;
     }
-/**
- * @return mouse value player clicked.
- */
+
+    /**
+     * @return mouse value player clicked.
+     */
     public double getMouseXVal() {
         return mouseXVal;
     }
+
     /**
      * @return mouse value player clicked.
      */
     public double getMouseYVal() {
         return mouseYVal;
     }
-/**
- * @param currentPlayer who now makes its turn.
- */
+
+    /**
+     * @param currentPlayer who now makes its turn.
+     */
     public void setCurrentPlayer(Text currentPlayer) {
         this.currentPlayer = currentPlayer;
     }
-/**
- * @param message to display to player.
- */
+
+    /**
+     * @param message to display to player.
+     */
     public void setMessage(String message) {
         this.status.setText(message);
     }
@@ -159,13 +164,15 @@ public void SetCurrentPlayer(CellStatus player) {
         ScenesCallerUtility scu = new ScenesCallerUtility();
         scu.goToMenu(this.backToMenuButton);
     }
-/**
- * game over display. 
- * @param winnerText string with the message who won.
- */
+
+    /**
+     * game over display.
+     *
+     * @param winnerTextMsg string with the message who won.
+     */
     public void gameOver(String winnerTextMsg) {
         try {
-            StackPane root = (StackPane)FXMLLoader.load(getClass().getResource("DeclareWinner.fxml"));
+            StackPane root = (StackPane) FXMLLoader.load(getClass().getResource("DeclareWinner.fxml"));
             Label label = (Label) root.getChildren().get(0);
             label.setText(winnerTextMsg);
             Stage stage = new Stage();
@@ -173,65 +180,65 @@ public void SetCurrentPlayer(CellStatus player) {
             Scene scene = new Scene(root, 400, 200);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-/**
- * read settings for the game from the file Settings.txt
- * @return
- */
+    /**
+     * read settings for the game from the file Settings.txt
+     *
+     * @return
+     */
     private GameFlow readGameFlowFromFile() {
 
         // read the setting from file
-		BufferedReader is = null;
-		 Exception Exception = null;
+        BufferedReader is = null;
+        Exception Exception = null;
         try {
-			is = new BufferedReader(new InputStreamReader(new FileInputStream("Settings.txt")));
-			String line ;
-			 while ((line = is.readLine()) != null ) { //null means no more data in the stream
-				 //split the string to two parts.
-				 String[] parts = line.split(":");
-				 String key = parts[0];//configurations.
-				 String val = parts[1];//the data user insert.
-				if(val.equals("null")) throw new IOException(); 
-				 if (key.equals("firstPlayer")) {
-				 //if first player is 1 means x starts.
-					 this.firstPlayer = (int) Integer.parseInt(val);
-					 if(firstPlayer == 1) {
-						 this.curentPlayerVal = CellStatus.O;
-					 } else {
-						 this.curentPlayerVal = CellStatus.X;
-					 }
-				 } else if(key.equals("firstImage")) {
-					 this.playerOneTag = val; //path to image
-				 } else if(key.equals("SecondImage")) {
-					 this.playerTwoTag = val; //path to image
-				 } else if(key.equals("boardSize")) {
-				 //set boards size.
-					 this.boardSize =(int) Integer.parseInt(val);
-				 } else {
-					 break;
-				 }
-			 }
-			 
+            is = new BufferedReader(new InputStreamReader(new FileInputStream("Settings.txt")));
+            String line;
+            while ((line = is.readLine()) != null) { //null means no more data in the stream
+                //split the string to two parts.
+                String[] parts = line.split(":");
+                String key = parts[0];//configurations.
+                String val = parts[1];//the data user insert.
+                if (val.equals("null")) throw new IOException();
+                if (key.equals("firstPlayer")) {
+                    //if first player is 1 means x starts.
+                    this.firstPlayer = (int) Integer.parseInt(val);
+                    if (firstPlayer == 1) {
+                        this.currentPlayerVal = CellStatus.O;
+                    } else {
+                        this.currentPlayerVal = CellStatus.X;
+                    }
+                } else if (key.equals("firstImage")) {
+                    this.playerOneTagPath = val; //path to image
+                } else if (key.equals("SecondImage")) {
+                    this.playerTwoTagPath = val; //path to image
+                } else if (key.equals("boardSize")) {
+                    //set boards size.
+                    this.boardSize = (int) Integer.parseInt(val);
+                } else {
+                    break;
+                }
+            }
+
         } catch (Exception e) {
             // assign default values
             this.firstPlayer = CellStatus.O.ordinal();
-            this.curentPlayerVal = CellStatus.O;
-            this.playerOneTag = "blackTag.png";
-            this.playerTwoTag = "greyTag.png";
+            this.currentPlayerVal = CellStatus.O;
+            this.playerOneTagPath = "blackTag.png";
+            this.playerTwoTagPath = "greyTag.png";
             this.boardSize = 8;
         } finally {
-    		if( is != null ){ // Exception might have happened at constructor
-    			try {
-    				is.close();
-    			} catch (IOException e) {
-    				e.printStackTrace();
-    			}
-    	}
+            if (is != null) { // Exception might have happened at constructor
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         // initialize the game
         GUI drawer = new GUI(this);
@@ -245,12 +252,12 @@ public void SetCurrentPlayer(CellStatus player) {
             Player2 = new TerminalPlayer(CellStatus.O);
         }
         Board board = new Board(boardSize, boardSize);
-        Logic logicGame = new Regular(board);
+        Logic logicGame = new RegularLogic(board);
         // create the game flow
         GameFlow gameFlow = new GameFlow(logicGame, board, Player1, Player2, drawer);
         return gameFlow;
-        }
     }
+}
 
 
 

@@ -9,22 +9,19 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.io.OutputStreamWriter;
 
 public class SettingsController implements Initializable {
 
     private static final int PLAYER1 = 1;
     private static final int PLAYER2 = 2;
 
-
     private ImageView playerOneTag;
     private ImageView playerTwoTag;
-    private String forstImagePath;
+    private String firstImagePath;
     private String secondImagePath;
     private int firstPlayer;
     private int boardSize;
@@ -33,16 +30,18 @@ public class SettingsController implements Initializable {
     @FXML private ToggleGroup SecondPlayerTag;
     @FXML private ToggleGroup FirstPlayer;
     @FXML Slider tableSize;
-
     @FXML private Button doneButton;
-    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-    	
+        /** in case I wanted to show the user default setting in the radio buttons I could set here their values
+         * but I believe it nicer without that since I want to make sure he chooses all of them.
+         */
     }
 
+    /**
+     * save the settings to file
+     */
     @FXML
     public void saveToFile() {
     	if(this.firstPlayer == 0) {
@@ -52,9 +51,9 @@ public class SettingsController implements Initializable {
 		PrintWriter os = null;
 		try {
 			//write all paramters.
-			 os = new PrintWriter(new OutputStreamWriter(new FileOutputStream("Settings.txt")));
+			 os =  new PrintWriter("Settings.txt", "UTF-8");
 			 os.println("firstPlayer:" + this.firstPlayer);
-			 os.println("firstImage:" + this.forstImagePath);
+			 os.println("firstImage:" + this.firstImagePath);
 			 os.println("SecondImage:" + this.secondImagePath);
 			 os.println("boardSize:" +(int) this.tableSize.getValue());
 			
@@ -67,6 +66,9 @@ public class SettingsController implements Initializable {
 	}
     }
 
+    /**
+     * go back to menu scene when pressed done button
+     */
     @FXML
     public void goBackToMenu() {
         // first save the values
@@ -77,10 +79,19 @@ public class SettingsController implements Initializable {
         // then go back to menu
     }
 
+    /**
+     *
+     * @param tag image to set
+     */
     @FXML
     public void setPlayerOneTag(ImageView tag){
         this.playerOneTag = tag;
     }
+
+    /**
+     * image to set
+     * @param tag
+     */
     @FXML
     public void setPlayerTwoTag(ImageView tag){
         this.playerTwoTag = tag;
@@ -93,7 +104,7 @@ public class SettingsController implements Initializable {
         updatePlayerTag(FirstPlayerTag);
     }
 /**
- * @param actionEvent.
+ * @param actionEvent
  */
     public void setPlayerTwoTag(ActionEvent actionEvent) {
         updatePlayerTag(SecondPlayerTag);
@@ -130,7 +141,7 @@ public class SettingsController implements Initializable {
         }
     }
 /**
- * set users choice on settings
+ * read and set images of users choice via settings
  * @param i
  * @param colorFilePath
  * @param player
@@ -138,7 +149,7 @@ public class SettingsController implements Initializable {
     private void readAndSetPlayerImage(ImageView i, String colorFilePath, int player) {
         i.setImage(new Image(new File(colorFilePath).toURI().toString()));
         if(player == PLAYER1){
-        	this.forstImagePath = colorFilePath;
+        	this.firstImagePath = colorFilePath;
             setPlayerOneTag(i);
         } else {
         	this.secondImagePath = colorFilePath;
@@ -146,7 +157,7 @@ public class SettingsController implements Initializable {
         }
     }
 /**
- * @param actionEvent to set players butten.
+ * @param actionEvent read first player from button.
  */
     public void setFirstPlayer(ActionEvent actionEvent) {
         RadioButton selectedRadioButton = (RadioButton) this.FirstPlayer.getSelectedToggle();
@@ -157,7 +168,4 @@ public class SettingsController implements Initializable {
             this.firstPlayer = PLAYER2;
         }
     }
-
-
-
 }

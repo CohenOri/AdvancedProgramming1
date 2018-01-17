@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
+    /**
+     * Starts the game, open menu screen
+     */
     public void start(Stage primaryStage) throws Exception{
         GridPane root = (GridPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
         Scene scene = new Scene(root,300,200);

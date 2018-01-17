@@ -16,6 +16,9 @@ public class MenuController {
     private ImageView settings;
 
 
+    /**
+     * start the actual game
+     */
     @FXML
     protected void start() {
         Stage stage = (Stage)this.startButton.getScene().getWindow();
@@ -30,6 +33,9 @@ public class MenuController {
         }
     }
 
+    /**
+     * open settings
+     */
     @FXML
     protected void settings() {
         Stage stage = (Stage)this.settings.getScene().getWindow();

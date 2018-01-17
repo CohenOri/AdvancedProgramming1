@@ -1,4 +1,4 @@
 firstPlayer:1
-firstImage:null
-SecondImage:null
+firstImage:blueTag.png
+SecondImage:purpleTag.png
 boardSize:8
