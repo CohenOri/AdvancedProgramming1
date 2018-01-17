@@ -1,0 +1,4 @@
+firstPlayer:2
+firstImage:blueTag.png
+SecondImage:redTag.png
+boardSize:8
