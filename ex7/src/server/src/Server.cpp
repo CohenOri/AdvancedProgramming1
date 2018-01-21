@@ -225,7 +225,7 @@ void *Server::CloseAllGames(void *args) {
     struct ClientArgs *playersInfo = (struct ClientArgs *) args;
     CommandManager *control = playersInfo->controller;
     map<int, pthread_t> *threadMap = playersInfo->threadArr;
-    ThreadPool pool = *playersInfo->pool;
+    ThreadPool *pool = playersInfo->pool;
     string checkToClose;
     bool stop = false;
     while (!stop) {
@@ -233,11 +233,11 @@ void *Server::CloseAllGames(void *args) {
         if (checkToClose.compare("exit") == 0) {
             stop = true;
             control->End();
-      /*      map<int, pthread_t>::const_iterator it;
+            map<int, pthread_t>::const_iterator it;
+            pool->terminate();
             for (it = threadMap->begin(); it != threadMap->end(); it++) {
                 pthread_cancel(it->second);
-            }**/
-            pool.terminate();
+            }
             *playersInfo->stop = 1;
         } else {
             cout << "you typed something, but it wasn't exit \n";
