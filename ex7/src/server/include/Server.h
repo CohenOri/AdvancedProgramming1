@@ -18,9 +18,13 @@
 #include "CommandManager.h"
 #include "CommandProtocol.h"
 #include "CommandInfo.h"
+#include "ThreadPool.h"
+#include "Task.h"
+
 
 using namespace std;
 #define MAX_CONNECTED_CLIENTS 10
+#define THREADS_NUM 4
 
 class Server {
 
@@ -34,6 +38,7 @@ class Server {
         map<int, pthread_t> *threadArr;
         int indexAtThreadArr;
         CommandManager *controller;
+        ThreadPool *pool;
     };
 
 public:
@@ -86,6 +91,7 @@ private:
     CommandManager *controller;
     map<int, pthread_t> threads;
     int stopGame;
+    ThreadPool pool;
     /**
      * Handles specific client, reading commands from the specific client
      * @param clientArgs
