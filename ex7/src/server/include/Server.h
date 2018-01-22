@@ -1,8 +1,5 @@
 /*
  * Server.h
- *
- *  Created on: 2 בדצמ׳ 2017
- *      Author: yanap
  */
 
 #ifndef SRC_SERVER_SERVER_H_
@@ -33,7 +30,7 @@ class Server {
     */
     struct ClientArgs {
         int clientSocket;
-        int *stop;
+        //int *stop;
         int serverSocket;
         map<int, pthread_t> *threadArr;
         int indexAtThreadArr;

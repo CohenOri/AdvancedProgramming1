@@ -1,8 +1,5 @@
 /*
  * ThreadPool.cpp
- *
- *  Created on: 20 בינו׳ 2018
- *      Author: yanap
  */
 
 #include "../include/ThreadPool.h"
@@ -32,6 +29,7 @@ void ThreadPool::executeTasks() {
 		 tasksQueue.pop();
 		 pthread_mutex_unlock(&lock);
 		 task->execute();
+		 //delete the task after its done
 		 delete task;
 	 } else {
 		 pthread_mutex_unlock(&lock);
@@ -44,5 +42,9 @@ void ThreadPool::terminate() {
 	stopped = true;
 	}
 ThreadPool::~ThreadPool() {
+	while(!tasksQueue.empty()) {
+		delete tasksQueue.front();
+	}
+
  delete[] threads;
 }

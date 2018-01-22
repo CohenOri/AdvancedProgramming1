@@ -42,7 +42,6 @@ void Server::start() {
     //no clients for now.
     arg.clientSocket = 0;
     //this argument used only for exit thread.
-    arg.stop = &this->stopGame;
     arg.indexAtThreadArr = 0;
     //gameControl
     arg.controller = this->controller;
@@ -132,8 +131,6 @@ void *Server::HandleClient(void *clientArgs) {
     // cast back from void* to struct
     struct ClientArgs *playersInfo = (struct ClientArgs *) clientArgs;
     int client = playersInfo->clientSocket;
-    map<int, pthread_t> *refToThreadArr = playersInfo->threadArr;
-    int indexAtThreadArr = playersInfo->indexAtThreadArr;
     CommandManager *control = playersInfo->controller;
 
     // Read massage from player.
@@ -177,7 +174,6 @@ void *Server::HandleClient(void *clientArgs) {
         // Execute the Command
         if (control->ExecuteCommand(command, args)) {
             endReading = true;
-            refToThreadArr->erase(indexAtThreadArr);
         } else {
             cout << "no such command" << endl;
         }
@@ -191,7 +187,6 @@ void *Server::ServerAcceptClients(void *clientArgs) {
     int threadCounter = 1;
     struct ClientArgs *playersInfo = (struct ClientArgs *) clientArgs;
     int serverSocket = playersInfo->serverSocket;
-    map<int, pthread_t> *threads = playersInfo->threadArr;
     ThreadPool *pool = playersInfo->pool;
 
     while (true) {
@@ -200,23 +195,13 @@ void *Server::ServerAcceptClients(void *clientArgs) {
         int playerNumber = accept(serverSocket, (struct sockaddr *) &clientAddress, &clientAddressLen);
         cout << "Client " << playerNumber << " connected" << endl;
         playersInfo->controller->AddPlayerSocket(playerNumber);
-        //pthread_t newOne;
-       // threads->insert(pair<int, pthread_t>(threadCounter, newOne));
-
 
         struct ClientArgs cArgs;
         cArgs.clientSocket = playerNumber;
         cArgs.controller = playersInfo->controller;
-        cArgs.indexAtThreadArr = threadCounter;
-        cArgs.threadArr = threads;
+        //create new task for player.
         Task *client =  new Task(HandleClient, (void *) &cArgs);
         pool->addTask(client);
-
-       // int rc = pthread_create(&newOne, NULL, HandleClient, (void *) &cArgs);
-   /*     if (rc) {
-            cout << "Error: unable to create thread, " << rc << endl;
-        }
-        threadCounter++;**/
     }
 }
 
@@ -238,7 +223,6 @@ void *Server::CloseAllGames(void *args) {
             for (it = threadMap->begin(); it != threadMap->end(); it++) {
                 pthread_cancel(it->second);
             }
-            *playersInfo->stop = 1;
         } else {
             cout << "you typed something, but it wasn't exit \n";
             cin.clear();

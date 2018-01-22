@@ -1,8 +1,5 @@
 /*
  * Task.h
- *
- *  Created on: 20 בינו׳ 2018
- *      Author: yanap
  */
 
 #ifndef INCLUDE_TASK_H_
@@ -10,8 +7,14 @@
 
 class Task {
 public:
+	/**
+	 * constructor
+	 */
  Task(void * (*func)(void *arg), void* arg) :
 func(func), arg(arg) {}
+ /*
+  * start the task
+  */
  void execute() {
  func(arg);
  }

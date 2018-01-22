@@ -1,8 +1,5 @@
 /*
  * ThreadPool.h
- *
- *  Created on: 20 בינו׳ 2018
- *      Author: yanap
  */
 
 #ifndef INCLUDE_THREADPOOL_H_
@@ -17,8 +14,18 @@ using namespace std;
 class ThreadPool {
 
 	public:
+	/**
+	 * constructor.
+	 * @param threadsNum number of thread.
+	 */
 		ThreadPool(int threadsNum);
+		/**
+		 * add new task for the list.
+		 */
 		void addTask(Task *task);
+		/**
+		 * stop all threads.
+		 */
 		void terminate();
 		virtual ~ThreadPool();
 	private:
