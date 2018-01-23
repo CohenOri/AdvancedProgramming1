@@ -1,3 +1,93 @@
+commit d8f435b3ec2642ecacbc087b5e81218cd248fe04
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Tue Jan 23 01:52:58 2018 +0200
+
+    semi final
+
+commit adfbd03236ee112534d638ae4dd13448156a60a9
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Sun Jan 21 13:29:21 2018 +0200
+
+    bug fixed.
+
+commit 742a95fae6618d250de0420664dcca2fef031613
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Sun Jan 21 03:19:46 2018 +0200
+
+    threadpool works. there is bug and dumpcore when forced exit from
+    server.
+
+commit 34aa42d99867288bbae6008736b53a90ef1f6d08
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Wed Jan 17 14:12:32 2018 +0200
+
+    just to jar it on linux, and some git organizing
+
+commit bade51def4a2f1d0708c476ce1aac2f2ab6e431a
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Wed Jan 17 12:18:19 2018 +0200
+
+    final version before packages
+
+commit ea7da3a0c6436c77559649d94e49ab02afcc8041
+Author: Yana Patyuk <Yana Patyuk@DESKTOP-JEAVVMC>
+Date:   Wed Jan 17 03:19:39 2018 +0200
+
+    last version. after coding style and fixing bugs.
+
+commit afff09d757a0479ac22ab2c274f564ca8799db6e
+Author: CohenOri <33662944+CohenOri@users.noreply.github.com>
+Date:   Tue Jan 16 23:59:05 2018 +0200
+
+    core project to migrate
+
+commit d0678d63a8eb89ddaa31b4e7017e2b7ceb4bc29a
+Merge: 01b60ee 44653ab
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Jan 16 23:49:07 2018 +0200
+
+    Merge branch 'master' of https://github.com/CohenOri/AdvancedProgramming1
+
+commit 01b60ee91bd35a2fc35180f6ee0101d8d9039128
+Author: Ori Cohen <oricohen@Oris-MacBook-Pro.local>
+Date:   Tue Jan 16 23:47:53 2018 +0200
+
+    core project
+
+commit 44653ab7df3aed8d64dabf5e5af309332fbb198d
+Author: Yana Patyuk <Yana Patyuk@DESKTOP-JEAVVMC>
+Date:   Tue Jan 16 18:35:58 2018 +0200
+
+    goodluck
+
+commit a8e9b5f68a229f0f687c49e9cc859e360ff2540b
+Author: Yana Patyuk <Yana Patyuk@DESKTOP-JEAVVMC>
+Date:   Tue Jan 16 01:41:02 2018 +0200
+
+    your part of project after fixing and cosumizing.
+    i coluds resolve one error in GAME CONTROLL. and not sure how to use GUI
+    the best way(who draw the board for the player?)
+
+commit 5b881adcdd2676bc42a6eee60519b87c3ffd9383
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Sun Jan 14 20:56:31 2018 +0200
+
+    our project. main class contains read/writen functions. for now its now
+    its generic beacuse im not sure who use them and when.
+    i added in board setters.
+
+commit f9141345749b93743d40121eeff2ca9b85fde6d4
+Author: YanaPatyuk <yanch22@gmail.com>
+Date:   Fri Jan 12 01:14:58 2018 +0200
+
+    java files of ex2. coukdnt check on linux if works.
+
+commit a0d14d6c05ab698e09b8b59c784e6eddf3e821e2
+Author: Ori Cohen <oricohen70@gmail.com>
+Date:   Wed Jan 3 18:17:27 2018 +0200
+
+    Finished with ex5, ex5 folder >> ex6. added ex5.zip
+
 commit 8af7697c0d7d2ae59d78d91e318e2ee87df153bb
 Author: Ori Cohen <oricohen70@gmail.com>
 Date:   Wed Jan 3 14:24:58 2018 +0200
